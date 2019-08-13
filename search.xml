@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[image]]></title>
+    <url>%2F2019%2F08%2F13%2Fimage%2F</url>
+    <content type="text"><![CDATA[11111111]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[test]]></title>
+    <url>%2F2019%2F08%2F13%2Ftest%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[第三周-数据库系统表学习]]></title>
     <url>%2F2019%2F08%2F13%2Fblog%2F</url>
     <content type="text"><![CDATA[111 11111]]></content>
