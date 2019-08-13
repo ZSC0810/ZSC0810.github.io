@@ -20,6 +20,14 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[1]]></title>
+    <url>%2F2019%2F08%2F12%2F7%23url%E4%B8%AD%E7%9A%84%E5%90%8D%E5%AD%97%EF%BC%88%E6%96%87%E4%BB%B6%E5%90%8D%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[11111111111]]></content>
+      <categories>
+        <category>6#分类</category>
+      </categories>
+  </entry>
+  <entry>
     <title></title>
     <url>%2F2019%2F08%2F12%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment layout: layouttitle: 标签1date: 2017-08-18 15:41:18tags: 标签1 #此文章在标签1标签下 #tags: [标签1,标签2] #此文章在标签1,标签2下 title: Hello World layout: layouttitle: 标签1date: 2017-08-18 15:41:18tags: 标签1top: 100 #添加top字段,设置数值，数值越大文章越靠前]]></content>
