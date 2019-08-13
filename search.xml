@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[image]]></title>
     <url>%2F2019%2F08%2F13%2Fimage%2F</url>
-    <content type="text"><![CDATA[11111111 1&#123;% asset_img image.jpg This is an image %&#125; 1![](image.jpg)]]></content>
+    <content type="text"><![CDATA[![你想输入的替代文字](image/image.jpg)]]></content>
   </entry>
   <entry>
     <title><![CDATA[test]]></title>
