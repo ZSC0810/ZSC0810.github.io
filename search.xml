@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[第三周-数据库系统表学习]]></title>
     <url>%2F2019%2F08%2F13%2F%E7%AC%AC%E4%B8%89%E5%91%A8-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%A1%A8%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[任务名称：数据库系统表相关学习1.系统表简介​ MySQL5.7 默认的模式有：information_schema， 具有 61个表； m ysqL, 具有31个表； performance_schema，具有87个表; sys, 具有1个表， 100个视图。 Information_schema具有 61个表 information_schema数据库部分表说明•SCHEMATA表：提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。 •TABLES表：提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表 mysqL具有31个表 performance_schema具有87个表 sys 具有1个表， 100个视图.** 1. MYSQL SHOW 命令1、如何利用数据库的功能读写文件，需要什么样的条件才可以读写 2、学习数据库系统表的功能，如何利用 sql 语句查询库名、表名、字段名、内容以及当前用户等基本信息，将学习过程中关键部分整理成报告扩展学习：尝试查询出用户的 hash，并使用 hashcat 来对获取的 hash 进行暴力破解]]></content>
   </entry>
   <entry>
     <title><![CDATA[image]]></title>
