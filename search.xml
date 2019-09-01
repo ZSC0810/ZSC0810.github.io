@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[LNMP环境搭建]]></title>
     <url>%2F2019%2F08%2F31%2FLNMP%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%2F</url>
-    <content type="text"><![CDATA[环境搭建Ubuntu 镜像下载：https://mirrors.huaweicloud.com/ubuntu-releases/bionic/ 系统安装]]></content>
+    <content type="text"><![CDATA[环境搭建Ubuntu 镜像下载：https://mirrors.huaweicloud.com/ubuntu-releases/bionic/ 系统安装安装语言选择 最小安装 格式化硬盘 配置root密码默认root密码是随机的，即每次开机都有一个新的root密码。我们可以在终端输入命令 sudo passwd，然后输入当前用户的密码，终端会提示我们输入新的密码并确认，此时的密码就是root新密码。修改成功后，输入命令 su root，再输入新的密码就ok了 配置镜像源1.编辑源：sudo gedit /etc/apt/sources.list 2.复制以下清华提供的镜像源：https://mirrors.tuna.tsinghua.edu.cn/help/ubuntu/ 3.更新系统：sudo apt update &amp;&amp; sudo apt upgrade &amp;&amp; sudo apt dist-upgrade SSH and htop安装SSH：sudo apt install openssh-server htop：sudo apt install htop 谷歌浏览器谷歌浏览器deb文件下载： https://www.google.cn/chrome/ 安装谷歌浏览器：sudo dpkg -i google-chrome*.deb ，修复依赖 卸载火狐浏览器：sudo apt autoremove firefox* 搜狗输入法官方地址：https://pinyin.sogou.com/linux/ 安装sogo: dpkg -i sogopinyin*.deb 修复依赖：sudo apt install -f 设置系统默认输入法： 删除自带输入法： Ctrl+space 切换输入法 安装mysql安装MySQL：sudo apt install mysql-server msysql 安全初始化 安全初始化：sudo mysql_secure_installation 登录测试 安装NginxNginx： sudo apt install nginx 验证： 安装PHP-FPM安装PHP 配置Nginx:sudo gpedit /etc/nginx/sites-available/default 添加默认页面：index.php 取消默认注释: 配置php-fpm文件：sudo gedit /etc/php/7.2/fpm/php-fpm.conf listen = /var/run/php/php7.0-fpm.sock (监听sock,路径和Nginx的一样) 重启Nginx和php-fpm配置生效sudo systemctl restart php7.2-fpm sudo systemctl restart nginx 验证： CURD(PHP)安装驱动 安装PHP的mysql驱动： sudo apt intstall php7.2-mysql 连接mysql 验证]]></content>
   </entry>
   <entry>
     <title><![CDATA[数据库系统功能相关学习]]></title>
