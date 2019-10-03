@@ -86,19 +86,33 @@
 
 
 
-<meta name="description" content="1、理解域名解析的整个过程DNS是什么？DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。 网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上IP地址的网站">
+<meta name="description" content="[TOC] 1、理解域名解析的整个过程DNS是什么？DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。 网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上I">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WEB页面解析流程">
 <meta property="og:url" content="http://yoursite.com/2019/09/19/WEB页面解析流程/index.html">
 <meta property="og:site_name" content="ZSC0810の博客">
-<meta property="og:description" content="1、理解域名解析的整个过程DNS是什么？DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。 网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上IP地址的网站">
+<meta property="og:description" content="[TOC] 1、理解域名解析的整个过程DNS是什么？DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。 网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上I">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569282936623.png">
 <meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569245635541.png">
-<meta property="og:updated_time" content="2019-09-23T13:34:20.625Z">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569245860945.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569246297067.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569726649709.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569726726314.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570077341758.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570078026821.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570078258029.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570078419129.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570082243603.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570082268329.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570082538037.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/775625205-57d4063b7b60d_articlex.png">
+<meta property="og:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1570086811131.png">
+<meta property="og:updated_time" content="2019-10-03T07:35:18.421Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WEB页面解析流程">
-<meta name="twitter:description" content="1、理解域名解析的整个过程DNS是什么？DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。 网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上IP地址的网站">
-<meta name="twitter:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569245635541.png">
+<meta name="twitter:description" content="[TOC] 1、理解域名解析的整个过程DNS是什么？DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。 网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上I">
+<meta name="twitter:image" content="http://yoursite.com/2019/09/19/WEB页面解析流程/1569282936623.png">
 
 
 
@@ -348,8 +362,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-09-23T21:34:20+08:00">
-                2019-09-23
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-03T15:35:18+08:00">
+                2019-10-03
               </time>
             
           </span>
@@ -381,7 +395,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  967
+                  4.1k
                 </span>
               
 
@@ -397,7 +411,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3
+                  14
                 </span>
               
             </div>
@@ -418,18 +432,153 @@
       
 
       
-        <h1 id="1、理解域名解析的整个过程"><a href="#1、理解域名解析的整个过程" class="headerlink" title="1、理解域名解析的整个过程"></a>1、理解域名解析的整个过程</h1><h2 id="DNS是什么？"><a href="#DNS是什么？" class="headerlink" title="DNS是什么？"></a>DNS是什么？</h2><p>DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。</p>
+        <p>[TOC]</p>
+<h1 id="1、理解域名解析的整个过程"><a href="#1、理解域名解析的整个过程" class="headerlink" title="1、理解域名解析的整个过程"></a>1、理解域名解析的整个过程</h1><h2 id="DNS是什么？"><a href="#DNS是什么？" class="headerlink" title="DNS是什么？"></a>DNS是什么？</h2><p>DNS( Domain Name System)是“域名系统”的英文缩写,用于TCP/IP网络，它所提供的服务是用来将主机名和域名转换为IP地址的工作。</p>
 <p>网络通讯大部分是基于TCP/IP的，而TCP/IP是基于IP地址的，所以计算机在网络上进行通讯时只能识别如“202.96.134.133”之类的IP地址，而不能认识域名。我们无法记住10个以上IP地址的网站，所以我们访问网站时，更多的是在浏览器地址栏中输入域名，就能看到所需要的页面，这是因为有一个叫“DNS服务器”的计算机自动把我们的域名“翻译”成了相应的IP地址，然后调出IP地址所对应的网页。</p>
-<h2 id="工作流程："><a href="#工作流程：" class="headerlink" title="工作流程："></a>工作流程：</h2><p>1、在浏览器中输入www  . qq  .com 域名，操作系统会先检查自己本地的hosts文件是否有这个网址映射关系，如果有，就先调用这个IP地址映射，完成域名解析。 </p>
+<h2 id="工作流程："><a href="#工作流程：" class="headerlink" title="工作流程："></a>工作流程：</h2><p><img src="/2019/09/19/WEB页面解析流程/1569282936623.png" alt="1569282936623"></p>
+<p>1、在浏览器中输入www  . qq  .com 域名，操作系统会先检查自己本地的hosts文件是否有这个网址映射关系，如果有，就先调用这个IP地址映射，完成域名解析。 </p>
 <p>2、如果hosts里没有这个域名的映射，则查找本地DNS解析器缓存，是否有这个网址映射关系，如果有，直接返回，完成域名解析。 </p>
 <p>3、如果hosts与本地DNS解析器缓存都没有相应的网址映射关系，首先会找TCP/ip参数中设置的首选DNS服务器，在此我们叫它本地DNS服务器，此服务器收到查询时，如果要查询的域名，包含在本地配置区域资源中，则返回解析结果给客户机，完成域名解析，此解析具有权威性。 </p>
 <p>4、如果要查询的域名，不由本地DNS服务器区域解析，但该服务器已缓存了此网址映射关系，则调用这个IP地址映射，完成域名解析，此解析不具有权威性。 </p>
-<p>5、如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置（是否设置转发器）进行查询，如果未用转发模式，本地DNS就把请求发至13台根DNS，根DNS服务器收到请求后会判断这个域名(.com)是谁来授权管理，并会返回一个负责该顶级域名服务器的一个IP。本地DNS服务器收到IP信息后，将会联系负责.com域的这台服务器。这台负责.com域的服务器收到请求后，如果自己无法解析，它就会找一个管理.com域的下一级DNS服务器地址(<a href="https://link.zhihu.com/?target=http%3A//qq.com" target="_blank" rel="noopener">http://qq.com</a>)给本地DNS服务器。当本地DNS服务器收到这个地址后，就会找<a href="https://link.zhihu.com/?target=http%3A//qq.com" target="_blank" rel="noopener">http://qq.com</a>域服务器，重复上面的动作，进行查询，直至找到www  . qq  .com主机。 </p>
-<p>6、如果用的是转发模式，此DNS服务器就会把请求转发至上一级DNS服务器，由上一级服务器进行解析，上一级服务器如果不能解析，或找根DNS或把转请求转至上上级，以此循环。不管是本地DNS服务器用是是转发，还是根提示，最后都是把结果返回给本地DNS服务器，由此DNS服务器再返回给客户机。 </p>
+<p>5、如果本地DNS服务器本地区域文件与缓存解析都失效，则根据本地DNS服务器的设置（是否设置转发器）进行查询，</p>
+<p>（1）如果未用转发模式，本地DNS就把请求发至13台根DNS，根DNS服务器收到请求后会判断这个域名(.com)是谁来授权管理，并会返回一个负责该顶级域名服务器的一个IP。本地DNS服务器收到IP信息后，将会联系负责.com域的这台服务器。这台负责.com域的服务器收到请求后，如果自己无法解析，它就会找一个管理.com域的下一级DNS服务器地址(<a href="https://link.zhihu.com/?target=http%3A//qq.com" target="_blank" rel="noopener">http://qq.com</a>)给本地DNS服务器。当本地DNS服务器收到这个地址后，就会找<a href="https://link.zhihu.com/?target=http%3A//qq.com" target="_blank" rel="noopener">http://qq.com</a>域服务器，重复上面的动作，进行查询，直至找到www  . qq  .com主机。 </p>
+<p> （2）如果用的是转发模式，此DNS服务器就会把请求转发至上一级DNS服务器，由上一级服务器进行解析，上一级服务器如果不能解析，或找根DNS或把转请求转至上上级，以此循环。不管是本地DNS服务器用是是转发，还是根提示，最后都是把结果返回给本地DNS服务器，由此DNS服务器再返回给客户机。 </p>
 <p>​    从客户端到本地DNS服务器是属于递归查询，而DNS服务器之间就是的交互查询就是迭代查询。</p>
 <h2 id="DNS-域名称的五个类别"><a href="#DNS-域名称的五个类别" class="headerlink" title="DNS 域名称的五个类别"></a>DNS 域名称的五个类别</h2><p><img src="/2019/09/19/WEB页面解析流程/1569245635541.png" alt="1569245635541"></p>
-<p>2、理解 web 页面请求的整个流程，绘制流程图（nginx 处理的 11 个过程）<br>3、学习 http 协议中的字段及含义<br>4、学习 http 请求方法以及返回状态码的类型和含义</p>
+<h2 id="一些常见的DNS域名称"><a href="#一些常见的DNS域名称" class="headerlink" title="一些常见的DNS域名称"></a>一些常见的DNS域名称</h2><p><img src="/2019/09/19/WEB页面解析流程/1569245860945.png" alt="1569245860945"></p>
+<h2 id="DNS记录"><a href="#DNS记录" class="headerlink" title="DNS记录"></a>DNS记录</h2><p><img src="/2019/09/19/WEB页面解析流程/1569246297067.png" alt="1569246297067"></p>
+<p>A记录       IP地址记录,记录一个域名对应的IP地址<br>AAAA记录    IPv6 地址记录，记录一个域名对应的IPv6地址<br>CNAME记录   别名记录，记录一个主机的别名<br>MX记录    电子邮件交换记录，记录一个邮件域名对应的IP地址<br>NS记录      域名服务器记录 ,记录该域名由哪台域名服务器解析<br>PTR记录     反向记录，也即从IP地址到域名的一条记录<br>TXT记录     记录域名的相关文本信息</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1569726649709.png" alt="1569726649709"></p>
+<p><img src="/2019/09/19/WEB页面解析流程/1569726726314.png" alt="1569726726314"></p>
+<p>第一行Server是： DNS服务器的主机名 –114.114.114.114</p>
+<p>第二行Address是： 服务器的ip地址 –114.114.114.114#53</p>
+<p>非权威应答（Non-authoritative answer）：</p>
+<p>Name是：解析的URL –<a href="http://www.zsc0810.site" target="_blank" rel="noopener">www.zsc0810.site</a></p>
+<p>Address是：47.105.32.145</p>
+<h3 id="DNS域传送漏洞："><a href="#DNS域传送漏洞：" class="headerlink" title="DNS域传送漏洞："></a>DNS域传送漏洞：</h3><p>什么是DNS域传送？</p>
+<p>DNS 服务器分为： 主服务器、备份服务器和缓存服务器。域传送是指后备服务器从主服务器拷贝数据，并用得到的数据更新自身数据库。 在主备服务器之间同步数据库，需要使用 “DNS 域传送 ” 。</p>
+<p>危险：若DNS服务器配置不当，可能导致匿名用户获取某个域的所有记录。造成整个网络的拓扑结构泄露给潜在的攻击者，包括一些安全性较低的内部主机，如测试服务器。凭借这份网络蓝图，攻击者可以节省很少的扫描时间。</p>
+<h3 id="（1）一键安装Docker"><a href="#（1）一键安装Docker" class="headerlink" title="（1）一键安装Docker"></a>（1）一键安装Docker</h3><p>curl -s <a href="https://get.docker.com/" target="_blank" rel="noopener">https://get.docker.com/</a> | sh </p>
+<p>如果是使用一键安装工具安装的docker，则docker会自动启动。</p>
+<h3 id="（2）安装Docker-Compose"><a href="#（2）安装Docker-Compose" class="headerlink" title="（2）安装Docker Compose"></a>（2）安装Docker Compose</h3><p>curl -L <a href="https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname" target="_blank" rel="noopener">https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname</a> -s <code>-</code>uname -m` &gt; /usr/local/bin/docker-compose</p>
+<p>chmod +x /usr/local/bin/docker-compose</p>
+<p>docker-compose -v</p>
+<h3 id="（3）下载Vulhub"><a href="#（3）下载Vulhub" class="headerlink" title="（3）下载Vulhub"></a>（3）下载Vulhub</h3><h3 id="（4）启动环境"><a href="#（4）启动环境" class="headerlink" title="（4）启动环境"></a>（4）启动环境</h3><p>进入相应路径</p>
+<p>cd /path/to/vuln/ </p>
+<p>运行</p>
+<p>docker-compose up -d </p>
+<p>结束</p>
+<p>docker-compose down</p>
+<p>启动192.168.1.100带有DNS域传送漏洞的DNS服务器</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570077341758.png" alt="1570077341758"></p>
+<ol>
+<li><strong>使用nmap扫描DNS域传送泄露漏洞</strong></li>
+</ol>
+<p><img src="/2019/09/19/WEB页面解析流程/1570078026821.png" alt="1570078026821"></p>
+<p>2      用dig来测试DNS服务器是否存在域传送泄露</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570078258029.png" alt="1570078258029"></p>
+<p>3   DNS查询工具<strong>nslookup</strong>对DNS域传送的测试（在交互式shell中发现一个DNS服务器的域传送漏洞的过程）</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570078419129.png" alt="1570078419129"></p>
+<p><strong>操作基本的步骤是:</strong></p>
+<p>1) 输入nslookup命令进入交互式shell</p>
+<p>2) Server 命令参数设定查询将要使用的DNS服务器</p>
+<p>3) Ls命令列出某个域中的所有域名</p>
+<p>4) Exit命令退出程序</p>
+<p><strong>攻击者能获取的敏感主要包括：</strong></p>
+<p>1）网络的拓扑结构，服务器集中的IP地址段</p>
+<p>2）数据库服务器的IP地址，例如上述nwpudb2.nwpu.edu.cn</p>
+<p>3）测试服务器的IP地址，例如test.nwpu.edu.cn</p>
+<p>4）VPN服务器地址泄露</p>
+<p>5）其他敏感服务器</p>
+<h1 id="2、WEB-页面请求的整个流程（从输入URL到页面加载发生了什么？）"><a href="#2、WEB-页面请求的整个流程（从输入URL到页面加载发生了什么？）" class="headerlink" title="2、WEB 页面请求的整个流程（从输入URL到页面加载发生了什么？）"></a>2、WEB 页面请求的整个流程（从输入URL到页面加载发生了什么？）</h1><h3 id="总的来说分为以下几个过程："><a href="#总的来说分为以下几个过程：" class="headerlink" title="总的来说分为以下几个过程："></a>总的来说分为以下几个过程：</h3><ol>
+<li>DNS解析</li>
+<li>TCP连接</li>
+<li>发送HTTP请求</li>
+<li>服务器处理请求并返回HTTP报文</li>
+<li>浏览器解析渲染页面</li>
+<li>连接结束具体过程 </li>
+</ol>
+<h3 id="具体过程"><a href="#具体过程" class="headerlink" title="具体过程:"></a>具体过程:</h3><h3 id="DNS解析"><a href="#DNS解析" class="headerlink" title="DNS解析"></a>DNS解析</h3><p>实现了网址到IP地址的转换。网址到IP地址转换的过程是如何进行的?</p>
+<p>首先在本地域名服务器中查询IP地址，如果没有找到的情况下，本地域名服务器会向根域名服务器发送一个请求，如果根域名服务器也不存在该域名时，本地域名会向com顶级域名服务器发送一个请求，依次类推下去。直到最后本地域名服务器得到google的IP地址并把它缓存到本地，供下次查询使用。</p>
+<p>所有网址真正的解析过程为: . -&gt; .com -&gt; google.com. -&gt; <a href="http://www.google.com.。" target="_blank" rel="noopener">www.google.com.。</a></p>
+<h4 id="DNS优化"><a href="#DNS优化" class="headerlink" title="DNS优化"></a>DNS优化</h4><p>如何减少该过程的步骤呢？那就是DNS缓存。</p>
+<p>DNS存在着多级缓存，从离浏览器的距离排序的话，有以下几种: 浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存。</p>
+<ul>
+<li>在你的chrome浏览器中输入:chrome://dns/，你可以看到chrome浏览器的DNS缓存。</li>
+<li>系统缓存主要存在/etc/hosts(Linux系统)中:</li>
+</ul>
+<p>谷歌浏览器缓存</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570082243603.png" alt="1570082243603"></p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570082268329.png" alt="1570082268329"></p>
+<h4 id="DNS负载均衡"><a href="#DNS负载均衡" class="headerlink" title="DNS负载均衡"></a>DNS负载均衡</h4><p>DNS可以返回一个合适的机器的IP给用户，例如可以根据每台机器的负载量，该机器离用户地理位置的距离等等，这种过程就是DNS负载均衡，又叫做DNS重定向。CDN(Content Delivery Network)就是利用DNS的重定向技术，DNS服务器会返回一个跟用户最接近的点的IP地址给用户，CDN节点的服务器负责响应用户的请求，提供所需的内容</p>
+<h3 id="TCP连接"><a href="#TCP连接" class="headerlink" title="TCP连接"></a>TCP连接</h3><p>HTTP协议是使用TCP作为其传输层协议的 HTTPS协议的本质就是HTTP + SSL(or TLS)。在HTTP报文进入TCP报文之前，先使用SSL对HTTP报文进行加密。从网络的层级结构看它位于HTTP协议与TCP协议之间。</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570082538037.png" alt="1570082538037"></p>
+<h4 id="HTTPS过程"><a href="#HTTPS过程" class="headerlink" title="HTTPS过程"></a>HTTPS过程</h4><p>HTTPS在传输数据之前需要客户端与服务器进行一个握手(TLS/SSL握手)，在握手过程中将确立双方加密传输数据的密码信息。TLS/SSL使用了非对称加密，对称加密以及hash等。具体过程请参考经典的阮一峰先生的博客<a href="http://www.ruanyifeng.com/blog/2014/09/illustration-ssl.html" target="_blank" rel="noopener">TLS/SSL握手过程</a>。<br>HTTPS相比于HTTP，虽然提供了安全保证，但是势必会带来一些时间上的损耗，如握手和加密等过程，是否使用HTTPS需要根据具体情况在安全和性能方面做出权衡。</p>
+<h3 id="HTTP请求"><a href="#HTTP请求" class="headerlink" title="HTTP请求"></a>HTTP请求</h3><p>HTTP请求报文是由三部分组成: <strong>请求行</strong>, <strong>请求报头</strong>和<strong>请求正文</strong>。</p>
+<h4 id="请求行"><a href="#请求行" class="headerlink" title="请求行"></a>请求行</h4><p>格式如下：</p>
+<p><code>Method Request-URL HTTP-Version CRLF</code></p>
+<p>   eg: GET index.html HTTP/1.1</p>
+<p>常用的方法有: GET, POST, PUT, DELETE, OPTIONS, HEAD。</p>
+<h4 id="请求报头"><a href="#请求报头" class="headerlink" title="请求报头"></a>请求报头</h4><p>请求报头允许客户端向服务器传递请求的附加信息和客户端自身的信息。</p>
+<p>PS: 客户端不一定特指浏览器，有时候也可使用Linux下的CURL命令以及HTTP客户端测试工具等。<br>常见的请求报头有: Accept, Accept-Charset, Accept-Encoding, Accept-Language, Content-Type, Authorization, Cookie, User-Agent等。</p>
+<p>请求报头中使用了Accept, Accept-Encoding, Accept-Language, Cache-Control, Connection, Cookie等字段。Accept用于指定客户端用于接受哪些类型的信息，Accept-Encoding与Accept类似，它用于指定接受的编码方式。Connection设置为Keep-alive用于告诉客户端本次HTTP请求结束之后并不需要关闭TCP连接，这样可以使下次HTTP请求使用相同的TCP通道，节省TCP连接建立的时间。</p>
+<h4 id="请求正文"><a href="#请求正文" class="headerlink" title="请求正文"></a>请求正文</h4><p>当使用POST, PUT等方法时，通常需要客户端向服务器传递数据。这些数据就储存在请求正文中。在请求包头中有一些与请求正文相关的信息，例如:<br>现在的Web应用通常采用Rest架构，请求的数据格式一般为json。这时就需要设置Content-Type: application/json。</p>
+<h3 id="服务器处理请求并返回HTTP报文"><a href="#服务器处理请求并返回HTTP报文" class="headerlink" title="服务器处理请求并返回HTTP报文"></a>服务器处理请求并返回HTTP报文</h3><p>后端从在固定的端口接收到TCP报文开始，这一部分对应于编程语言中的socket。它会对TCP连接进行处理，对HTTP协议进行解析，并按照报文格式进一步封装成HTTPRequest对象，供上层使用。这一部分工作一般是由Web服务器去进行，我使用过的Web服务器有Tomcat, Jetty和Netty等等。</p>
+<p>HTTP响应报文也是由三部分组成: <strong>状态码</strong>, <strong>响应报头</strong>和<strong>响应报文</strong>。</p>
+<h4 id="状态码"><a href="#状态码" class="headerlink" title="状态码"></a>状态码</h4><p>状态码是由3位数组成，第一个数字定义了响应的类别，且有五种可能取值:</p>
+<ul>
+<li><p>1xx：指示信息–表示请求已接收，继续处理。</p>
+</li>
+<li><p>2xx：成功–表示请求已被成功接收、理解、接受。</p>
+</li>
+<li><p>3xx：重定向–要完成请求必须进行更进一步的操作。</p>
+</li>
+<li><p>4xx：客户端错误–请求有语法错误或请求无法实现。</p>
+</li>
+<li><p>5xx：服务器端错误–服务器未能实现合法的请求。<br>平时遇到比较常见的状态码有:200, 204, 301, 302, 304, 400, 401, 403, 404, 422, 500</p>
+<p>200：请求已成功。</p>
+<p>204：服务器已处理请求，但不返回任何实体内容，并且希望返回更新了的元信息。若客户端是浏览器的话，那么浏览器应保留发送该请求的页面，而不更改任何文档视图。</p>
+<p>301：永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替。</p>
+<p> 302：临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI。</p>
+<p> 304：如果客户端发送了一个带条件的 GET 请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。</p>
+<p> 400：客户端请求包含语法错误，服务器无法理解。</p>
+<p> 401：请求要求用户进行身份认证。</p>
+<p> 403：服务器理解请求客户端的请求，但是拒绝执行此请求。</p>
+<p> 404：请求失败，请求所希望得到的资源未被在服务器上发现。没有信息能够告诉用户这个状况到底是暂时的还是永久的。</p>
+<p> 422：请求格式正确，但是由于含有语义错误，无法响应。</p>
+<p>500：服务器内部错误。</p>
+</li>
+</ul>
+<h4 id="响应报头"><a href="#响应报头" class="headerlink" title="响应报头"></a>响应报头</h4><p>常见的响应报头字段有: Server, Connection…。</p>
+<h4 id="响应报文"><a href="#响应报文" class="headerlink" title="响应报文"></a>响应报文</h4><p>服务器返回给浏览器的文本信息，通常HTML, CSS, JS, 图片等文件就放在这一部分。</p>
+<h3 id="浏览器解析渲染页面"><a href="#浏览器解析渲染页面" class="headerlink" title="浏览器解析渲染页面"></a>浏览器解析渲染页面</h3><p>浏览器在收到HTML,CSS,JS文件后，它是如何把页面呈现到屏幕上的？下图对应的就是WebKit渲染的过程。</p>
+<p><img src="/2019/09/19/WEB页面解析流程/775625205-57d4063b7b60d_articlex.png" alt="img"></p>
+<p>浏览器是一个边解析边渲染的过程。</p>
+<p>JS的解析是由浏览器中的JS解析引擎完成的</p>
+<p>浏览器在解析过程中，如果遇到请求外部资源时，如图像,iconfont,JS等。浏览器将重复1-6过程下载该资源。请求过程是异步的，并不会影响HTML文档进行加载，但是当文档加载过程中遇到JS文件，HTML文档会挂起渲染过程，不仅要等到文档中JS文件加载完毕还要等待解析执行完毕，才会继续HTML的渲染过程。原因是因为JS有可能修改DOM结构，这就意味着JS执行完成前，后续所有资源的下载是没有必要的，这就是JS阻塞后续资源下载的根本原因。CSS文件的加载不影响JS文件的加载，但是却影响JS文件的执行。JS代码执行前浏览器必须保证CSS文件已经下载并加载完毕。</p>
+<p>WEB页面解析流程如图：</p>
+<p><img src="/2019/09/19/WEB页面解析流程/1570086811131.png" alt="1570086811131"></p>
+<h2 id="nginx将HTTP请求处理流程分为11个阶段"><a href="#nginx将HTTP请求处理流程分为11个阶段" class="headerlink" title="nginx将HTTP请求处理流程分为11个阶段"></a>nginx将HTTP请求处理流程分为11个阶段</h2><ul>
+<li>NGX_HTTP_POST_READ_PHASE：第一个阶段，ngx_http_realip_module模块会注册handler到该阶段（nginx作为代理服务器时有用，后端以此获取客户端原始IP），而该模块默认不会开启，需要通过–with-http_realip_module启动；</li>
+<li>NGX_HTTP_SERVER_REWRITE_PHASE：server块中配置了rewrite指令时，该阶段会重写url；</li>
+<li>NGX_HTTP_FIND_CONFIG_PHASE：查找匹配的location配置；该阶段不能自定义handler；</li>
+<li>NGX_HTTP_REWRITE_PHASE：location块中配置了rewrite指令时，该阶段会重写url；</li>
+<li>NGX_HTTP_POST_REWRITE_PHASE：该阶段会检查是否发生了url重写，如果有，重新回到FIND_CONFIG阶段，否则直接进入下一个阶段；该阶段不能自定义handler；</li>
+<li>NGX_HTTP_PREACCESS_PHASE：访问控制，比如限流模块ngx_http_limit_req_module会注册handler到该阶段；</li>
+<li>NGX_HTTP_ACCESS_PHASE：访问权限控制，比如基于ip黑白名单的权限控制，基于用户名密码的权限控制等；</li>
+<li>NGX_HTTP_POST_ACCESS_PHASE：该阶段会根据访问权限控制阶段做相应处理，不能自定义handler；</li>
+<li>NGX_HTTP_TRY_FILES_PHASE：只有配置了try_files指令，才会有此阶段，不能自定义handler；</li>
+<li>NGX_HTTP_CONTENT_PHASE：内容产生阶段，返回响应给客户端；ngx_http_fastcgi_module模块就处于该阶段；</li>
+<li>NGX_HTTP_LOG_PHASE：该阶段会记录日志</li>
+</ul>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://www.zhihu.com/question/23042131/answer/66571369" target="_blank" rel="noopener">https://www.zhihu.com/question/23042131/answer/66571369</a></p>
+<p><a href="https://www.freebuf.com/articles/web/190947.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/web/190947.html</a></p>
+<p><a href="http://www.lijiejie.com/dns-zone-transfer-1/" target="_blank" rel="noopener">http://www.lijiejie.com/dns-zone-transfer-1/</a></p>
+<p><a href="https://vulhub.org/#/docs/" target="_blank" rel="noopener">https://vulhub.org/#/docs/</a></p>
+<p><a href="https://segmentfault.com/a/1190000020178836" target="_blank" rel="noopener">https://segmentfault.com/a/1190000020178836</a></p>
+<p><a href="https://segmentfault.com/a/1190000006879700" target="_blank" rel="noopener">https://segmentfault.com/a/1190000006879700</a></p>
+<p><a href="https://segmentfault.com/a/1190000019263330" target="_blank" rel="noopener">https://segmentfault.com/a/1190000019263330</a></p>
+<p><a href="https://segmentfault.com/a/1190000006689767" target="_blank" rel="noopener">https://segmentfault.com/a/1190000006689767</a></p>
 
       
     </div>
@@ -578,7 +727,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、理解域名解析的整个过程"><span class="nav-number">1.</span> <span class="nav-text">1、理解域名解析的整个过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">DNS是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流程："><span class="nav-number">1.2.</span> <span class="nav-text">工作流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-域名称的五个类别"><span class="nav-number">1.3.</span> <span class="nav-text">DNS 域名称的五个类别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">2.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、理解域名解析的整个过程"><span class="nav-number">1.</span> <span class="nav-text">1、理解域名解析的整个过程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS是什么？"><span class="nav-number">1.1.</span> <span class="nav-text">DNS是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工作流程："><span class="nav-number">1.2.</span> <span class="nav-text">工作流程：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-域名称的五个类别"><span class="nav-number">1.3.</span> <span class="nav-text">DNS 域名称的五个类别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些常见的DNS域名称"><span class="nav-number">1.4.</span> <span class="nav-text">一些常见的DNS域名称</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS记录"><span class="nav-number">1.5.</span> <span class="nav-text">DNS记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS域传送漏洞："><span class="nav-number">1.5.1.</span> <span class="nav-text">DNS域传送漏洞：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（1）一键安装Docker"><span class="nav-number">1.5.2.</span> <span class="nav-text">（1）一键安装Docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（2）安装Docker-Compose"><span class="nav-number">1.5.3.</span> <span class="nav-text">（2）安装Docker Compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（3）下载Vulhub"><span class="nav-number">1.5.4.</span> <span class="nav-text">（3）下载Vulhub</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（4）启动环境"><span class="nav-number">1.5.5.</span> <span class="nav-text">（4）启动环境</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、WEB-页面请求的整个流程（从输入URL到页面加载发生了什么？）"><span class="nav-number">2.</span> <span class="nav-text">2、WEB 页面请求的整个流程（从输入URL到页面加载发生了什么？）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#总的来说分为以下几个过程："><span class="nav-number">2.0.1.</span> <span class="nav-text">总的来说分为以下几个过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体过程"><span class="nav-number">2.0.2.</span> <span class="nav-text">具体过程:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DNS解析"><span class="nav-number">2.0.3.</span> <span class="nav-text">DNS解析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS优化"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">DNS优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS负载均衡"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">DNS负载均衡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP连接"><span class="nav-number">2.0.4.</span> <span class="nav-text">TCP连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTTPS过程"><span class="nav-number">2.0.4.1.</span> <span class="nav-text">HTTPS过程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求"><span class="nav-number">2.0.5.</span> <span class="nav-text">HTTP请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#请求行"><span class="nav-number">2.0.5.1.</span> <span class="nav-text">请求行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求报头"><span class="nav-number">2.0.5.2.</span> <span class="nav-text">请求报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求正文"><span class="nav-number">2.0.5.3.</span> <span class="nav-text">请求正文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#服务器处理请求并返回HTTP报文"><span class="nav-number">2.0.6.</span> <span class="nav-text">服务器处理请求并返回HTTP报文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#状态码"><span class="nav-number">2.0.6.1.</span> <span class="nav-text">状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应报头"><span class="nav-number">2.0.6.2.</span> <span class="nav-text">响应报头</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#响应报文"><span class="nav-number">2.0.6.3.</span> <span class="nav-text">响应报文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器解析渲染页面"><span class="nav-number">2.0.7.</span> <span class="nav-text">浏览器解析渲染页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nginx将HTTP请求处理流程分为11个阶段"><span class="nav-number">2.1.</span> <span class="nav-text">nginx将HTTP请求处理流程分为11个阶段</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">3.</span> <span class="nav-text">参考资料</span></a></li></div>
             
 
           </div>
