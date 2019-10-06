@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="DDOS分类？资源消耗类型连接类主要表现为常用的连接耗尽，包括并发连接，新建连接，慢速连接，空连接等； 数据库查询主要表现为账号验证，表项查询，数据提交等； 网络：带宽 防火墙：吞吐量，并发连接 服务器：CPU.内存，I/O 应用：处理请求能力，对操作系统的使用权 带宽上限，设备性能上限，协议性能上限，应用性能上限，系统性能上限 利用漏洞崩溃系统 崩溃程序 网络流量型：利用网络通讯协议 SYN F">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于ddos">
+<meta property="og:url" content="http://yoursite.com/2019/10/04/关于ddos/index.html">
+<meta property="og:site_name" content="ZSC0810の博客">
+<meta property="og:description" content="DDOS分类？资源消耗类型连接类主要表现为常用的连接耗尽，包括并发连接，新建连接，慢速连接，空连接等； 数据库查询主要表现为账号验证，表项查询，数据提交等； 网络：带宽 防火墙：吞吐量，并发连接 服务器：CPU.内存，I/O 应用：处理请求能力，对操作系统的使用权 带宽上限，设备性能上限，协议性能上限，应用性能上限，系统性能上限 利用漏洞崩溃系统 崩溃程序 网络流量型：利用网络通讯协议 SYN F">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237236980.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237616738.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237444995.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237694896.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237851137.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237896180.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570238033666.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570191417086.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570191470736.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570191591527.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570193544587.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570193423866.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570193240601.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570238919102.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570240153376.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570242309076.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570242392568.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570242411372.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570261537346.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570246629189.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570261238211.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570261771679.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570273037718.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570274228720.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570281254406.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570285712400.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/04/关于ddos/1570285677108.png">
+<meta property="og:updated_time" content="2019-10-06T00:28:37.665Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于ddos">
+<meta name="twitter:description" content="DDOS分类？资源消耗类型连接类主要表现为常用的连接耗尽，包括并发连接，新建连接，慢速连接，空连接等； 数据库查询主要表现为账号验证，表项查询，数据提交等； 网络：带宽 防火墙：吞吐量，并发连接 服务器：CPU.内存，I/O 应用：处理请求能力，对操作系统的使用权 带宽上限，设备性能上限，协议性能上限，应用性能上限，系统性能上限 利用漏洞崩溃系统 崩溃程序 网络流量型：利用网络通讯协议 SYN F">
+<meta name="twitter:image" content="http://yoursite.com/2019/10/04/关于ddos/1570237236980.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/10/04/关于ddos/">
+
+
+
+
+
+  <title>关于ddos | ZSC0810の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZSC0810の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录成长中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/04/关于ddos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZSC0810">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZSC0810の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">关于ddos</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-04T11:11:13+08:00">
+                2019-10-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-06T08:28:37+08:00">
+                2019-10-06
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="DDOS分类？"><a href="#DDOS分类？" class="headerlink" title="DDOS分类？"></a>DDOS分类？</h1><h2 id="资源消耗类型"><a href="#资源消耗类型" class="headerlink" title="资源消耗类型"></a>资源消耗类型</h2><p>连接类主要表现为常用的连接耗尽，包括并发连接，新建连接，慢速连接，空连接等；</p>
+<p>数据库查询主要表现为账号验证，表项查询，数据提交等；</p>
+<p>网络：带宽</p>
+<p>防火墙：吞吐量，并发连接</p>
+<p>服务器：CPU.内存，I/O</p>
+<p>应用：处理请求能力，对操作系统的使用权</p>
+<p>带宽上限，设备性能上限，协议性能上限，应用性能上限，系统性能上限</p>
+<h2 id="利用漏洞"><a href="#利用漏洞" class="headerlink" title="利用漏洞"></a>利用漏洞</h2><p>崩溃系统</p>
+<p>崩溃程序</p>
+<h3 id="网络流量型：利用网络通讯协议"><a href="#网络流量型：利用网络通讯协议" class="headerlink" title="网络流量型：利用网络通讯协议"></a>网络流量型：利用网络通讯协议</h3><ol>
+<li>SYN Flood</li>
+<li>ACK Flood</li>
+<li>ICMP Flood</li>
+<li>UDP Flood</li>
+<li>DNS Flood</li>
+<li>HTTP Flood</li>
+</ol>
+<h3 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h3><ol>
+<li>Http Flood</li>
+<li>DNS Flood</li>
+<li>Https Flood等</li>
+</ol>
+<h3 id="协议层"><a href="#协议层" class="headerlink" title="协议层"></a>协议层</h3><ol>
+<li>SYN Flood、ICMP Flood</li>
+<li>Tcp Flood、Udp Flood等</li>
+</ol>
+<h3 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h3><ol>
+<li>Arp攻击</li>
+</ol>
+<h1 id="hping详细参数解析："><a href="#hping详细参数解析：" class="headerlink" title="hping详细参数解析："></a>hping详细参数解析：</h1><ol>
+<li>-h –help 显示帮助信息</li>
+<li>-v –version 显示Hping的版本信息</li>
+<li>-c –count 指定数据包的次数</li>
+<li>-i –interval 指定发包间隔为多少毫秒，如-i m10：表示发包间隔为毫秒  </li>
+<li>–flood 尽最快发送数据包，不显示回复</li>
+</ol>
+<h2 id="指定所用的模式："><a href="#指定所用的模式：" class="headerlink" title="指定所用的模式："></a>指定所用的模式：</h2><p>　　 默认模式 TCP模式 </p>
+<ol>
+<li>　　 -0 –rawip RAW IP 模式 </li>
+<li>　　 -1 –icmp ICMP 模式 </li>
+<li>　　 -2 –udp UDP 模式 </li>
+<li>　　 -8 –scan 扫描模式. 例: hping –scan 1-30,70-90 -S <a href="http://www.target.host" target="_blank" rel="noopener">www.target.host</a> </li>
+<li>　　 -9 –listen 监听模式 </li>
+</ol>
+<h2 id="IP选项："><a href="#IP选项：" class="headerlink" title="IP选项："></a>IP选项：</h2><ol>
+<li>　　 -a –spoof 源地址欺骗 </li>
+<li>　　 –rand-dest 随机目的地址模式 </li>
+<li>　　 –rand-source 随机源地址模式 </li>
+<li>　　 -t –ttl ttl值，默认为64 </li>
+<li>　　 -N –id 指定id，默认是随机的 </li>
+<li>　　 -W –winid 使用win*的id 字节顺序 </li>
+<li>　　 -r –rel 相对的id区域 </li>
+<li>　　 -f –frag 将数据包分片后传输（可以通过薄弱的acl（访问控制 </li>
+<li>　　 列表）） </li>
+<li>　　 -x –morefrag 设置更多的分片标记 </li>
+<li>　　 -y –dontfrag 设置不加分片标记 </li>
+<li>　　 -g –fragoff 设置分片偏移 </li>
+<li>　　 -m –mtu 设置虚拟MTU, 当数据包&gt;MTU时要使用–frag 进行分片 </li>
+<li>　　 -o –tos 指定服务类型，默认是0x00,，可以使用–tos help查看帮助 </li>
+<li>　　 -G –rroute 包含RECORD_ROUTE选项并且显示路由缓存 </li>
+<li>　　 –lsrr 释放源路记录 </li>
+<li>　　 –ssrr 严格的源路由记录 </li>
+<li>　　 -H –ipproto 设置协议范围，仅在RAW IP模式下使用 </li>
+</ol>
+<h2 id="ICMP选项"><a href="#ICMP选项" class="headerlink" title="ICMP选项"></a>ICMP选项</h2><ol>
+<li><p>　　 -C –icmptype 指定icmp类型（默认类型为回显请求） </p>
+</li>
+<li><p>　　 -K –icmpcode 指定icmp编码（默认为0） </p>
+</li>
+<li><p>　　 –force-icmp 发送所有ICMP数据包类型（默认只发送可以支持的类型） –icmp-gw 针对ICMP数据包重定向设定网关地址（默认是0.0.0.0） </p>
+</li>
+<li><p>　　 –icmp-ts 相当于–icmp –icmptype 13（ICMP时间戳） </p>
+</li>
+<li><p>　　 –icmp-addr 相当于–icmp –icmptype 17（ICMP地址掩码） </p>
+</li>
+<li><p>　　 –icmp-help 显示ICMP的其它帮助选项 </p>
+</li>
+<li><h2 id="UDP-TCP选项"><a href="#UDP-TCP选项" class="headerlink" title="UDP/TCP选项"></a>UDP/TCP选项</h2></li>
+<li><p>-s –baseport 基本源端口（默认是随机的）</p>
+</li>
+<li><p>-p –destport 目的端口（默认为0），可同时指定多个端口</p>
+</li>
+<li><p>-k –keep 仍然保持源端口</p>
+</li>
+<li><p>-w –win 指定数据包大小，默认为64</p>
+</li>
+<li><p>-O –tcpoff 设置假的TCP数据偏移</p>
+</li>
+<li><p>-Q –seqnum 仅显示TCP序列号</p>
+</li>
+<li><p>-b –badcksum 尝试发送不正确IP校验和的数据包</p>
+</li>
+<li><p>许多系统在发送数据包时使用固定的IP校验和，因此你会得到不正确的UDP/TCP校验和.</p>
+</li>
+<li><p>-M –setseq 设置TCP序列号</p>
+</li>
+<li><p>-L –setack 使用TCP的ACK（访问控制列表）</p>
+</li>
+<li><p>-F –fin 使用FIN标记set FIN flag</p>
+</li>
+<li><p>-S –syn 使用SNY标记</p>
+</li>
+<li><p>-R –rst 使用RST标记</p>
+</li>
+<li><p>-P –push 使用PUSH标记</p>
+</li>
+<li><p>-A –ack 使用 ACK 标记</p>
+</li>
+<li><p>-U –urg 使用URG标记</p>
+</li>
+<li><p>-X –xmas 使用 X 未用标记 (0x40)</p>
+</li>
+<li><p>-Y –ymas 使用 Y 未用标记 (0x80)</p>
+</li>
+<li><p>–tcpexitcode 最后使用 tcp-&gt;th_flags 作为退出代码</p>
+</li>
+<li><p>–tcp-timestamp 启动TCP时间戳选项来猜测运行时间</p>
+</li>
+</ol>
+<h2 id="常规选项"><a href="#常规选项" class="headerlink" title="常规选项"></a>常规选项</h2><ol>
+<li>-d –data 数据大小，默认为0</li>
+<li>-E –file 从指定文件中读取数据</li>
+<li>-e –sign 增加签名</li>
+<li>-j –dump 以十六进行形式转存数据包</li>
+<li>-J –print 转存可输出的字符</li>
+<li>-B –safe 启用安全协议</li>
+<li>-u –end 当通过- -file指定的文件结束时停止并显示，防止文件再从头开始</li>
+<li>-T –traceroute 路由跟踪模式</li>
+<li>–tr-stop 在路由跟踪模式下当收到第一个非ICMP数据包时退出</li>
+<li>–tr-keep-ttl 保持源TTL，对监测一个hop有用</li>
+<li>–tr-no-rtt 使用路由跟踪模式时不计算或显示RTT信息</li>
+<li>ARS 数据包描述（新增加的内容，暂时还不稳定）</li>
+<li>–apd-send 发送用描述APD的数据包 </li>
+</ol>
+<h1 id="TCP的正常连接建立和关闭"><a href="#TCP的正常连接建立和关闭" class="headerlink" title="TCP的正常连接建立和关闭"></a>TCP的正常连接建立和关闭</h1><p><img src="/2019/10/04/关于ddos/1570237236980.png" alt="1570237236980"></p>
+<h1 id="TCP报文段格式"><a href="#TCP报文段格式" class="headerlink" title="TCP报文段格式"></a>TCP报文段格式</h1><p><img src="/2019/10/04/关于ddos/1570237616738.png" alt="1570237616738"></p>
+<h2 id="TCP三次握手"><a href="#TCP三次握手" class="headerlink" title="TCP三次握手"></a>TCP三次握手</h2><p>三次握手(Three-way Handshake)，是指建立一个TCP连接时，需要客户端和服务器总共发送3个包。</p>
+<p>三次握手的目的是连接服务器指定端口，建立TCP连接,并同步连接双方的序列号和确认号并交换 TCP 窗口大小信息.在socket编程中，客户端执行connect()时。将触发三次握手。</p>
+<p><img src="/2019/10/04/关于ddos/1570237444995.png" alt="1570237444995"></p>
+<p>第一次握手:</p>
+<p>客户端发送一个TCP的SYN标志位置1的包指明客户打算连接的服务器的端口，以及初始序号X,保存在包头的序列号(Sequence Number)字段里</p>
+<p><img src="/2019/10/04/关于ddos/1570237694896.png" alt="1570237694896"></p>
+<p>第二次握手:</p>
+<p>服务器发回确认包(ACK)应答。即SYN标志位和ACK标志位均为1同时，将确认序号(Acknowledgement Number)设置为客户的ISN(初始序列号)加1以.即X+1。</p>
+<p><img src="/2019/10/04/关于ddos/1570237851137.png" alt="1570237851137"></p>
+<p>第三次握手.<br>客户端再次发送确认包(ACK) SYN标志位为0,ACK标志位为1.并且把服务器发来ACK的序号字段+1,放在确定字段中发送给对方.并且在数据段放写ISN的+1</p>
+<p><img src="/2019/10/04/关于ddos/1570237896180.png" alt="1570237896180"></p>
+<h2 id="TCP四次挥手"><a href="#TCP四次挥手" class="headerlink" title="TCP四次挥手"></a>TCP四次挥手</h2><p><img src="/2019/10/04/关于ddos/1570238033666.png" alt="1570238033666"></p>
+<h1 id="DDoS测试"><a href="#DDoS测试" class="headerlink" title="DDoS测试"></a>DDoS测试</h1><h2 id="SYN-Flood"><a href="#SYN-Flood" class="headerlink" title="SYN Flood"></a>SYN Flood</h2><h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>攻击者通过发送大量伪造的带有SYN标志位的TCP报文，与目标主机建立了很多虚假的半开连接，在服务器返回SYN+ACK数据包后，攻击者不对其做出响应，也就是不返回ACK数据包给服务器，这样服务器就会一直等待直到超时。</p>
+<p>在三次握手过程中，服务器发送SYN-ACK之后，收到客户端的ACK之前的TCP连接称为半连接(half-open connect).此时服务器处于Syn_RECV状态.当收到ACK后，服务器转入ESTABLISHED状态.</p>
+<h4 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h4><p>使目标服务器连接资源耗尽、链路堵塞，从而达到拒绝服务的目的。</p>
+<p>由于源地址是不存在的，服务器需要不断的重发直至超时，这些伪造的SYN包将长时间占用未连接队列，正常的SYN请求被丢弃，目标系统运行缓慢，严重者引起网络堵塞甚至系统瘫痪。</p>
+<h4 id="测试命令："><a href="#测试命令：" class="headerlink" title="测试命令："></a>测试命令：</h4><p>hping3 -c 1000 -d 120 -S -p 80  –flood –rand-source 192.168.1.116</p>
+<p>-c –count 指定数据包的次数</p>
+<p>-d –data 数据大小，默认为0</p>
+<p>-S –syn 使用SNY标记</p>
+<p>-p –destport 目的端口（默认为0），可同时指定多个端口</p>
+<p><img src="/2019/10/04/关于ddos/1570191417086.png" alt="1570191417086"></p>
+<p><img src="/2019/10/04/关于ddos/1570191470736.png" alt="1570191470736"></p>
+<p>统计分析：</p>
+<p><img src="/2019/10/04/关于ddos/1570191591527.png" alt="1570191591527"></p>
+<p><img src="/2019/10/04/关于ddos/1570193544587.png" alt="1570193544587"></p>
+<p>windows：netstat –an | find “SYN_RECEIVED”  </p>
+<p><img src="/2019/10/04/关于ddos/1570193423866.png" alt="1570193423866"></p>
+<p>linux：netstat -n | awk ‘/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}’</p>
+<p><img src="/2019/10/04/关于ddos/1570193240601.png" alt="1570193240601"></p>
+<p><a href="http://www.xitongcheng.cc/xtjc/2443.html" target="_blank" rel="noopener">Win7如何开启/关闭TCP/IP半开连接数限制</a></p>
+<h2 id="ACK-Flood"><a href="#ACK-Flood" class="headerlink" title="ACK Flood"></a>ACK Flood</h2><h4 id="原理：-1"><a href="#原理：-1" class="headerlink" title="原理："></a>原理：</h4><p>第一种：攻击者伪造大量的SYN+ACK包发送给目标主机，目标主机每收到一个SYN+ACK数据包时，都会去自己的TCP连接表中查看有没有与ACK的发送者建立连接，如果有则发送ACK包完成TCP连接，如果没有则发送ACK+RST 断开连接。但是在查询过程中会消耗一定的CUP计算资源。</p>
+<p>第二种：</p>
+<p>利用TCP三次握手的ACK+SYN应答，攻击者向不同的服务器发送大量的SYN请求，这些SYN请求数据包的源IP均为受害主机IP</p>
+<h4 id="现象：-1"><a href="#现象：-1" class="headerlink" title="现象："></a>现象：</h4><p>针对第一种方式：如果瞬间收到大量的SYN+ACK数据包，将会消耗服务器的大量cpu资源，导致正常的连接无法建立或增加延迟，甚至造成服务器瘫痪、死机。</p>
+<p>针对第二种方式：会有大量的SYN+ACK应答数据包发往受害主机，从而占用目标的网络带宽资源，形成拒绝服务。</p>
+<h4 id="测试命令：-1"><a href="#测试命令：-1" class="headerlink" title="测试命令："></a>测试命令：</h4><p>hping3  –ack -S –flood 192.168.1.116</p>
+<p>-s 6666 固定源端口 默认是随机的</p>
+<p><img src="/2019/10/04/关于ddos/1570238919102.png" alt="1570238919102"></p>
+<h2 id="ICMP-Flood"><a href="#ICMP-Flood" class="headerlink" title="ICMP Flood"></a>ICMP Flood</h2><h4 id="原理：-2"><a href="#原理：-2" class="headerlink" title="原理："></a>原理：</h4><p>ICMP Flood 的攻击原理和ACK Flood原理类似，属于流量型的攻击方式，由于目前很多防火墙直接过滤ICMP报文， 因此ICMP Flood出现的频度较低。</p>
+<h4 id="现象：-2"><a href="#现象：-2" class="headerlink" title="现象："></a>现象：</h4><p>给服务器带来较大的负载，影响服务器的正常。</p>
+<h4 id="测试命令：-2"><a href="#测试命令：-2" class="headerlink" title="测试命令："></a>测试命令：</h4><p>hping3  -d 200 –icmp –flood -a 1.1.1.1 192.168.1.116</p>
+<p>-d –data 数据大小，默认为0</p>
+<p>-a 指定源IP</p>
+<p><img src="/2019/10/04/关于ddos/1570240153376.png" alt="1570240153376"></p>
+<h2 id="UDP-Flood"><a href="#UDP-Flood" class="headerlink" title="UDP Flood"></a>UDP Flood</h2><h4 id="原理：-3"><a href="#原理：-3" class="headerlink" title="原理："></a>原理：</h4><p>UDP（User Datagram Protocol，用户数据报协议），是一种无连接和无状态的网络协议，UDP不需要像TCP那样进行三次握手，运行开销低，不需要确认数据包是否成功到达目的地。这就造成UDP泛洪攻击不但效率高，而且还可以在资源相对较少的情况下执行。UDP大量小数据包会增大网络设备处理数据包的压力；FLOOD可以使用小数据包(64字节)进行攻击,也可以使用大数据包(大于1500字节,以太网MTU为1500字节)进行攻击。</p>
+<h4 id="现象：-3"><a href="#现象：-3" class="headerlink" title="现象："></a>现象：</h4><p>对于大数据包，网络设备需要进行分片、重组，最终达到的效果就是占用网络传输接口的带宽、网络堵塞、服务器响应慢等等。</p>
+<h4 id="测试命令：-3"><a href="#测试命令：-3" class="headerlink" title="测试命令："></a>测试命令：</h4><p>hping3  –udp -p 53  –flood 192.168.1.116</p>
+<p><img src="/2019/10/04/关于ddos/1570242309076.png" alt="1570242309076"></p>
+<p><img src="/2019/10/04/关于ddos/1570242392568.png" alt="1570242392568"></p>
+<p><img src="/2019/10/04/关于ddos/1570242411372.png" alt="1570242411372"></p>
+<h2 id="DNS-Flood-反射攻击"><a href="#DNS-Flood-反射攻击" class="headerlink" title="DNS Flood 反射攻击"></a>DNS Flood 反射攻击</h2><p>原理：</p>
+<p>利用协议特性实现放大效果的流量，查询流量小，相应流量非常巨大</p>
+<p>攻击者向僵尸网络发出指令，使僵尸网络中的每一台主机均发出一个伪造源地址的DNS查询请求包，这些请求包查询类型设置为ANY，因为这种类型会请求所有的记录，这些记录会在返回的响应包中，也就是说这种数据包的大小较其他类型是最大的。</p>
+<p>伪造DNS数据包，向DNS服务器发送域名查询报文了，而DNS服务器返回的应答报文则会发送给被攻击主机。放大体现在请求DNS回复的类型为ANY，攻击者向服务器请求的包长度为69个字节，而服务器向被攻击主机回复的ANY类型DNS包长度为535字节，大约放大了7倍。</p>
+<p><img src="/2019/10/04/关于ddos/1570261537346.png" alt="1570261537346"></p>
+<h4 id="DNS-报文格式"><a href="#DNS-报文格式" class="headerlink" title="DNS 报文格式"></a>DNS 报文格式</h4><p><img src="/2019/10/04/关于ddos/1570246629189.png" alt="1570246629189"></p>
+<h4 id="测试命令：-4"><a href="#测试命令：-4" class="headerlink" title="测试命令："></a>测试命令：</h4><p>scapy</p>
+<p>i = IP (src=”192.168.1.107”,dst=”114.114.114.114”)  </p>
+<p>u = UDP()</p>
+<p>q = DNSQR(qname=”nsfocus.com”,qtype=255)</p>
+<p>d =DNS (rd =1, qdcount=1,qd=q)</p>
+<p>r = (i/u/d)</p>
+<p>send(r,loop=1)</p>
+<p>q = DNSQR(qname=”nsfocus.com”,qtype=255) # 255 类型是any</p>
+<p>d =DNS (rd =1, qdcount=1,qd=q) #rd=1表示执行递归查询</p>
+<p>如果迭代查询第一个请求的DNS服务器没有查询到结果，那么第一个请求的服务器会返回另一个DNS服务器IP，让请求主机向这个IP去继续查询，然而攻击者的数据包源地址是伪造的，所以并不会发起第二次查询，因为第一次查询根本就不是它发起的；而递归查询却是在查询到结果之后，才返回给查询请求发起者。</p>
+<p>r = (i/u/d) #合并数据包</p>
+<p><img src="/2019/10/04/关于ddos/1570261238211.png" alt="1570261238211"></p>
+<p><img src="/2019/10/04/关于ddos/1570261771679.png" alt="1570261771679"></p>
+<h2 id="CC攻击"><a href="#CC攻击" class="headerlink" title="CC攻击"></a>CC攻击</h2><h4 id="原理：-4"><a href="#原理：-4" class="headerlink" title="原理："></a>原理：</h4><p>又称作HTTP 泛洪攻击，其原理是攻击者控制肉鸡、僵尸网络或使用代理服务器，不停地向目标的web服务发送大量合法请求</p>
+<h4 id="现象：-4"><a href="#现象：-4" class="headerlink" title="现象："></a>现象：</h4><p>使得正常用户的web请求处理缓慢甚至得不到处理，制造大量的后台数据库查询动作，消耗目标CPU资源，最终导致服务器宕机崩溃。</p>
+<h4 id="测试命令：-5"><a href="#测试命令：-5" class="headerlink" title="测试命令："></a>测试命令：</h4><p><img src="/2019/10/04/关于ddos/1570273037718.png" alt="1570273037718"></p>
+<h2 id="HTTP慢速攻击"><a href="#HTTP慢速攻击" class="headerlink" title="HTTP慢速攻击"></a>HTTP慢速攻击</h2><h4 id="原理：-5"><a href="#原理：-5" class="headerlink" title="原理："></a>原理：</h4><p>模拟正常用户向web服务器发送慢速http请求，由于是慢速的，服务器端需要保持连接资源，直到数据传输结束或请求结束才可释放连接。这种攻击可以分为两类：一类是客户端发数据，另一类是客户端读取服务器发来的数据。HTTP慢速攻击对基于线程处理的web服务器影响显著，如apache、dhttpd，而对基于事件处理的web服务器影响不大，如ngix、lighttpd。</p>
+<h4 id="现象：-5"><a href="#现象：-5" class="headerlink" title="现象："></a>现象：</h4><p>当服务器端建立了大量这样的慢速连接，就会导致服务器拒绝服务。</p>
+<h5 id="Slowloris攻击方式"><a href="#Slowloris攻击方式" class="headerlink" title="Slowloris攻击方式"></a>Slowloris攻击方式</h5><p>HTTP协议规定请求头以一个空行结束，所以完整的http请求头结尾是\r\n\r\n。然而使用非正常的\r\n来结尾，就会导致服务端认为我们的请求头还没结束，等待我们继续发送数据直到超时时间。两种请求头区别如下，CRLF（Carriage<br>Return Line Feed）表示回车换行</p>
+<h5 id="Slow-post攻击方式"><a href="#Slow-post攻击方式" class="headerlink" title="Slow post攻击方式"></a>Slow post攻击方式</h5><p>在http头部信息，可以使用content-length声明HTTP消息实体的传输长度，服务器端会content-length的值作为HTTP<br>BODY的长度。利用这一特点，攻击者把content-length设置得很大的，然后缓慢发送数据部分，比如一次只发送一个字节，这样服务器端就要一直保持连接，直到客户端传完所有的数据。</p>
+<h5 id="Slow-read攻击方式"><a href="#Slow-read攻击方式" class="headerlink" title="Slow read攻击方式"></a>Slow read攻击方式</h5><p>攻击者发送一个完整的HTTP数据请求，之后服务器会给出响应，这时攻击者在将自己的TCP窗口大小设置的很小，服务器会根据客户的TCP窗口大小来传送数据。由于客户端的TCP窗口大小很小，服务器只能缓慢的传输数据给客户端。当建立大量的这种连接时，web应用的并发连接池将被耗尽，最终导致拒绝服务。</p>
+<h5 id="Apache-range-header攻击"><a href="#Apache-range-header攻击" class="headerlink" title="Apache range header攻击"></a>Apache range header攻击</h5><p>这种攻击方式只针对apache，当客户端传输大文件时会有range字段，表示将大文件分段，分成几个小段进行传输。例如攻击者将一个文件按照一个字节一段，分成好多段，这样就会造成传输数据缓慢，长时间占用连接，消耗服务器CPU和内存资源。</p>
+<h4 id="测试命令：-6"><a href="#测试命令：-6" class="headerlink" title="测试命令："></a>测试命令：</h4><p>安装slowhttptest</p>
+<p><img src="/2019/10/04/关于ddos/1570274228720.png" alt="1570274228720"></p>
+<h6 id="Slowloris攻击命令："><a href="#Slowloris攻击命令：" class="headerlink" title="Slowloris攻击命令："></a>Slowloris攻击命令：</h6><p>slowhttptest -c 50 -H -g -o my_header_stats  -i 10 -r 200 -t GET -u </p>
+<p>slowhttptest -c 50 -H -g -o my_header_stats -i 10 -r 200 -t GET -u <a href="http://192.168.1.116/dvwa/login.php" target="_blank" rel="noopener">http://192.168.1.116/dvwa/login.php</a></p>
+<p>-c      number of connections 测试时建立的连接数<br>-H      SlowLoris模式<br>-g      在测试完成后，以时间戳为名生成一个CVS和HTML文件的统计数据<br>-o      file name 使用-g参数时，可以使用此参数指定输出文件名<br>-i      seconds 在slowrois和Slow POST模式中，指定发送数据间的间隔。<br>-r      connections per second 每秒连接个数<br>-t      HTTP verb 在请求时使用什么操作，默认GET</p>
+<p>netstat -pantu | grep ESTABLISHED</p>
+<p><img src="/2019/10/04/关于ddos/1570281254406.png" alt="1570281254406"></p>
+<p>正常</p>
+<p><img src="/2019/10/04/关于ddos/1570285712400.png" alt="1570285712400"></p>
+<p>异常，0d表示\r,0a表示\n，也就是说结尾是\r\n。</p>
+<p><img src="/2019/10/04/关于ddos/1570285677108.png" alt="1570285677108"></p>
+<h6 id="Slow-post攻击命令"><a href="#Slow-post攻击命令" class="headerlink" title="Slow post攻击命令"></a>Slow post攻击命令</h6><p>slowhttptest -c 3000 -B -g -o my_body_stats -i 110 -r 200 -s 8192 -t FAKEVERB -u <a href="http://192.168.1.116/dvwa/login.php" target="_blank" rel="noopener">http://192.168.1.116/dvwa/login.php</a></p>
+<h6 id="Slow-read攻击命令"><a href="#Slow-read攻击命令" class="headerlink" title="Slow read攻击命令"></a>Slow read攻击命令</h6><p>slowhttptest -c 8000 -X -r 200 -w 512 -y 1024 -n 5 -z 32 -k 3 -u <a href="http://192.168.1.116/dvwa/login.php" target="_blank" rel="noopener">http://192.168.1.116/dvwa/login.php</a></p>
+<h6 id="Apache-range-header攻击命令"><a href="#Apache-range-header攻击命令" class="headerlink" title="Apache range header攻击命令"></a>Apache range header攻击命令</h6><p>slowhttptest -R  -u <a href="http://192.168.1.116/dvwa/login.php" target="_blank" rel="noopener">http://192.168.1.116/dvwa/login.php</a> -t     HEAD  -c 1000 -a 10 -b 3000 -r 500</p>
+<p>#### </p>
+<h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><p><a href="https://www.cnblogs.com/zmlctt/p/3690998.html" target="_blank" rel="noopener">https://www.cnblogs.com/zmlctt/p/3690998.html</a></p>
+<p><a href="https://xz.aliyun.com/t/71#toc-11" target="_blank" rel="noopener">https://xz.aliyun.com/t/71#toc-11</a></p>
+<p><a href="https://blog.csdn.net/Fly_hps/article/details/80941148" target="_blank" rel="noopener">https://blog.csdn.net/Fly_hps/article/details/80941148</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/03/各种注入类型的环境搭建和代码编写/" rel="next" title="各种注入类型的环境搭建和代码编写">
+                <i class="fa fa-chevron-left"></i> 各种注入类型的环境搭建和代码编写
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/cat.jpg" alt="ZSC0810">
+            
+              <p class="site-author-name" itemprop="name">ZSC0810</p>
+              <p class="site-description motion-element" itemprop="description">加油！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DDOS分类？"><span class="nav-number">1.</span> <span class="nav-text">DDOS分类？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#资源消耗类型"><span class="nav-number">1.1.</span> <span class="nav-text">资源消耗类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用漏洞"><span class="nav-number">1.2.</span> <span class="nav-text">利用漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络流量型：利用网络通讯协议"><span class="nav-number">1.2.1.</span> <span class="nav-text">网络流量型：利用网络通讯协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用层"><span class="nav-number">1.2.2.</span> <span class="nav-text">应用层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协议层"><span class="nav-number">1.2.3.</span> <span class="nav-text">协议层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络层"><span class="nav-number">1.2.4.</span> <span class="nav-text">网络层</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hping详细参数解析："><span class="nav-number">2.</span> <span class="nav-text">hping详细参数解析：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#指定所用的模式："><span class="nav-number">2.1.</span> <span class="nav-text">指定所用的模式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP选项："><span class="nav-number">2.2.</span> <span class="nav-text">IP选项：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP选项"><span class="nav-number">2.3.</span> <span class="nav-text">ICMP选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP-TCP选项"><span class="nav-number">2.4.</span> <span class="nav-text">UDP/TCP选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规选项"><span class="nav-number">2.5.</span> <span class="nav-text">常规选项</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP的正常连接建立和关闭"><span class="nav-number">3.</span> <span class="nav-text">TCP的正常连接建立和关闭</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP报文段格式"><span class="nav-number">4.</span> <span class="nav-text">TCP报文段格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP三次握手"><span class="nav-number">4.1.</span> <span class="nav-text">TCP三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP四次挥手"><span class="nav-number">4.2.</span> <span class="nav-text">TCP四次挥手</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DDoS测试"><span class="nav-number">5.</span> <span class="nav-text">DDoS测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SYN-Flood"><span class="nav-number">5.1.</span> <span class="nav-text">SYN Flood</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理："><span class="nav-number">5.1.0.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现象："><span class="nav-number">5.1.0.2.</span> <span class="nav-text">现象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令："><span class="nav-number">5.1.0.3.</span> <span class="nav-text">测试命令：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ACK-Flood"><span class="nav-number">5.2.</span> <span class="nav-text">ACK Flood</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理：-1"><span class="nav-number">5.2.0.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现象：-1"><span class="nav-number">5.2.0.2.</span> <span class="nav-text">现象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令：-1"><span class="nav-number">5.2.0.3.</span> <span class="nav-text">测试命令：</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#ICMP-Flood"><span class="nav-number">5.3.</span> <span class="nav-text">ICMP Flood</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理：-2"><span class="nav-number">5.3.0.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现象：-2"><span class="nav-number">5.3.0.2.</span> <span class="nav-text">现象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令：-2"><span class="nav-number">5.3.0.3.</span> <span class="nav-text">测试命令：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UDP-Flood"><span class="nav-number">5.4.</span> <span class="nav-text">UDP Flood</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理：-3"><span class="nav-number">5.4.0.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现象：-3"><span class="nav-number">5.4.0.2.</span> <span class="nav-text">现象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令：-3"><span class="nav-number">5.4.0.3.</span> <span class="nav-text">测试命令：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS-Flood-反射攻击"><span class="nav-number">5.5.</span> <span class="nav-text">DNS Flood 反射攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#DNS-报文格式"><span class="nav-number">5.5.0.1.</span> <span class="nav-text">DNS 报文格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令：-4"><span class="nav-number">5.5.0.2.</span> <span class="nav-text">测试命令：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CC攻击"><span class="nav-number">5.6.</span> <span class="nav-text">CC攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理：-4"><span class="nav-number">5.6.0.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现象：-4"><span class="nav-number">5.6.0.2.</span> <span class="nav-text">现象：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令：-5"><span class="nav-number">5.6.0.3.</span> <span class="nav-text">测试命令：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP慢速攻击"><span class="nav-number">5.7.</span> <span class="nav-text">HTTP慢速攻击</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#原理：-5"><span class="nav-number">5.7.0.1.</span> <span class="nav-text">原理：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#现象：-5"><span class="nav-number">5.7.0.2.</span> <span class="nav-text">现象：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Slowloris攻击方式"><span class="nav-number">5.7.0.2.1.</span> <span class="nav-text">Slowloris攻击方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Slow-post攻击方式"><span class="nav-number">5.7.0.2.2.</span> <span class="nav-text">Slow post攻击方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Slow-read攻击方式"><span class="nav-number">5.7.0.2.3.</span> <span class="nav-text">Slow read攻击方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Apache-range-header攻击"><span class="nav-number">5.7.0.2.4.</span> <span class="nav-text">Apache range header攻击</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试命令：-6"><span class="nav-number">5.7.0.3.</span> <span class="nav-text">测试命令：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Slowloris攻击命令："><span class="nav-number">5.7.0.3.0.1.</span> <span class="nav-text">Slowloris攻击命令：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Slow-post攻击命令"><span class="nav-number">5.7.0.3.0.2.</span> <span class="nav-text">Slow post攻击命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Slow-read攻击命令"><span class="nav-number">5.7.0.3.0.3.</span> <span class="nav-text">Slow read攻击命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Apache-range-header攻击命令"><span class="nav-number">5.7.0.3.0.4.</span> <span class="nav-text">Apache range header攻击命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料："><span class="nav-number">6.</span> <span class="nav-text">参考资料：</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZSC0810</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
