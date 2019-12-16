@@ -86,17 +86,17 @@
 
 
 
-<meta name="description" content="加油！">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZSC0810の博客">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="1、手工测试之前搭建的不同注入环境，并记录 sql 语句，最终以获取 mysql 中的用户信息和当前表的信息为目标 2、思考通过注入漏洞可以做什么？ 3、思考注入漏洞如何防御？代码、服务器等角度 扩展学习：针对不同的注入漏洞，编写防御代码，具体如何防御自己决定，相关代码均记录在报告中，测试自己的防御代码是否可以绕过，并将过程进行记录 1 常规回显手工注入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手工注入过程">
+<meta property="og:url" content="http://yoursite.com/2019/11/21/手工注入过程/index.html">
 <meta property="og:site_name" content="ZSC0810の博客">
-<meta property="og:description" content="加油！">
+<meta property="og:description" content="1、手工测试之前搭建的不同注入环境，并记录 sql 语句，最终以获取 mysql 中的用户信息和当前表的信息为目标 2、思考通过注入漏洞可以做什么？ 3、思考注入漏洞如何防御？代码、服务器等角度 扩展学习：针对不同的注入漏洞，编写防御代码，具体如何防御自己决定，相关代码均记录在报告中，测试自己的防御代码是否可以绕过，并将过程进行记录 1 常规回显手工注入">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-12T06:17:30.056Z">
+<meta property="og:updated_time" content="2019-11-21T10:29:40.456Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ZSC0810の博客">
-<meta name="twitter:description" content="加油！">
+<meta name="twitter:title" content="手工注入过程">
+<meta name="twitter:description" content="1、手工测试之前搭建的不同注入环境，并记录 sql 语句，最终以获取 mysql 中的用户信息和当前表的信息为目标 2、思考通过注入漏洞可以做什么？ 3、思考注入漏洞如何防御？代码、服务器等角度 扩展学习：针对不同的注入漏洞，编写防御代码，具体如何防御自己决定，相关代码均记录在报告中，测试自己的防御代码是否可以绕过，并将过程进行记录 1 常规回显手工注入">
 
 
 
@@ -126,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/">
+  <link rel="canonical" href="http://yoursite.com/2019/11/21/手工注入过程/">
 
 
 
 
 
-  <title>标签 | ZSC0810の博客</title>
+  <title>手工注入过程 | ZSC0810の博客</title>
   
 
 
@@ -289,40 +289,194 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/21/手工注入过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZSC0810">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZSC0810の博客">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                暂无标签
-            </div>
-            <div class="tag-cloud-tags">
+          <h1 class="post-title" itemprop="name headline">手工注入过程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-21T18:13:19+08:00">
+                2019-11-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-21T18:29:40+08:00">
+                2019-11-21
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  149
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
               
             </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>1、手工测试之前搭建的不同注入环境，并记录 sql 语句，最终以获取 mysql 中的用户信息和当前表的信息为目标</p>
+<p>2、思考通过注入漏洞可以做什么？</p>
+<p>3、思考注入漏洞如何防御？代码、服务器等角度</p>
+<p>扩展学习：针对不同的注入漏洞，编写防御代码，具体如何防御自己决定，相关代码均记录在报告中，测试自己的防御代码是否可以绕过，并将过程进行记录</p>
+<p>1 常规回显手工注入</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/18/python正则表达式/" rel="next" title="python正则表达式">
+                <i class="fa fa-chevron-left"></i> python正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/25/python学习/" rel="prev" title="python学习">
+                python学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
