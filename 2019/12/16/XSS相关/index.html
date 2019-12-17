@@ -6,10 +6,10 @@
 
 
 <html class="theme-next gemini use-motion" lang="zh-Hans">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
 
@@ -27,8 +27,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -55,9 +55,9 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -86,17 +86,19 @@
 
 
 
-<meta name="description" content="加油！">
+<meta name="description" content="什么是XSS?Cross Site Scripting，跨站脚本攻击,为了和层叠样式表（Cascading Style Sheet，CSS）区分，在WEB安全叫XSS。 简述：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java，VBScript，Ac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XSS相关">
 <meta property="og:url" content="http://yoursite.com/2019/12/16/XSS相关/index.html">
 <meta property="og:site_name" content="ZSC0810の博客">
-<meta property="og:description" content="加油！">
+<meta property="og:description" content="什么是XSS?Cross Site Scripting，跨站脚本攻击,为了和层叠样式表（Cascading Style Sheet，CSS）区分，在WEB安全叫XSS。 简述：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java，VBScript，Ac">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-16T07:00:56.291Z">
+<meta property="og:image" content="http://yoursite.com/2019/12/16/XSS相关/1576547225263.png">
+<meta property="og:updated_time" content="2019-12-17T01:47:09.881Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XSS相关">
-<meta name="twitter:description" content="加油！">
+<meta name="twitter:description" content="什么是XSS?Cross Site Scripting，跨站脚本攻击,为了和层叠样式表（Cascading Style Sheet，CSS）区分，在WEB安全叫XSS。 简述：XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java，VBScript，Ac">
+<meta name="twitter:image" content="http://yoursite.com/2019/12/16/XSS相关/1576547225263.png">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/12/16/XSS相关/">
+  <link rel="canonical" href="http://yoursite.com/2019/12/16/XSS相关/"/>
 
 
 
@@ -160,7 +162,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
+      <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">ZSC0810の博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -190,7 +192,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
           </a>
@@ -200,7 +202,7 @@
         <li class="menu-item menu-item-about">
           <a href="/about/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
           </a>
@@ -210,7 +212,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
             标签
           </a>
@@ -220,7 +222,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
             分类
           </a>
@@ -230,7 +232,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
             归档
           </a>
@@ -243,7 +245,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
             
             搜索
           </a>
@@ -264,7 +266,9 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -305,7 +309,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ZSC0810">
-      <meta itemprop="description" content>
+      <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/cat.jpg">
     </span>
 
@@ -346,8 +350,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-12-16T15:00:56+08:00">
-                2019-12-16
+              <time title="更新于" itemprop="dateModified" datetime="2019-12-17T09:47:09+08:00">
+                2019-12-17
               </time>
             
           </span>
@@ -364,7 +368,7 @@
           
             <span class="post-meta-divider">|</span>
             <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
             </span>
           
 
@@ -379,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  1.5k
                 </span>
               
 
@@ -395,7 +399,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  5
                 </span>
               
             </div>
@@ -416,7 +420,109 @@
       
 
       
-        
+        <h1 id="什么是XSS"><a href="#什么是XSS" class="headerlink" title="什么是XSS?"></a>什么是XSS?</h1><p>Cross Site Scripting，跨站脚本攻击,为了和层叠样式表（Cascading Style Sheet，CSS）区分，在WEB安全叫XSS。</p>
+<h2 id="简述："><a href="#简述：" class="headerlink" title="简述："></a>简述：</h2><p>XSS攻击通常指的是通过利用网页开发时留下的漏洞，通过巧妙的方法注入恶意指令代码到网页，使用户加载并执行攻击者恶意制造的网页程序。这些恶意网页程序通常是JavaScript，但实际上也可以包括Java，VBScript，ActiveX，Flash或者甚至是普通的HTML。攻击成功后，攻击者可能得到更高的权限（如执行一些操作）、私密网页内容、会话和cookie等各种内容。</p>
+<h3 id="成因"><a href="#成因" class="headerlink" title="成因"></a>成因</h3><p>通过在用户端注入恶意的可执行脚本，若服务器对用户的输入不进行处理或处理不严，则浏览器就会直接执行用户注入的脚本。</p>
+<h3 id="危害"><a href="#危害" class="headerlink" title="危害"></a>危害</h3><p>攻击者通过Web应用程序发送恶意代码，一般以浏览器脚本的形式发送给不同的终端用户。当一个Web程序的用户输入点没有进行校验和编码，将很容易的导致 XSS 。</p>
+<ul>
+<li>网络钓鱼，包括获取各类用户账号；</li>
+<li>窃取用户 cookies 资料，从而获取用户隐私信息，或利用用户身份进一步对网站执行操作；</li>
+<li>劫持用户（浏览器）会话，从而执行任意操作，例如非法转账、强制发表日志、电子邮件等；</li>
+<li>强制弹出广告页面、刷流量等；</li>
+<li>网页挂马；</li>
+<li>进行恶意操作，如任意篡改页面信息、删除文章等；</li>
+<li>进行大量的客户端攻击，如ddos等；</li>
+<li>获取客户端信息，如用户的浏览历史、真实ip、开放端口等；</li>
+<li>控制受害者机器向其他网站发起攻击；</li>
+<li>结合其他漏洞，如csrf,实施进一步危害；</li>
+<li>提升用户权限，包括进一步渗透网站；</li>
+<li>传播跨站脚本蠕虫等</li>
+</ul>
+<h3 id="易产生XSS的地方"><a href="#易产生XSS的地方" class="headerlink" title="易产生XSS的地方"></a>易产生XSS的地方</h3><ol>
+<li>数据交互的地方<ul>
+<li>get、post、cookies、headers</li>
+<li>反馈与浏览</li>
+<li>富文本编辑器</li>
+<li>各类标签插入和自定义</li>
+</ul>
+</li>
+<li>数据输出的地方<ul>
+<li>用户资料</li>
+<li>关键词、标签、说明</li>
+<li>文件上传</li>
+</ul>
+</li>
+</ol>
+<h1 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h1><h2 id="1、反射型"><a href="#1、反射型" class="headerlink" title="1、反射型"></a>1、反射型</h2><p>Reflected XSS Attacks 反射型 XSS 攻击，有些地方也称为非持续性 XSS ，这种攻击方式往往具有一次性，只在用户单击时触发。因为 payload 在触发时，是客户端渲染了服务器响应体，payload 经过了服务器，是与服务器产生了交互了的。</p>
+<h4 id="常见注入点"><a href="#常见注入点" class="headerlink" title="常见注入点"></a>常见注入点</h4><p>网站的搜索栏、用户登录入口、输入表单等地方。</p>
+<h4 id="攻击方式"><a href="#攻击方式" class="headerlink" title="攻击方式"></a>攻击方式</h4><p>反射型 XSS 的利用一般是攻击者通过特定手法（如电子邮件），诱使用户去访问一个包含恶意代码的 URL，当受害者点击这些专门设计的链接的时候，恶意代码会直接在受害者主机上的浏览器执行。此类 XSS 通常出现在网站的搜索栏、用户登录口等地方，常用来窃取客户端 Cookies 或进行钓鱼欺骗。</p>
+<script>alert(document.cookie)</script>
+
+<h3 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h3><p>构造反射型web界面</p>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>XSS原理重现</title>
+</head>
+<body>
+    <form action method="get">
+        <input type="text" name="xss_input">
+        <input type="submit"></form>
+    <hr>
+    <?php
+        $xss = @$_GET['xss_input'];
+        echo "your input:".$xss."\n";
+    ?>
+</body>
+</html>
+
+<p><img src="/2019/12/16/XSS相关/1576547225263.png" alt="1576547225263"></p>
+<h2 id="2、存储型"><a href="#2、存储型" class="headerlink" title="2、存储型"></a>2、存储型</h2><p>Stored XSS Attacks 持久型XSS，比反射型XSS更具有威胁性，并且可能影响到Web服务器自身的安全。攻击脚本将被永久的存放在目标服务器的数据库或文件中。</p>
+<h4 id="常见注入点-1"><a href="#常见注入点-1" class="headerlink" title="常见注入点"></a>常见注入点</h4><p>论坛、博客、留言板、网站的留言、评论、日志等交互处。</p>
+<h4 id="攻击方式-1"><a href="#攻击方式-1" class="headerlink" title="攻击方式"></a>攻击方式</h4><p>攻击者在发帖或留言的过程中，将恶意脚本连同正常信息一起注入到发布内容中。随着发布内容被服务器存储下来，恶意脚本也将永久的存放到服务器的后端存储器中。当其他用户浏览这个被注入了恶意脚本的帖子时，恶意脚本就会在用户的浏览器中得到执行。</p>
+<h2 id="3、DOM型"><a href="#3、DOM型" class="headerlink" title="3、DOM型"></a>3、DOM型</h2><p>DOM(Document object model)，使用 DOM 能够使程序和脚本能够动态访问和更新文档的内容、结构和样式。</p>
+<p>DOM型XSS其实是一种特殊类型的反射型XSS，它是基于DOM文档对象的一种漏洞。DOM型XSS是基于js上的。不需要与服务器进行交互。</p>
+<h4 id="注入点"><a href="#注入点" class="headerlink" title="注入点"></a>注入点</h4><p>通过js脚本对对文档对象进行编辑，从而修改页面的元素。也就是说，客户端的脚本程序可以DOM动态修改页面的内容，从客户端获取DOM中的数据并在本地执行。由于DOM是在客户端修改节点的，所以基于DOM型的XSS漏洞不需要与服务器d端交互，它只发生在客户端处理数据的阶段。</p>
+<h4 id="攻击方式-2"><a href="#攻击方式-2" class="headerlink" title="攻击方式"></a>攻击方式</h4><p>用户请求一个经过专门设计的URL，它由攻击者提供，而且其中包含XSS代码。服务器的响应不会以任何形式包含攻击者的脚本，当用户的浏览器处理这个响应时，DOM对象就会处理XSS代码，导致存在XSS漏洞</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+<thead>
+<tr>
+<th>XSS类型</th>
+<th>反射型</th>
+<th>存储型</th>
+<th>DOM型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>触发过程</td>
+<td>正常用户访问携带XSS的url</td>
+<td>1.黑客构造XSS脚本 2.用户访问有XSS脚本的网站</td>
+<td>正常用户访问携带XSS的url</td>
+</tr>
+<tr>
+<td>存储位置</td>
+<td>url</td>
+<td>数据库</td>
+<td>url</td>
+</tr>
+<tr>
+<td>谁来输出</td>
+<td>后端web</td>
+<td>后端web</td>
+<td>前端JS</td>
+</tr>
+<tr>
+<td>输出位置</td>
+<td>HTML响应</td>
+<td>HTML响应</td>
+<td>动态生成的DOM节点</td>
+</tr>
+</tbody></table>
+<h3 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h3><p>尽可能找到一切用户可控并且能够输出在页面代码中的地方，比如下面这些：</p>
+<p>URL的每一个参数<br>URL本身<br>表单<br>搜索框</p>
+<h3 id="常见业务场景"><a href="#常见业务场景" class="headerlink" title="常见业务场景"></a>常见业务场景</h3><p>重灾区：评论区、留言区、个人信息、订单信息等<br>针对型：站内信、网页即时通讯、私信、意见反馈<br>存在风险：搜索框、当前目录、图片属性等</p>
+
       
     </div>
     
@@ -500,12 +606,23 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/images/cat.jpg" alt="ZSC0810">
+              <img class="site-author-image" itemprop="image"
+                src="/images/cat.jpg"
+                alt="ZSC0810" />
             
               <p class="site-author-name" itemprop="name">ZSC0810</p>
               <p class="site-description motion-element" itemprop="description">加油！</p>
@@ -545,6 +662,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是XSS"><span class="nav-number">1.</span> <span class="nav-text">什么是XSS?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简述："><span class="nav-number">1.1.</span> <span class="nav-text">简述：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#成因"><span class="nav-number">1.1.1.</span> <span class="nav-text">成因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#危害"><span class="nav-number">1.1.2.</span> <span class="nav-text">危害</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#易产生XSS的地方"><span class="nav-number">1.1.3.</span> <span class="nav-text">易产生XSS的地方</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分类"><span class="nav-number">2.</span> <span class="nav-text">分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、反射型"><span class="nav-number">2.1.</span> <span class="nav-text">1、反射型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见注入点"><span class="nav-number">2.1.0.1.</span> <span class="nav-text">常见注入点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击方式"><span class="nav-number">2.1.0.2.</span> <span class="nav-text">攻击方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漏洞复现"><span class="nav-number">2.1.1.</span> <span class="nav-text">漏洞复现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、存储型"><span class="nav-number">2.2.</span> <span class="nav-text">2、存储型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见注入点-1"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">常见注入点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击方式-1"><span class="nav-number">2.2.0.2.</span> <span class="nav-text">攻击方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、DOM型"><span class="nav-number">2.3.</span> <span class="nav-text">3、DOM型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#注入点"><span class="nav-number">2.3.0.1.</span> <span class="nav-text">注入点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#攻击方式-2"><span class="nav-number">2.3.0.2.</span> <span class="nav-text">攻击方式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#黑盒测试"><span class="nav-number">2.4.1.</span> <span class="nav-text">黑盒测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常见业务场景"><span class="nav-number">2.4.2.</span> <span class="nav-text">常见业务场景</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
