@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="目标：1、掌握 Windows、Linux 系统及常见站点下快速收集信息（系统、用户、进程、安全日志等）及安全隐患排查的方法与技巧； 2、熟练使用火融剑/Process Explorer、Wireshark、rootkit 等进程、流量分析及木马查杀工具； 3、熟知各种常见的勒索病毒、木马查杀、在线样本分析站点； 4、将自己常用的应急响应工具整理成一个镜像包，并将相关工具的使用心得整理成文档。 扩">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应急响应工具包">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/应急响应工具包/index.html">
+<meta property="og:site_name" content="ZSC0810の博客">
+<meta property="og:description" content="目标：1、掌握 Windows、Linux 系统及常见站点下快速收集信息（系统、用户、进程、安全日志等）及安全隐患排查的方法与技巧； 2、熟练使用火融剑/Process Explorer、Wireshark、rootkit 等进程、流量分析及木马查杀工具； 3、熟知各种常见的勒索病毒、木马查杀、在线样本分析站点； 4、将自己常用的应急响应工具整理成一个镜像包，并将相关工具的使用心得整理成文档。 扩">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226103754926.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226104731108.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226103907300.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226105029125.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226105135275.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226105259107.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226105510382.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226105654362.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226105929012.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226110900322.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226111106253.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226111218660.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226111316819.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226124307436.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226144013515.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226144101939.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226152118421.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227091742130.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227091954938.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227092308232.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227092618500.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227092949550.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227093442262.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227093504488.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227094542700.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227094805210.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227095026347.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227095238745.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227141157075.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227141226319.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227141337359.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227141748426.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227142515646.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227144424876.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227152810493.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200227153626507.png">
+<meta property="og:updated_time" content="2020-02-29T15:01:38.216Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="应急响应工具包">
+<meta name="twitter:description" content="目标：1、掌握 Windows、Linux 系统及常见站点下快速收集信息（系统、用户、进程、安全日志等）及安全隐患排查的方法与技巧； 2、熟练使用火融剑/Process Explorer、Wireshark、rootkit 等进程、流量分析及木马查杀工具； 3、熟知各种常见的勒索病毒、木马查杀、在线样本分析站点； 4、将自己常用的应急响应工具整理成一个镜像包，并将相关工具的使用心得整理成文档。 扩">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/25/应急响应工具包/image-20200226103754926.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/25/应急响应工具包/">
+
+
+
+
+
+  <title>应急响应工具包 | ZSC0810の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZSC0810の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录成长中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/25/应急响应工具包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZSC0810">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZSC0810の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">应急响应工具包</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-25T13:43:39+08:00">
+                2020-02-25
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-29T23:01:38+08:00">
+                2020-02-29
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.8k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  7
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目标："><a href="#目标：" class="headerlink" title="目标："></a>目标：</h1><p>1、掌握 Windows、Linux 系统及常见站点下快速收集信息（系统、用户、进程、安全日志等）及安全隐患排查的方法与技巧；</p>
+<p>2、熟练使用火融剑/Process Explorer、Wireshark、rootkit 等进程、流量分析及木马查杀工具；</p>
+<p>3、熟知各种常见的<a href="https://www.nomoreransom.org/" target="_blank" rel="noopener">勒索病毒</a>、木马查杀、在线样本分析站点；</p>
+<p>4、将自己常用的应急响应工具整理成一个镜像包，并将相关工具的使用心得整理成文档。</p>
+<p>扩展学习：系统安全漏洞排查（SQL注入、命令执行）、流量中对文件进行还原、虚拟机下对恶意程序进行动态分析。</p>
+<h1 id="信息收集"><a href="#信息收集" class="headerlink" title="信息收集"></a>信息收集</h1><h2 id="基础信息收集"><a href="#基础信息收集" class="headerlink" title="基础信息收集"></a>基础信息收集</h2><h3 id="windows-主机"><a href="#windows-主机" class="headerlink" title="windows 主机"></a>windows 主机</h3><h6 id="1-查看系统版本-Windows-NT是一系列操作系统的总称"><a href="#1-查看系统版本-Windows-NT是一系列操作系统的总称" class="headerlink" title="1.查看系统版本  (Windows NT是一系列操作系统的总称)"></a>1.查看系统版本  (Windows NT是一系列操作系统的总称)</h6><p>ver</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226103754926.png" alt="image-20200226103754926"></p>
+<p>按下Windows 键+ R 键，打开【运行】对话框，输入【winver】，确定</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226104731108.png" alt="image-20200226104731108"></p>
+<h6 id="2-查看-SP-版本"><a href="#2-查看-SP-版本" class="headerlink" title="2.查看 SP 版本"></a>2.查看 SP 版本</h6><p>wmic os get ServicePackMajorVersion (service packet (sp) 服务补丁包（一系列补丁的集合）)</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226103907300.png" alt="image-20200226103907300"></p>
+<h3 id="3-查看-Hotfix-（wmic-qfe-查看补丁安装情况）"><a href="#3-查看-Hotfix-（wmic-qfe-查看补丁安装情况）" class="headerlink" title="3.查看 Hotfix   （wmic qfe 查看补丁安装情况）"></a>3.查看 Hotfix   （wmic qfe 查看补丁安装情况）</h3><p><strong>hotfix—-热补丁</strong>针对单一漏洞的补丁</p>
+<p>wmic qfe get hotfixid,InstalledOn</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226105029125.png" alt="image-20200226105029125"></p>
+<h6 id="4-查看主机名"><a href="#4-查看主机名" class="headerlink" title="4.查看主机名"></a>4.查看主机名</h6><p>hostname </p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226105135275.png" alt="image-20200226105135275"></p>
+<h6 id="5-查看网络配置"><a href="#5-查看网络配置" class="headerlink" title="5.查看网络配置"></a>5.查看网络配置</h6><p>ipconfig /all</p>
+<h6 id="6-查看路由表"><a href="#6-查看路由表" class="headerlink" title="6.查看路由表"></a>6.查看路由表</h6><p>route print</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226105259107.png" alt="image-20200226105259107"></p>
+<h6 id="7-查看开放端口"><a href="#7-查看开放端口" class="headerlink" title="7.查看开放端口"></a>7.查看开放端口</h6><p>netstat -ano</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226105510382.png" alt="image-20200226105510382"></p>
+<h6 id="8-查看开启的服务"><a href="#8-查看开启的服务" class="headerlink" title="8.查看开启的服务"></a>8.查看开启的服务</h6><p>net start </p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226105654362.png" alt="image-20200226105654362"></p>
+<h6 id="9-主机信息"><a href="#9-主机信息" class="headerlink" title="9.主机信息"></a>9.主机信息</h6><p>systeminfo </p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226105929012.png" alt="image-20200226105929012"></p>
+<h5 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h5><ol>
+<li><h6 id="查看开放端口3389端口号对应的进程，最右边的数字就是进程号。"><a href="#查看开放端口3389端口号对应的进程，最右边的数字就是进程号。" class="headerlink" title="查看开放端口3389端口号对应的进程，最右边的数字就是进程号。"></a>查看开放端口3389端口号对应的进程，最右边的数字就是进程号。</h6><p>netstat -ano | find “:3389”</p>
+</li>
+</ol>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226110900322.png" alt="image-20200226110900322"></p>
+<h6 id="2-tasklist-V-find-“1276”-查找pid号1276的进程名称-v-显示的更详细"><a href="#2-tasklist-V-find-“1276”-查找pid号1276的进程名称-v-显示的更详细" class="headerlink" title="2.   tasklist -V | find “1276” 查找pid号1276的进程名称(-v 显示的更详细)"></a>2.   tasklist -V | find “1276” 查找pid号1276的进程名称(-v 显示的更详细)</h6><p><img src="/2020/02/25/应急响应工具包/image-20200226111106253.png" alt="image-20200226111106253"></p>
+<p>可以看出，是 xxx.exe 这个进程占用了端口号，这时可以使用 Windows 任务管理器将服务停掉。</p>
+<h6 id="3-taskkill-PID-17284-T-F-强行终止一个进程"><a href="#3-taskkill-PID-17284-T-F-强行终止一个进程" class="headerlink" title="3.   taskkill /PID 17284 /T /F 强行终止一个进程"></a>3.   taskkill /PID 17284 /T /F 强行终止一个进程</h6><p><img src="/2020/02/25/应急响应工具包/image-20200226111218660.png" alt="image-20200226111218660"></p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226111316819.png" alt="image-20200226111316819"></p>
+<p>错误：权限无法访问<br>解决方法：右击cmd,用管理员身份运行</p>
+<p>taskkill /PID 1276 /T /F</p>
+<h3 id="linux-主机"><a href="#linux-主机" class="headerlink" title="linux 主机"></a>linux 主机</h3><h6 id="1-查看系统内核版本的两种方法"><a href="#1-查看系统内核版本的两种方法" class="headerlink" title="1. 查看系统内核版本的两种方法"></a>1. 查看系统内核版本的两种方法</h6><p><img src="/2020/02/25/应急响应工具包/image-20200226124307436.png" alt="image-20200226124307436"></p>
+<h6 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h6><p><img src="/2020/02/25/应急响应工具包/image-20200226144013515.png" alt="image-20200226144013515"></p>
+<h6 id="3-lsb-release-a，即可列出所有版本信息"><a href="#3-lsb-release-a，即可列出所有版本信息" class="headerlink" title="3.lsb_release -a，即可列出所有版本信息"></a>3.lsb_release -a，即可列出所有版本信息</h6><p><img src="/2020/02/25/应急响应工具包/image-20200226144101939.png" alt="image-20200226144101939"></p>
+<h6 id="4-查看本地监听的tcp端口"><a href="#4-查看本地监听的tcp端口" class="headerlink" title="4.查看本地监听的tcp端口"></a>4.查看本地监听的tcp端口</h6><p>netstat -lnt</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200226152118421.png" alt="image-20200226152118421"></p>
+<h2 id="主机进程查看"><a href="#主机进程查看" class="headerlink" title="主机进程查看"></a>主机进程查看</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><h5 id="tasklist命令"><a href="#tasklist命令" class="headerlink" title="tasklist命令"></a>tasklist命令</h5><h6 id="1-查看本机进程"><a href="#1-查看本机进程" class="headerlink" title="1.查看本机进程"></a>1.查看本机进程</h6><p><img src="/2020/02/25/应急响应工具包/image-20200227091742130.png" alt="image-20200227091742130"></p>
+<h6 id="2-查看系统进程提供的服务"><a href="#2-查看系统进程提供的服务" class="headerlink" title="2.查看系统进程提供的服务"></a>2.查看系统进程提供的服务</h6><p><img src="/2020/02/25/应急响应工具包/image-20200227091954938.png" alt="image-20200227091954938"></p>
+<p>3 查看调用DLL模块文件的进程列表</p>
+<p>tasklist /m</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227092308232.png" alt="image-20200227092308232"></p>
+<p>4.使用筛选器查找指定的进程</p>
+<p>TASKLIST /FI “USERNAME ne NT AUTHORITY\SYSTEM” /FI “STATUS eq running”</p>
+<p>列出了系统中正在运行的非“SYSTEM“状态的所有进程。其中“/FI“为筛选器参数。</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227092618500.png" alt="image-20200227092618500"></p>
+<p>Tasklist /FI “PID eq xxxx”，使用筛选器查找指定的PID</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227092949550.png" alt="image-20200227092949550"></p>
+<h5 id="扩展-1"><a href="#扩展-1" class="headerlink" title="扩展"></a>扩展</h5><p>1.windows 登录可使用 cmd 开启任务管理器： taskmgr  </p>
+<p>2.应急时如果是 windows xp 或 windows 7，任务管理器点“查看”－》“选择列” ，一<br>般至少勾选“PID”和“映象路径”，可以选择多个列辅助应急。  </p>
+<h3 id="Linux主机"><a href="#Linux主机" class="headerlink" title="Linux主机"></a>Linux主机</h3><h5 id="ps-aux-或-ps-ef"><a href="#ps-aux-或-ps-ef" class="headerlink" title="ps -aux 或 ps -ef"></a>ps -aux 或 ps -ef</h5><p>1.显示所有包含其他使用者的进程,使用grep对进程进行筛选</p>
+<p>ps -aux或者ps -ef</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227093442262.png" alt="image-20200227093442262"></p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227093504488.png" alt="image-20200227093504488"></p>
+<h3 id="进程工具"><a href="#进程工具" class="headerlink" title="进程工具"></a>进程工具</h3><h6 id="Windows-IceSword，-wsyscheck，-powertoo"><a href="#Windows-IceSword，-wsyscheck，-powertoo" class="headerlink" title="Windows:      IceSword， wsyscheck， powertoo"></a>Windows:      IceSword， wsyscheck， powertoo</h6><h4 id="Windows进程与端口对应情况"><a href="#Windows进程与端口对应情况" class="headerlink" title="Windows进程与端口对应情况"></a>Windows进程与端口对应情况</h4><h6 id="1-使用-netstat-–ano-命令得到端口对应的-PID，使用-Tasklist-FI-“PID-eq-xxxx”命令得到-PID-对应的进程名称。"><a href="#1-使用-netstat-–ano-命令得到端口对应的-PID，使用-Tasklist-FI-“PID-eq-xxxx”命令得到-PID-对应的进程名称。" class="headerlink" title="1.使用 netstat –ano 命令得到端口对应的 PID，使用 Tasklist /FI “PID eq xxxx”命令得到 PID 对应的进程名称。"></a>1.使用 netstat –ano 命令得到端口对应的 PID，使用 Tasklist /FI “PID eq xxxx”命令得到 PID 对应的进程名称。</h6><p><img src="/2020/02/25/应急响应工具包/image-20200227094542700.png" alt="image-20200227094542700"></p>
+<p>2.使用netstat -anb，可以直接查看进程与端口的对应情况</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227094805210.png" alt="image-20200227094805210"></p>
+<h4 id="Linux进程与端口对应情况"><a href="#Linux进程与端口对应情况" class="headerlink" title="Linux进程与端口对应情况"></a>Linux进程与端口对应情况</h4><p>1.使用netstat -anp命令，可以查看端口对应的进程信息</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227095026347.png" alt="image-20200227095026347"></p>
+<p>2.使用lsof -i命令，可以查看实时的进程，服务与端口信息</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227095238745.png" alt="image-20200227095238745"></p>
+<p>常见的应用程序配置文件</p>
+<h2 id="wireshark流量中对文件进行还原"><a href="#wireshark流量中对文件进行还原" class="headerlink" title="wireshark流量中对文件进行还原"></a>wireshark流量中对文件进行还原</h2><h1 id="应急响应工具使用"><a href="#应急响应工具使用" class="headerlink" title="应急响应工具使用"></a>应急响应工具使用</h1><h3 id="windows进程分析工具"><a href="#windows进程分析工具" class="headerlink" title="windows进程分析工具"></a>windows进程分析工具</h3><h4 id="ProcessHacker"><a href="#ProcessHacker" class="headerlink" title="ProcessHacker"></a>ProcessHacker</h4><p>功能：ProcessHacker是一款不错的进程分析工具，可查看所有进程信息，包括进程加载的dll、进程打开的文件、进程读写的注册表……，也可以将特定进程的内存空间Dump到本地，此外还可以查看网络连接。</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227141157075.png" alt="image-20200227141157075"></p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227141226319.png" alt="image-20200227141226319"></p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227141337359.png" alt="image-20200227141337359"></p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227141748426.png" alt="image-20200227141748426"></p>
+<h4 id="ProcessExplorer"><a href="#ProcessExplorer" class="headerlink" title="ProcessExplorer"></a>ProcessExplorer</h4><p>功能：ProcessExplorer是一款不错的进程分析工具，微软官方推荐工具，稳定性和兼容性相对不错。可查看所有进程的信息，包括其加载的dll、创建的线程、网络连接……，同样可以Dump出进程的内存空间到本地。</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227142515646.png" alt="image-20200227142515646"></p>
+<h4 id="ProcessMonitor"><a href="#ProcessMonitor" class="headerlink" title="ProcessMonitor"></a>ProcessMonitor</h4><p>功能：ProcessMonitor是一款实时刷新的进程信息监控工具，微软官方推荐工具，稳定性和兼容性也是相对出色。展示的信息很全面，且每一个打开的句柄、注册表、网络连接……都与具体的进程关联起来。</p>
+<h3 id="windows启动项分析工具"><a href="#windows启动项分析工具" class="headerlink" title="windows启动项分析工具"></a>windows启动项分析工具</h3><p>功能：一款不错的启动项分析工具，微软官方推荐。只要涉及到启动项相关的信息，事无巨细，通通都可以查询得到，非常方便找到病毒的启动项。</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227144424876.png" alt="image-20200227144424876"></p>
+<h4 id="信息收集工具"><a href="#信息收集工具" class="headerlink" title="信息收集工具"></a>信息收集工具</h4><h4 id="BrowsingHistoryView"><a href="#BrowsingHistoryView" class="headerlink" title="BrowsingHistoryView"></a>BrowsingHistoryView</h4><p>功能：收集浏览器的历史记录，方便追溯域名、URL的访问来源是否源自于用户行为。</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227152810493.png" alt="image-20200227152810493"></p>
+<h4 id="WEB-shell查杀工具"><a href="#WEB-shell查杀工具" class="headerlink" title="WEB shell查杀工具"></a>WEB shell查杀工具</h4><p> D盾</p>
+<p>功能：D盾是迪元素科技的一款Webshell查杀工具。</p>
+<p><img src="/2020/02/25/应急响应工具包/image-20200227153626507.png" alt="image-20200227153626507"></p>
+<h1 id="相关学习网站"><a href="#相关学习网站" class="headerlink" title="相关学习网站"></a>相关学习网站</h1><h2 id="勒索病毒-https-www-nomoreransom-org-、木马查杀、在线样本分析站点"><a href="#勒索病毒-https-www-nomoreransom-org-、木马查杀、在线样本分析站点" class="headerlink" title="勒索病毒(https://www.nomoreransom.org/)、木马查杀、在线样本分析站点"></a>勒索病毒(<a href="https://www.nomoreransom.org/)、木马查杀、在线样本分析站点" target="_blank" rel="noopener">https://www.nomoreransom.org/)、木马查杀、在线样本分析站点</a></h2><h4 id="信息查询网站"><a href="#信息查询网站" class="headerlink" title="信息查询网站"></a>信息查询网站</h4><p>勒索病毒信息查询网站：<a href="https://www.botfrei.de/de/ransomware/galerie.html" target="_blank" rel="noopener">https://www.botfrei.de/de/ransomware/galerie.html</a></p>
+<p>勒索病毒信息查询网站：<a href="https://id-ransomware.malwarehunterteam.com/" target="_blank" rel="noopener">https://id-ransomware.malwarehunterteam.com/</a></p>
+<h4 id="解密工具"><a href="#解密工具" class="headerlink" title="解密工具"></a>解密工具</h4><p>卡巴斯基勒索病毒解密工具集：<a href="https://noransom.kaspersky.com/" target="_blank" rel="noopener">https://noransom.kaspersky.com/</a></p>
+<p>Avast勒索软件解密工具集：<a href="https://www.avast.com/zh-cn/ransomware-decryption-tools" target="_blank" rel="noopener">https://www.avast.com/zh-cn/ransomware-decryption-tools</a></p>
+<p>Trendmicro勒索软件解密工具集：<a href="http://support.asiainfo-sec.com/Anti-Virus/Clean-Tool/Tools/RansomwareFileDecryptor/" target="_blank" rel="noopener">http://support.asiainfo-sec.com/Anti-Virus/Clean-Tool/Tools/RansomwareFileDecryptor/</a></p>
+<p>nomoreransom勒索软件解密工具集：<a href="https://www.nomoreransom.org/zh/decryption-tools.html" target="_blank" rel="noopener">https://www.nomoreransom.org/zh/decryption-tools.html</a></p>
+<p>Emsisoft勒索软件解密工具集：<a href="https://www.emsisoft.com/decrypter/" target="_blank" rel="noopener">https://www.emsisoft.com/decrypter/</a></p>
+<p>清除<em>勒索</em>软件以及下载免费解密工具。由卡巴斯基实验室发布。 <a href="https://noransom.kaspersky.com/zh/" target="_blank" rel="noopener">https://noransom.kaspersky.com/zh/</a></p>
+<h4 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h4><p><a href="https://www.secpulse.com/archives/category/articles/system" target="_blank" rel="noopener">https://www.secpulse.com/archives/category/articles/system</a></p>
+<p><a href="https://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=32&amp;filter=typeid&amp;typeid=62&amp;orderby=dateline" target="_blank" rel="noopener">https://www.52pojie.cn/forum.php?mod=forumdisplay&amp;fid=32&amp;filter=typeid&amp;typeid=62&amp;orderby=dateline</a></p>
+<h4 id="2-1-病毒分析"><a href="#2-1-病毒分析" class="headerlink" title="2.1 病毒分析"></a>2.1 病毒分析</h4><p>PCHunter：<a href="http://www.xuetr.com" target="_blank" rel="noopener">http://www.xuetr.com</a></p>
+<p>火绒剑：<a href="https://www.huorong.cn" target="_blank" rel="noopener">https://www.huorong.cn</a></p>
+<p>Process Explorer：<a href="https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/sysinternals/downloads/process-explorer</a></p>
+<p>processhacker：<a href="https://processhacker.sourceforge.io/downloads.php" target="_blank" rel="noopener">https://processhacker.sourceforge.io/downloads.php</a></p>
+<p>autoruns：<a href="https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns</a></p>
+<p>OTL：<a href="https://www.bleepingcomputer.com/download/otl/" target="_blank" rel="noopener">https://www.bleepingcomputer.com/download/otl/</a></p>
+<p>SysInspector：<a href="http://download.eset.com.cn/download/detail/?product=sysinspector" target="_blank" rel="noopener">http://download.eset.com.cn/download/detail/?product=sysinspector</a></p>
+<h4 id="2-2-病毒查杀"><a href="#2-2-病毒查杀" class="headerlink" title="2.2 病毒查杀"></a>2.2 病毒查杀</h4><p>卡巴斯基：<a href="http://devbuilds.kaspersky-labs.com/devbuilds/KVRT/latest/full/KVRT.exe" target="_blank" rel="noopener">http://devbuilds.kaspersky-labs.com/devbuilds/KVRT/latest/full/KVRT.exe</a>   （推荐理由：绿色版、最新病毒库）</p>
+<p>大蜘蛛：<a href="http://free.drweb.ru/download+cureit+free（推荐理由：扫描快、一次下载只能用1周，更新病毒库）" target="_blank" rel="noopener">http://free.drweb.ru/download+cureit+free（推荐理由：扫描快、一次下载只能用1周，更新病毒库）</a></p>
+<p>火绒安全软件：<a href="https://www.huorong.cn" target="_blank" rel="noopener">https://www.huorong.cn</a></p>
+<p>360杀毒：<a href="http://sd.360.cn/download_center.html" target="_blank" rel="noopener">http://sd.360.cn/download_center.html</a></p>
+<h4 id="2-3-病毒动态"><a href="#2-3-病毒动态" class="headerlink" title="2.3 病毒动态"></a>2.3 病毒动态</h4><p>CVERC-国家计算机病毒应急处理中心：<a href="http://www.cverc.org.cn" target="_blank" rel="noopener">http://www.cverc.org.cn</a></p>
+<p>微步在线威胁情报社区：<a href="https://x.threatbook.cn" target="_blank" rel="noopener">https://x.threatbook.cn</a></p>
+<p>火绒安全论坛：<a href="http://bbs.huorong.cn/forum-59-1.html" target="_blank" rel="noopener">http://bbs.huorong.cn/forum-59-1.html</a></p>
+<p>爱毒霸社区：<a href="http://bbs.duba.net" target="_blank" rel="noopener">http://bbs.duba.net</a></p>
+<p>腾讯电脑管家：<a href="http://bbs.guanjia.qq.com/forum-2-1.html" target="_blank" rel="noopener">http://bbs.guanjia.qq.com/forum-2-1.html</a></p>
+<h4 id="2-4-在线病毒扫描网站"><a href="#2-4-在线病毒扫描网站" class="headerlink" title="2.4 在线病毒扫描网站"></a>2.4 在线病毒扫描网站</h4><p><a href="http://www.virscan.org" target="_blank" rel="noopener">http://www.virscan.org</a>         //多引擎在线病毒扫描网 v1.02，当前支持 41 款杀毒引擎     </p>
+<p><a href="https://habo.qq.com" target="_blank" rel="noopener">https://habo.qq.com</a>             //腾讯哈勃分析系统</p>
+<p><a href="https://virusscan.jotti.org" target="_blank" rel="noopener">https://virusscan.jotti.org</a>      //Jotti恶意软件扫描系统</p>
+<p><a href="http://www.scanvir.com" target="_blank" rel="noopener">http://www.scanvir.com</a>        //针对计算机病毒、手机病毒、可疑文件等进行检测分析</p>
+<h4 id="2-5-webshell查杀"><a href="#2-5-webshell查杀" class="headerlink" title="2.5 webshell查杀"></a>2.5 webshell查杀</h4><p>D盾_Web查杀：<a href="http://www.d99net.net/index.asp" target="_blank" rel="noopener">http://www.d99net.net/index.asp</a></p>
+<p>河马webshell查杀：<a href="http://www.shellpub.com" target="_blank" rel="noopener">http://www.shellpub.com</a></p>
+<p>深信服Webshell网站后门检测工具：<a href="http://edr.sangfor.com.cn/backdoor_detection.html" target="_blank" rel="noopener">http://edr.sangfor.com.cn/backdoor_detection.html</a></p>
+<p>Safe3：<a href="http://www.uusec.com/webshell.zip" target="_blank" rel="noopener">http://www.uusec.com/webshell.zip</a></p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><p><a href="https://www.twblogs.net/a/5d0096fcbd9eee14029fbf7d/zh-cn" target="_blank" rel="noopener">https://www.twblogs.net/a/5d0096fcbd9eee14029fbf7d/zh-cn</a></p>
+<p><a href="https://www.freebuf.com/articles/es/206199.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/es/206199.html</a></p>
+<p>应急响应实战笔记-Bypass</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/24/应急响应基础/" rel="next" title="应急响应基础">
+                <i class="fa fa-chevron-left"></i> 应急响应基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/08/渗透测试之规范学习/" rel="prev" title="渗透测试之规范学习">
+                渗透测试之规范学习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/cat.jpg" alt="ZSC0810">
+            
+              <p class="site-author-name" itemprop="name">ZSC0810</p>
+              <p class="site-description motion-element" itemprop="description">加油！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标："><span class="nav-number">1.</span> <span class="nav-text">目标：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息收集"><span class="nav-number">2.</span> <span class="nav-text">信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础信息收集"><span class="nav-number">2.1.</span> <span class="nav-text">基础信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-主机"><span class="nav-number">2.1.1.</span> <span class="nav-text">windows 主机</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-查看系统版本-Windows-NT是一系列操作系统的总称"><span class="nav-number">2.1.1.0.0.1.</span> <span class="nav-text">1.查看系统版本  (Windows NT是一系列操作系统的总称)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-查看-SP-版本"><span class="nav-number">2.1.1.0.0.2.</span> <span class="nav-text">2.查看 SP 版本</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-查看-Hotfix-（wmic-qfe-查看补丁安装情况）"><span class="nav-number">2.1.2.</span> <span class="nav-text">3.查看 Hotfix   （wmic qfe 查看补丁安装情况）</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#4-查看主机名"><span class="nav-number">2.1.2.0.0.1.</span> <span class="nav-text">4.查看主机名</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-查看网络配置"><span class="nav-number">2.1.2.0.0.2.</span> <span class="nav-text">5.查看网络配置</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-查看路由表"><span class="nav-number">2.1.2.0.0.3.</span> <span class="nav-text">6.查看路由表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-查看开放端口"><span class="nav-number">2.1.2.0.0.4.</span> <span class="nav-text">7.查看开放端口</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-查看开启的服务"><span class="nav-number">2.1.2.0.0.5.</span> <span class="nav-text">8.查看开启的服务</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#9-主机信息"><span class="nav-number">2.1.2.0.0.6.</span> <span class="nav-text">9.主机信息</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展"><span class="nav-number">2.1.2.0.1.</span> <span class="nav-text">扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#查看开放端口3389端口号对应的进程，最右边的数字就是进程号。"><span class="nav-number">2.1.2.0.1.1.</span> <span class="nav-text">查看开放端口3389端口号对应的进程，最右边的数字就是进程号。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-tasklist-V-find-“1276”-查找pid号1276的进程名称-v-显示的更详细"><span class="nav-number">2.1.2.0.1.2.</span> <span class="nav-text">2.   tasklist -V | find “1276” 查找pid号1276的进程名称(-v 显示的更详细)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-taskkill-PID-17284-T-F-强行终止一个进程"><span class="nav-number">2.1.2.0.1.3.</span> <span class="nav-text">3.   taskkill /PID 17284 /T /F 强行终止一个进程</span></a></li></ol></li></ol><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-主机"><span class="nav-number">2.1.3.</span> <span class="nav-text">linux 主机</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-查看系统内核版本的两种方法"><span class="nav-number">2.1.3.0.0.1.</span> <span class="nav-text">1. 查看系统内核版本的两种方法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2"><span class="nav-number">2.1.3.0.0.2.</span> <span class="nav-text">2.</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-lsb-release-a，即可列出所有版本信息"><span class="nav-number">2.1.3.0.0.3.</span> <span class="nav-text">3.lsb_release -a，即可列出所有版本信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-查看本地监听的tcp端口"><span class="nav-number">2.1.3.0.0.4.</span> <span class="nav-text">4.查看本地监听的tcp端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主机进程查看"><span class="nav-number">2.2.</span> <span class="nav-text">主机进程查看</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows"><span class="nav-number">2.2.1.</span> <span class="nav-text">Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#tasklist命令"><span class="nav-number">2.2.1.0.1.</span> <span class="nav-text">tasklist命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-查看本机进程"><span class="nav-number">2.2.1.0.1.1.</span> <span class="nav-text">1.查看本机进程</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-查看系统进程提供的服务"><span class="nav-number">2.2.1.0.1.2.</span> <span class="nav-text">2.查看系统进程提供的服务</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扩展-1"><span class="nav-number">2.2.1.0.2.</span> <span class="nav-text">扩展</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux主机"><span class="nav-number">2.2.2.</span> <span class="nav-text">Linux主机</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ps-aux-或-ps-ef"><span class="nav-number">2.2.2.0.1.</span> <span class="nav-text">ps -aux 或 ps -ef</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程工具"><span class="nav-number">2.2.3.</span> <span class="nav-text">进程工具</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Windows-IceSword，-wsyscheck，-powertoo"><span class="nav-number">2.2.3.0.0.1.</span> <span class="nav-text">Windows:      IceSword， wsyscheck， powertoo</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows进程与端口对应情况"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">Windows进程与端口对应情况</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-使用-netstat-–ano-命令得到端口对应的-PID，使用-Tasklist-FI-“PID-eq-xxxx”命令得到-PID-对应的进程名称。"><span class="nav-number">2.2.3.1.0.1.</span> <span class="nav-text">1.使用 netstat –ano 命令得到端口对应的 PID，使用 Tasklist /FI “PID eq xxxx”命令得到 PID 对应的进程名称。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux进程与端口对应情况"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">Linux进程与端口对应情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wireshark流量中对文件进行还原"><span class="nav-number">2.3.</span> <span class="nav-text">wireshark流量中对文件进行还原</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应急响应工具使用"><span class="nav-number">3.</span> <span class="nav-text">应急响应工具使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows进程分析工具"><span class="nav-number">3.0.1.</span> <span class="nav-text">windows进程分析工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ProcessHacker"><span class="nav-number">3.0.1.1.</span> <span class="nav-text">ProcessHacker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProcessExplorer"><span class="nav-number">3.0.1.2.</span> <span class="nav-text">ProcessExplorer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ProcessMonitor"><span class="nav-number">3.0.1.3.</span> <span class="nav-text">ProcessMonitor</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#windows启动项分析工具"><span class="nav-number">3.0.2.</span> <span class="nav-text">windows启动项分析工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信息收集工具"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">信息收集工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#BrowsingHistoryView"><span class="nav-number">3.0.2.2.</span> <span class="nav-text">BrowsingHistoryView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WEB-shell查杀工具"><span class="nav-number">3.0.2.3.</span> <span class="nav-text">WEB shell查杀工具</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#相关学习网站"><span class="nav-number">4.</span> <span class="nav-text">相关学习网站</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#勒索病毒-https-www-nomoreransom-org-、木马查杀、在线样本分析站点"><span class="nav-number">4.1.</span> <span class="nav-text">勒索病毒(https://www.nomoreransom.org/)、木马查杀、在线样本分析站点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#信息查询网站"><span class="nav-number">4.1.0.1.</span> <span class="nav-text">信息查询网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解密工具"><span class="nav-number">4.1.0.2.</span> <span class="nav-text">解密工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#学习网站"><span class="nav-number">4.1.0.3.</span> <span class="nav-text">学习网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-病毒分析"><span class="nav-number">4.1.0.4.</span> <span class="nav-text">2.1 病毒分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-病毒查杀"><span class="nav-number">4.1.0.5.</span> <span class="nav-text">2.2 病毒查杀</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-病毒动态"><span class="nav-number">4.1.0.6.</span> <span class="nav-text">2.3 病毒动态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-4-在线病毒扫描网站"><span class="nav-number">4.1.0.7.</span> <span class="nav-text">2.4 在线病毒扫描网站</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-5-webshell查杀"><span class="nav-number">4.1.0.8.</span> <span class="nav-text">2.5 webshell查杀</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接"><span class="nav-number">5.</span> <span class="nav-text">参考链接</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZSC0810</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

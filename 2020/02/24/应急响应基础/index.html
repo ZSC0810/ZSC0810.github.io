@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="目标1、掌握应急响应的概念及常规的响应场景； 2、了解 PDCERF 流程，每个阶段要做的具体事情并绘制出流程图； 3、熟悉应急响应中常见的安全事件分类； 4、将学习心得与绘制的流程图整理成文档。 扩展学习：企业应急事件分类、安全事件溯源分析的方法、卡巴斯基的应急响应指南。 基本概念安全事件（Security Accident） 是指影响一个系统正常工作的情况。这里的系统包括主机和网络，如黑客入侵">
+<meta property="og:type" content="article">
+<meta property="og:title" content="应急响应基础">
+<meta property="og:url" content="http://yoursite.com/2020/02/24/应急响应基础/index.html">
+<meta property="og:site_name" content="ZSC0810の博客">
+<meta property="og:description" content="目标1、掌握应急响应的概念及常规的响应场景； 2、了解 PDCERF 流程，每个阶段要做的具体事情并绘制出流程图； 3、熟悉应急响应中常见的安全事件分类； 4、将学习心得与绘制的流程图整理成文档。 扩展学习：企业应急事件分类、安全事件溯源分析的方法、卡巴斯基的应急响应指南。 基本概念安全事件（Security Accident） 是指影响一个系统正常工作的情况。这里的系统包括主机和网络，如黑客入侵">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/02/24/应急响应基础/image-20200224110050408.png">
+<meta property="og:image" content="http://yoursite.com/2020/02/24/应急响应基础/image-20200224145601208.png">
+<meta property="og:updated_time" content="2020-02-24T07:17:38.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="应急响应基础">
+<meta name="twitter:description" content="目标1、掌握应急响应的概念及常规的响应场景； 2、了解 PDCERF 流程，每个阶段要做的具体事情并绘制出流程图； 3、熟悉应急响应中常见的安全事件分类； 4、将学习心得与绘制的流程图整理成文档。 扩展学习：企业应急事件分类、安全事件溯源分析的方法、卡巴斯基的应急响应指南。 基本概念安全事件（Security Accident） 是指影响一个系统正常工作的情况。这里的系统包括主机和网络，如黑客入侵">
+<meta name="twitter:image" content="http://yoursite.com/2020/02/24/应急响应基础/image-20200224110050408.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/02/24/应急响应基础/">
+
+
+
+
+
+  <title>应急响应基础 | ZSC0810の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZSC0810の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录成长中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/24/应急响应基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZSC0810">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZSC0810の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">应急响应基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T10:08:39+08:00">
+                2020-02-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-02-24T15:17:38+08:00">
+                2020-02-24
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.7k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h1><p>1、掌握应急响应的概念及常规的响应场景；</p>
+<p>2、了解 PDCERF 流程，每个阶段要做的具体事情并绘制出流程图；</p>
+<p>3、熟悉应急响应中常见的安全事件分类；</p>
+<p>4、将学习心得与绘制的流程图整理成文档。</p>
+<p>扩展学习：企业应急事件分类、安全事件溯源分析的方法、卡巴斯基的应急响应指南。</p>
+<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>安全事件（Security Accident）</strong> 是指影响一个系统正常工作的情况。这里的系统包括主机和网络，如黑客入侵、信息窃取、拒绝服务攻击、网络流量异常等</p>
+<p><strong>应急响应（Emergency Response）</strong> 是指组织为了应对突发/重大信息安全事件的发生所做的准备以及在事件发生后所采取的措施。</p>
+<h2 id="常规的应急响应场景（分类）"><a href="#常规的应急响应场景（分类）" class="headerlink" title="常规的应急响应场景（分类）"></a>常规的应急响应场景（分类）</h2><h4 id="网络攻击事件"><a href="#网络攻击事件" class="headerlink" title="网络攻击事件"></a>网络攻击事件</h4><ul>
+<li>安全扫描攻击：利用扫描器对目标进行扫描探测，发现漏洞后进一步利用漏洞进行攻击。</li>
+<li>暴力破解攻击：对目标系统账号密码进行暴力破解，获得后台管理员权限。</li>
+<li>系统漏洞攻击：操作系统，应用系统中存在的漏洞进行攻击。</li>
+<li>WEB漏洞攻击：通过SQL注入，上传，XSS，授权绕过等WEB漏洞进行攻击。</li>
+<li>拒绝服务攻击：通过大流量DDOS或者CC攻击目标，使服务器无法提供正常服务；</li>
+<li>其他网络攻击行为。</li>
+</ul>
+<h4 id="恶意程序事件："><a href="#恶意程序事件：" class="headerlink" title="恶意程序事件："></a>恶意程序事件：</h4><ul>
+<li>病毒，蠕虫，造成系统缓慢，数据损坏，运行异常；</li>
+<li>远控木马： 主机被黑客远程控制；</li>
+<li>僵尸网络程序（肉鸡行为）：主机对外发动DDOS攻击，对外发起扫描攻击行为；</li>
+<li>挖矿程序 ：造成系统资源大量消耗；</li>
+</ul>
+<h4 id="WEB恶意代码"><a href="#WEB恶意代码" class="headerlink" title="WEB恶意代码"></a>WEB恶意代码</h4><ul>
+<li><p>Webshell后门：黑客通过Webshell控制主机；</p>
+</li>
+<li><p>网页挂马：页面被植入待病毒内容，影响访问者安全；</p>
+</li>
+<li><p>网页暗链：网站被植入博彩，游戏等广告内容。           </p>
+</li>
+</ul>
+<h4 id="信息破坏事件"><a href="#信息破坏事件" class="headerlink" title="信息破坏事件"></a>信息破坏事件</h4><ul>
+<li>系统配置遭篡改：系统中出现异常服务，进程，启动项，账号等等；</li>
+<li>数据库内容篡改：业务数据遭到恶意篡改，引发业务异常和损失；</li>
+<li>网站内容篡改：网站页面内容被黑客恶意篡改；</li>
+<li>信息数据泄露事件：服务器数据，会员账号遭到窃取并泄露；</li>
+</ul>
+<h4 id="其他安全事件"><a href="#其他安全事件" class="headerlink" title="其他安全事件"></a>其他安全事件</h4><ul>
+<li><p>账号被异常登录：系统账号在异地登录，可能出现账号密码泄露；</p>
+</li>
+<li><p>异常网络连接：服务器发起对外的异常访问，连接到木马主控端，矿池，病毒服务器等行为；</p>
+</li>
+</ul>
+<h2 id="应急响应PDCERF-模型"><a href="#应急响应PDCERF-模型" class="headerlink" title="应急响应PDCERF 模型"></a>应急响应PDCERF 模型</h2><p><img src="/2020/02/24/应急响应基础/image-20200224110050408.png" alt="image-20200224110050408"></p>
+<p>P：指preparation准备，之前要做的各种工具，如编译好的Ls，ifconfig,ps这些事先准备好的。</p>
+<p>D：指Detection诊断，诊断初期发生了哪些类型的问题，该环节强化了信息取证和预先通告，以助于后续工作的开展，利于同样是大规模流量，L4DDos和CC，蠕虫爆发，应对的应急手段不一样。</p>
+<p>C:指Containment抑制，容易被忽视，首先应抑制受害范围，隔离区域，切断受害面扩大范围，再追求根治。思路同ITIL。</p>
+<p>E：指Eradication根除，寻找根因，封堵攻击源。</p>
+<p>R: 指Reconvery恢复，恢复业务，增加必要的安全加固措施，这步是大多说人熟悉的一步。</p>
+<p>F：指follow-up跟踪，后续监控有无异常，报告，管理环节的自省和改进，现在一般称为安全运营的持续改进环节。</p>
+<p>具体要做的事情如下:</p>
+<h4 id="准备阶段"><a href="#准备阶段" class="headerlink" title="准备阶段"></a>准备阶段</h4><p> 该阶段以预防为主。</p>
+<p>（1）制定应急响应工作流程文档计划，建立一组基于威胁态势的合理防御措施。</p>
+<p>（2）制定预警与报警的方式流程，建立搞笑事件处理程序；</p>
+<p>（3）建立备份的体系和流程，按网络安全政策配置安全设备和软件；</p>
+<p>（4）一个支持事件响应活动的基础设施，获取处理问题的资源和人员，进行安全培训，预演应急事件；</p>
+<h4 id="事件监测与分析阶段"><a href="#事件监测与分析阶段" class="headerlink" title="事件监测与分析阶段"></a>事件监测与分析阶段</h4><h5 id="a-紧急事件监测，如何检测？："><a href="#a-紧急事件监测，如何检测？：" class="headerlink" title="a.紧急事件监测，如何检测？："></a>a.紧急事件监测，如何检测？：</h5><ul>
+<li>防火墙日志</li>
+<li>系统日志</li>
+<li>Web服务器日志</li>
+<li>IDS日志</li>
+<li>可疑的用户</li>
+<li>管理员报告</li>
+</ul>
+<h5 id="b-初始响应："><a href="#b-初始响应：" class="headerlink" title="b.初始响应："></a>b.初始响应：</h5><ul>
+<li>初步判定事件类型，定义事件级别，预估事件的范围和影响严重程度（涉及到多少网络，多少主机等）以此决定启动相应的应急响应方案；</li>
+<li>准备相关资源；</li>
+<li>为紧急事件的处理取得管理方面的支持（决定是否关闭被破坏系统的业务，是否继续收集入侵者活动数据）；</li>
+<li>组件事件处理小组；</li>
+<li>制定安全事件响应策略；</li>
+</ul>
+<h5 id="c-事件分级："><a href="#c-事件分级：" class="headerlink" title="c.事件分级："></a>c.事件分级：</h5><ul>
+<li>决定什么对自己最重要</li>
+<li>为紧急事件确定优先级，更有效的利用资源</li>
+<li>不是紧急事件都需要平等对待；</li>
+</ul>
+<h5 id="d-响应后的事件调查"><a href="#d-响应后的事件调查" class="headerlink" title="d.响应后的事件调查"></a>d.响应后的事件调查</h5><ul>
+<li>事件起因分析</li>
+<li>事件取证追查</li>
+<li>系统后门调查，漏洞分析</li>
+<li>数据收集，数据分析；</li>
+</ul>
+<h4 id="抑制处理阶段"><a href="#抑制处理阶段" class="headerlink" title="抑制处理阶段"></a>抑制处理阶段</h4><p>在检测到安全事件后，抑制的目的在于限制攻击范围，限制潜在的损失与破坏，在限制被抑制后，找出事件根源并彻底解决；然后就该着手恢复系统，把所有受侵害的系统，应用数据库恢复到他们的正常业务状态。</p>
+<ul>
+<li>收集入侵相关的所有资料，收集并保护证据，保证安全地获取并且保存证据；</li>
+<li>确定使系统恢复正常的需求和时间表、从可信的备份介质中恢复用户数据和应用服务；</li>
+<li>通过对有关恶意代码或行为的分析结果，找出事件根源明确相应的补救措施并彻底清除，并对攻击源进行准确定位并采取措施将其中断；</li>
+<li>清理系统、恢复数据、程序、服务，把所有被攻破的系统和网络设备彻底还原到正常的任务状态。</li>
+</ul>
+<h2 id="应急响应基本流程"><a href="#应急响应基本流程" class="headerlink" title="应急响应基本流程"></a>应急响应基本流程</h2><p><img src="/2020/02/24/应急响应基础/image-20200224145601208.png" alt="image-20200224145601208"></p>
+<h2 id="应急响应的目标"><a href="#应急响应的目标" class="headerlink" title="应急响应的目标"></a>应急响应的目标</h2><p>·     防止散乱和无协作的响应</p>
+<p>·     根据法律和政策保护隐私</p>
+<p>·     确认或排除事件是否发生</p>
+<p>·     进行快速检查和现场封锁</p>
+<p>·     将事件的破坏性减到最小</p>
+<p>·     提供报告和有价值的建议</p>
+<p>·     改进策略防止类似事件发生</p>
+<h1 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h1><p><a href="https://www.jianshu.com/p/e49f0319044c" target="_blank" rel="noopener">https://www.jianshu.com/p/e49f0319044c</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/18/文件上传/" rel="next" title="文件上传">
+                <i class="fa fa-chevron-left"></i> 文件上传
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/02/25/应急响应工具包/" rel="prev" title="应急响应工具包">
+                应急响应工具包 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/cat.jpg" alt="ZSC0810">
+            
+              <p class="site-author-name" itemprop="name">ZSC0810</p>
+              <p class="site-description motion-element" itemprop="description">加油！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目标"><span class="nav-number">1.</span> <span class="nav-text">目标</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常规的应急响应场景（分类）"><span class="nav-number">1.2.</span> <span class="nav-text">常规的应急响应场景（分类）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络攻击事件"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">网络攻击事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恶意程序事件："><span class="nav-number">1.2.0.2.</span> <span class="nav-text">恶意程序事件：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WEB恶意代码"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">WEB恶意代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#信息破坏事件"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">信息破坏事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他安全事件"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">其他安全事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应急响应PDCERF-模型"><span class="nav-number">1.3.</span> <span class="nav-text">应急响应PDCERF 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#准备阶段"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">准备阶段</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件监测与分析阶段"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">事件监测与分析阶段</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#a-紧急事件监测，如何检测？："><span class="nav-number">1.3.0.2.1.</span> <span class="nav-text">a.紧急事件监测，如何检测？：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-初始响应："><span class="nav-number">1.3.0.2.2.</span> <span class="nav-text">b.初始响应：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#c-事件分级："><span class="nav-number">1.3.0.2.3.</span> <span class="nav-text">c.事件分级：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#d-响应后的事件调查"><span class="nav-number">1.3.0.2.4.</span> <span class="nav-text">d.响应后的事件调查</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抑制处理阶段"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">抑制处理阶段</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#应急响应基本流程"><span class="nav-number">1.4.</span> <span class="nav-text">应急响应基本流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应急响应的目标"><span class="nav-number">1.5.</span> <span class="nav-text">应急响应的目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考文档"><span class="nav-number">2.</span> <span class="nav-text">参考文档</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZSC0810</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
