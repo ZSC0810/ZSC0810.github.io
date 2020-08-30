@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="“只有不努力的黑客，没有攻不破的系统”。 在SRC漏洞挖掘或渗透测试中，信息收集占很大一部分，能收集到别人收集不到的资产，就能挖到别人挖不到的洞。 target:日日顺 www.rrswl.com（60.209.105.206） 基础信息企业运营状况，规模，业务分布 系统信息覆盖面 应用信息0/1day 漏洞 服务信息历史漏洞 人员信息构造字典、社工 防护信息防护绕过 信息收集流程1、厂商信息收集">
+<meta property="og:type" content="article">
+<meta property="og:title" content="渗透测试之资产信息收集">
+<meta property="og:url" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/index.html">
+<meta property="og:site_name" content="ZSC0810の博客">
+<meta property="og:description" content="“只有不努力的黑客，没有攻不破的系统”。 在SRC漏洞挖掘或渗透测试中，信息收集占很大一部分，能收集到别人收集不到的资产，就能挖到别人挖不到的洞。 target:日日顺 www.rrswl.com（60.209.105.206） 基础信息企业运营状况，规模，业务分布 系统信息覆盖面 应用信息0/1day 漏洞 服务信息历史漏洞 人员信息构造字典、社工 防护信息防护绕过 信息收集流程1、厂商信息收集">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310091341263.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310091621886.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310091759784.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310091905761.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310092130296.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310092151932.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310092454624.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310093932196.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310094026977.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310095211557.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310095336686.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310102036804.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310112003468.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310112220154.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310113138322.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310113231249.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310114030647.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310121247331.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310121335693.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310121510571.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310122339097.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310123737415.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310123831886.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310123909835.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310135206064.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310135637299.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310141410906.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310143356158.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310144659576.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310144815896.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310144911461.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310145443905.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310150111333.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310150257524.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310150654716.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310153832463.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310155000824.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310164400003.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310164929726.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310165053280.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310165339476.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310165548512.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310165611184.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310165927846.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310165942138.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310170025548.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310173053565.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310173107920.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310191832669.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310191922942.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310194134092.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310201314012.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310201821242.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310201802580.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310201920947.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310202146499.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311075505132.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/clip_image002.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311080702809.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311081100581.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311081138688.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311084346030.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311084445868.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311085149871.png">
+<meta property="og:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200311085641514.png">
+<meta property="og:updated_time" content="2020-04-27T16:35:02.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="渗透测试之资产信息收集">
+<meta name="twitter:description" content="“只有不努力的黑客，没有攻不破的系统”。 在SRC漏洞挖掘或渗透测试中，信息收集占很大一部分，能收集到别人收集不到的资产，就能挖到别人挖不到的洞。 target:日日顺 www.rrswl.com（60.209.105.206） 基础信息企业运营状况，规模，业务分布 系统信息覆盖面 应用信息0/1day 漏洞 服务信息历史漏洞 人员信息构造字典、社工 防护信息防护绕过 信息收集流程1、厂商信息收集">
+<meta name="twitter:image" content="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/image-20200310091341263.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/">
+
+
+
+
+
+  <title>渗透测试之资产信息收集 | ZSC0810の博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ZSC0810の博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录成长中的点点滴滴</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/08/渗透测试之资产信息收集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ZSC0810">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ZSC0810の博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">渗透测试之资产信息收集</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-08T10:06:38+08:00">
+                2020-03-08
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2020-04-28T00:35:02+08:00">
+                2020-04-28
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  9.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  37
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>“只有不努力的黑客，没有攻不破的系统”。</p>
+<p>在SRC漏洞挖掘或渗透测试中，信息收集占很大一部分，能收集到别人收集不到的资产，就能挖到别人挖不到的洞。</p>
+<h1 id="target"><a href="#target" class="headerlink" title="target:"></a>target:</h1><p>日日顺 <a href="http://www.rrswl.com（60.209.105.206）" target="_blank" rel="noopener">www.rrswl.com（60.209.105.206）</a></p>
+<h2 id="基础信息"><a href="#基础信息" class="headerlink" title="基础信息"></a>基础信息</h2><p>企业运营状况，规模，业务分布</p>
+<h2 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h2><p>覆盖面</p>
+<h2 id="应用信息"><a href="#应用信息" class="headerlink" title="应用信息"></a>应用信息</h2><p>0/1day 漏洞</p>
+<h2 id="服务信息"><a href="#服务信息" class="headerlink" title="服务信息"></a>服务信息</h2><p>历史漏洞</p>
+<h2 id="人员信息"><a href="#人员信息" class="headerlink" title="人员信息"></a>人员信息</h2><p>构造字典、社工</p>
+<h2 id="防护信息"><a href="#防护信息" class="headerlink" title="防护信息"></a>防护信息</h2><p>防护绕过</p>
+<h1 id="信息收集流程"><a href="#信息收集流程" class="headerlink" title="信息收集流程"></a>信息收集流程</h1><h2 id="1、厂商信息收集"><a href="#1、厂商信息收集" class="headerlink" title="1、厂商信息收集"></a>1、厂商信息收集</h2><p>whois 启信宝 天眼查 域名备案</p>
+<p>服务供应商 第三方厂商系统</p>
+<p><a href="https://www.qixin.com/" target="_blank" rel="noopener">https://www.qixin.com/</a></p>
+<p>初步得到几个域名 通过备案号可以查询兄弟域名，</p>
+<h2 id="2、资产归属判断"><a href="#2、资产归属判断" class="headerlink" title="2、资产归属判断"></a>2、资产归属判断</h2><p>whois 备案信息 域名证书、数字签名、logo、title</p>
+<h2 id="3、资产收集维度"><a href="#3、资产收集维度" class="headerlink" title="3、资产收集维度"></a>3、资产收集维度</h2><p>WEB网站 WAP（手机端）</p>
+<p>APP PC客户端</p>
+<p>微信公众号、微信小程序、支付宝小程序</p>
+<p>QQ 钉钉 企业微信 微信群 QQ群</p>
+<h2 id="4、资产收集内容"><a href="#4、资产收集内容" class="headerlink" title="4、资产收集内容"></a>4、资产收集内容</h2><p>子域名、IP、C段、旁站</p>
+<p>WEB路径、参数名、文件名、协议、数据包类型</p>
+<p>邮箱、ID、用户名、密码、手机号、员工工号、重要系统密码规则</p>
+<p>身份证号、企业资质证书、法人信息</p>
+<h1 id="收集域名信息"><a href="#收集域名信息" class="headerlink" title="收集域名信息"></a>收集域名信息</h1><p>知道目标域名之后，我们要做的第一件事情就是获取域名的注册信息，包括该域名的DNS服务器信息和注册人的联系信息等。</p>
+<h2 id="Whois-查询"><a href="#Whois-查询" class="headerlink" title="Whois 查询"></a>Whois 查询</h2><p>Whois 简单来说，就是一个用来查询域名是否已经被注册，以及注册域名的详细信息的数据库（如域名所有人、域名注册商、域名注册日期和过期日期、DNS等）。通过域名Whois服务器查询，可以==查询域名归属者联系方式，以及注册和到期时间==。</p>
+<h3 id="Kali下whois查询"><a href="#Kali下whois查询" class="headerlink" title="Kali下whois查询"></a>Kali下whois查询</h3><p><a href="https://www.kali.org/downloads/" target="_blank" rel="noopener">https://www.kali.org/downloads/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310091341263.png" alt="image-20200310091341263"></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310091621886.png" alt="image-20200310091621886"></p>
+<h3 id="域名Whois查询-站长之家"><a href="#域名Whois查询-站长之家" class="headerlink" title="域名Whois查询 - 站长之家"></a>域名Whois查询 - 站长之家</h3><p><a href="http://whois.chinaz.com/" target="_blank" rel="noopener">http://whois.chinaz.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310091759784.png" alt="image-20200310091759784"></p>
+<h3 id="Whois-爱站"><a href="#Whois-爱站" class="headerlink" title="Whois 爱站"></a>Whois 爱站</h3><p> <a href="http://whois.aizhan.com/" target="_blank" rel="noopener">http://whois.aizhan.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310091905761.png" alt="image-20200310091905761"></p>
+<h3 id="ip138-（可查询子域名）"><a href="#ip138-（可查询子域名）" class="headerlink" title="ip138 （可查询子域名）"></a>ip138 （可查询子域名）</h3><p><a href="https://site.ip138.com/" target="_blank" rel="noopener">https://site.ip138.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310092130296.png" alt="image-20200310092130296"></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310092151932.png" alt="image-20200310092151932"></p>
+<h3 id="Whois-Lookup"><a href="#Whois-Lookup" class="headerlink" title="Whois Lookup"></a>Whois Lookup</h3><p> <a href="https://www.whois.net/" target="_blank" rel="noopener">https://www.whois.net/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310092454624.png" alt="image-20200310092454624"></p>
+<h3 id="ICANN-Lookup"><a href="#ICANN-Lookup" class="headerlink" title="ICANN Lookup"></a>ICANN Lookup</h3><p><a href="https://lookup.icann.org/" target="_blank" rel="noopener">https://lookup.icann.org/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310093932196.png" alt="image-20200310093932196"></p>
+<p>域名信息查询 - 腾讯云</p>
+<p><a href="https://whois.cloud.tencent.com/domain?domain=" target="_blank" rel="noopener">https://whois.cloud.tencent.com/domain?domain=</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310094026977.png" alt="image-20200310094026977"></p>
+<h3 id="nicolasbouliane"><a href="#nicolasbouliane" class="headerlink" title="nicolasbouliane"></a>nicolasbouliane</h3><p><a href="http://nicolasbouliane.com/utils/whois/?url=http://baidu.com" target="_blank" rel="noopener">http://nicolasbouliane.com/utils/whois/?url=http://baidu.com</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310095211557.png" alt="image-20200310095211557"></p>
+<h3 id="新网-whois信息查询"><a href="#新网-whois信息查询" class="headerlink" title="新网 whois信息查询"></a>新网 whois信息查询</h3><p> <a href="http://whois.xinnet.com/" target="_blank" rel="noopener">http://whois.xinnet.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310095336686.png" alt="image-20200310095336686"></p>
+<h3 id="IP-WHOIS查询-站长工具"><a href="#IP-WHOIS查询-站长工具" class="headerlink" title="IP WHOIS查询 - 站长工具"></a>IP WHOIS查询 - 站长工具</h3><p> <a href="http://tool.chinaz.com/ipwhois/" target="_blank" rel="noopener">http://tool.chinaz.com/ipwhois/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310102036804.png" alt="image-20200310102036804"></p>
+<h2 id="备案信息查询"><a href="#备案信息查询" class="headerlink" title="备案信息查询"></a>备案信息查询</h2><p>国内网站注册需要向国家有关部门申请备案，防止网站从事非法活动，而国外网站不需要备案。</p>
+<h3 id="ICP备案查询网"><a href="#ICP备案查询网" class="headerlink" title="ICP备案查询网"></a>ICP备案查询网</h3><p><a href="http://www.beianbeian.com/" target="_blank" rel="noopener">http://www.beianbeian.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310112003468.png" alt="image-20200310112003468"></p>
+<h3 id="ICP备案查询-站长工具"><a href="#ICP备案查询-站长工具" class="headerlink" title="ICP备案查询 - 站长工具"></a>ICP备案查询 - 站长工具</h3><p><a href="http://icp.chinaz.com/" target="_blank" rel="noopener">http://icp.chinaz.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310112220154.png" alt="image-20200310112220154"></p>
+<h3 id="SEO综合查询-爱站"><a href="#SEO综合查询-爱站" class="headerlink" title="SEO综合查询 - 爱站"></a>SEO综合查询 - 爱站</h3><p><a href="https://www.aizhan.com/seo/" target="_blank" rel="noopener">https://www.aizhan.com/seo/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310113138322.png" alt="image-20200310113138322"></p>
+<h3 id="批量查询-站长工具"><a href="#批量查询-站长工具" class="headerlink" title="批量查询 - 站长工具"></a>批量查询 - 站长工具</h3><p><a href="http://icp.chinaz.com/searchs" target="_blank" rel="noopener">http://icp.chinaz.com/searchs</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310113231249.png" alt="image-20200310113231249"></p>
+<h3 id="工业和信息化部ICP-IP-域名信息备案管理-（太卡了）"><a href="#工业和信息化部ICP-IP-域名信息备案管理-（太卡了）" class="headerlink" title="工业和信息化部ICP/IP/域名信息备案管理 （太卡了）"></a>工业和信息化部ICP/IP/域名信息备案管理 （太卡了）</h3><p><a href="http://www.beian.miit.gov.cn/publish/query/indexFirst.action" target="_blank" rel="noopener">http://www.beian.miit.gov.cn/publish/query/indexFirst.action</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310114030647.png" alt="image-20200310114030647"></p>
+<h2 id="信用信息查询"><a href="#信用信息查询" class="headerlink" title="信用信息查询"></a>信用信息查询</h2><p>国家企业信用信息公示系统</p>
+<p> <a href="http://www.gsxt.gov.cn/index.html" target="_blank" rel="noopener">http://www.gsxt.gov.cn/index.html</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310121247331.png" alt="image-20200310121247331"></p>
+<p>全国企业信息查询 </p>
+<p><a href="http://company.xizhi.com/" target="_blank" rel="noopener">http://company.xizhi.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310121335693.png" alt="image-20200310121335693"></p>
+<p>个人信用查询搜索-企业信息查询搜索-统一社会信用代码查询-信用中国 </p>
+<p><a href="https://www.creditchina.gov.cn/" target="_blank" rel="noopener">https://www.creditchina.gov.cn/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310121510571.png" alt="image-20200310121510571"></p>
+<h2 id="IP反查站点的站"><a href="#IP反查站点的站" class="headerlink" title="IP反查站点的站"></a>IP反查站点的站</h2><h3 id="Dnslytics"><a href="#Dnslytics" class="headerlink" title="Dnslytics"></a>Dnslytics</h3><p>Dnslytics地址：<a href="https://dnslytics.com/" target="_blank" rel="noopener">https://dnslytics.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310122339097.png" alt="image-20200310122339097"></p>
+<h3 id="浏览器插件"><a href="#浏览器插件" class="headerlink" title="浏览器插件"></a>浏览器插件</h3><h2 id="收集相关应用信息"><a href="#收集相关应用信息" class="headerlink" title="收集相关应用信息"></a>收集相关应用信息</h2><p>天眼查 </p>
+<p><a href="https://www.tianyancha.com/" target="_blank" rel="noopener">https://www.tianyancha.com/</a></p>
+<p>企查查 </p>
+<p><a href="https://www.qichacha.com/" target="_blank" rel="noopener">https://www.qichacha.com/</a></p>
+<h2 id="微信公众号-amp-微博"><a href="#微信公众号-amp-微博" class="headerlink" title="微信公众号&amp;微博"></a>微信公众号&amp;微博</h2><h3 id="天眼查"><a href="#天眼查" class="headerlink" title="天眼查"></a>天眼查</h3><p>根据前面获取的企业名称可以获取目标企业的微信公众号、微博、备案站点、软件著作权等信息。</p>
+<p>天眼查-商业安全工具 <a href="https://www.tianyancha.com/" target="_blank" rel="noopener">https://www.tianyancha.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310123737415.png" alt="image-20200310123737415"></p>
+<h3 id="微信公众号"><a href="#微信公众号" class="headerlink" title="微信公众号"></a>微信公众号</h3><h3 id><a href="#" class="headerlink" title></a><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310123831886.png" alt="image-20200310123831886"></h3><p><a href="https://weixin.sogou.com" target="_blank" rel="noopener">https://weixin.sogou.com</a></p>
+<p>微信搜索</p>
+<p>小程序抓包的问题，微信7.0 校验抓不到，文件传输助手，PC端抓包</p>
+<h3 id="微博"><a href="#微博" class="headerlink" title="微博"></a>微博</h3><p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310123909835.png" alt="image-20200310123909835"></p>
+<h3 id="APP"><a href="#APP" class="headerlink" title="APP"></a>APP</h3><p>各大APP应用商店:应用宝，豌豆荚 google play</p>
+<p>ASO网站</p>
+<p>抓包 反编译 获取资产信息</p>
+<h3 id="七麦数据"><a href="#七麦数据" class="headerlink" title="七麦数据"></a>七麦数据</h3><p><a href="https://www.qimai.cn/" target="_blank" rel="noopener">https://www.qimai.cn/</a></p>
+<p>通过当前APP查询同开发商应用，得到目标所有APP应用</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310135206064.png" alt="image-20200310135206064"></p>
+<h3 id="AppStore"><a href="#AppStore" class="headerlink" title="AppStore"></a>AppStore</h3><p><a href="https://apps.apple.com/" target="_blank" rel="noopener">https://apps.apple.com/</a></p>
+<p>通过当前APP查询同开发商应用，得到目标所有APP应用</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310135637299.png" alt="image-20200310135637299"></p>
+<h1 id="收集子域名信息"><a href="#收集子域名信息" class="headerlink" title="收集子域名信息"></a>收集子域名信息</h1><p>子域名也就是二级域名，是指顶级域名下的域名。假设我们的目标网络规模比较大，直接从主域入手显然是很不理智的，因为对于这种规模的目标，一般其主域都是重点防护区域，所以不如先进入目标的某个子域，然后再想办法迂回接近真正的目标，这无疑是个比较好的选择。那么问题来了，怎样才能尽可能多地搜集目标的高价值子域呢？常用的方法有以下这几种。</p>
+<h2 id="在线平台"><a href="#在线平台" class="headerlink" title="在线平台"></a>在线平台</h2><h3 id="第三方平台查询"><a href="#第三方平台查询" class="headerlink" title="第三方平台查询"></a>第三方平台查询</h3><p>主要是一些第三方网站和一些博主提供的服务</p>
+<p>ip138 <a href="https://site.ip138.com/" target="_blank" rel="noopener">https://site.ip138.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310141410906.png" alt="image-20200310141410906"></p>
+<p>t1h2ua <a href="https://www.t1h2ua.cn/tools/" target="_blank" rel="noopener">https://www.t1h2ua.cn/tools/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310143356158.png" alt="image-20200310143356158"></p>
+<p>zcjun <a href="http://z.zcjun.com/" target="_blank" rel="noopener">http://z.zcjun.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310144659576.png" alt="image-20200310144659576"></p>
+<h3 id="权重综合查询"><a href="#权重综合查询" class="headerlink" title="权重综合查询"></a>权重综合查询</h3><p>爱站 <a href="https://www.aizhan.com/seo/" target="_blank" rel="noopener">https://www.aizhan.com/seo/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310144815896.png" alt="image-20200310144815896"></p>
+<p>站长工具 <a href="http://rank.chinaz.com/all/" target="_blank" rel="noopener">http://rank.chinaz.com/all/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310144911461.png" alt="image-20200310144911461"></p>
+<h3 id="IP反查绑定域名网站"><a href="#IP反查绑定域名网站" class="headerlink" title="IP反查绑定域名网站"></a>IP反查绑定域名网站</h3><p>IP关联域名，大部分网站一个IP多个域名</p>
+<p><a href="http://s.tool.chinaz.com/same?s" target="_blank" rel="noopener">http://s.tool.chinaz.com/same?s</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310145443905.png" alt="image-20200310145443905"></p>
+<p><a href="http://dns.aizhan.com/" target="_blank" rel="noopener">http://dns.aizhan.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310150111333.png" alt="image-20200310150111333"></p>
+<h2 id="资产搜索引擎"><a href="#资产搜索引擎" class="headerlink" title="资产搜索引擎"></a>资产搜索引擎</h2><p>google、shodan、FOFA、zoomeye</p>
+<h3 id="Google语法查询"><a href="#Google语法查询" class="headerlink" title="Google语法查询"></a>Google语法查询</h3><p>搜索子域名 “site:xxxxx”</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310150257524.png" alt="image-20200310150257524"></p>
+<h3 id="FOFA语法查询"><a href="#FOFA语法查询" class="headerlink" title="FOFA语法查询"></a>FOFA语法查询</h3><p><a href="https://fofa.so/" target="_blank" rel="noopener">https://fofa.so/</a></p>
+<p>搜索子域名 “domain:xxxxx”</p>
+<p>domain=”rrswl.com”</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310150654716.png" alt="image-20200310150654716"></p>
+<h2 id="工具枚举"><a href="#工具枚举" class="headerlink" title="工具枚举"></a>工具枚举</h2><p>常用子域名工具如下（Github上都可搜到）</p>
+<p>OneForAll:接口多，速度快<br>Layer<br>Sublist3r<br>subDomainsBrute</p>
+<p>Amass: OWASP更新维护</p>
+<h3 id="OneForAll"><a href="#OneForAll" class="headerlink" title="OneForAll"></a>OneForAll</h3><p>OneForAll是一款功能强大的子域收集工具，拥有多个模块和接口扫描，收集子域信息很全，包括子域、子域IP、子域常用端口、子域Title、子域Banner、子域状态等。</p>
+<p>项目地址：<code>https://github.com/shmilylty/OneForAll</code></p>
+<p>子域名收集：<code>python3 oneforall.py --target=target.com run</code></p>
+<h3 id="Layer"><a href="#Layer" class="headerlink" title="Layer"></a>Layer</h3><p>Layer子域名挖掘机的使用方法比较简单，在域名对话框中直接输入域名就可以进行扫描，它的显示界面比较细致，有域名、解析IP、开放端口、Web<strong>服务器和网站状态等</strong></p>
+<h3 id="subDomainsBrute"><a href="#subDomainsBrute" class="headerlink" title="subDomainsBrute"></a>subDomainsBrute</h3><p>subDomainsBrute的特点是可以用小字典递归地发现三级域名、四级域名,甚至五级域名等不容易被探测到的域名。</p>
+<p>项目地址：<code>https://github.com/lijiejie/subDomainsBrute</code></p>
+<p>子域名收集：<code>python subDomainsbrute.py xtarget.com</code></p>
+<h3 id="Sublist3r"><a href="#Sublist3r" class="headerlink" title="Sublist3r"></a>Sublist3r</h3><p>Sublist3r也是一个比较常用的工具， 它能列举多种资源，如在Google、Yahoo、 Bing、 Baidu和Ask等搜索引擎中可查到的子域名，还可以列出Netcraft、VirusTotal、ThreatCrowd、 DNSdumpster、SSL Certificates、和Reverse DNS查到的子域名。</p>
+<p>项目地址：<code>https://github.com/aboul3la/Sublist3r</code></p>
+<p>子域名收集：<code>python sublist3r.py -d target.com -b -t 50 -p 80,443,21,22</code></p>
+<h2 id="证书透明度公开日志枚举"><a href="#证书透明度公开日志枚举" class="headerlink" title="证书透明度公开日志枚举"></a>证书透明度公开日志枚举</h2><p>证书透明度(Certificate Transparency, CT)是证书授权机构(CA) 的一个项目，证书授权机构会将每个SSL/TLS证书发布到公共日志中。一个SSL/TLS证书通常包含域名、子域名和邮件地址， 这些也经常成为攻击者非常希望获得的有用信息。查找某个域名所属证书的最简单的方法就是使用搜索引|擎搜索一些公开的CT日志</p>
+<h3 id="在线第三方平台查询"><a href="#在线第三方平台查询" class="headerlink" title="在线第三方平台查询"></a>在线第三方平台查询</h3><p>crt.sh: <a href="https://crt.sh" target="_blank" rel="noopener">https://crt.sh</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310153832463.png" alt="image-20200310153832463"></p>
+<h2 id="DNS域传送漏洞"><a href="#DNS域传送漏洞" class="headerlink" title="DNS域传送漏洞"></a>DNS域传送漏洞</h2><p>目前来看”DNS域传送漏洞”已经很少了。</p>
+<p>常见的DNS记录有以下几类：</p>
+<p>A记录       IP地址记录,记录一个域名对应的IP地址</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310155000824.png" alt="image-20200310155000824">AAAA记录    IPv6地址记录，记录一个域名对应的IPv6地址<br>CNAME记录   别名记录，记录一个主机的别名<br>MX记录      电子邮件交换记录，记录一个邮件域名对应的IP地址<br>NS记录      域名服务器记录 ,记录该域名由哪台域名服务器解析<br>PTR记录     反向记录，也即从IP地址到域名的一条记录<br>TXT记录     记录域名的相关文本信息</p>
+<h2 id="DNS历史解析"><a href="#DNS历史解析" class="headerlink" title="DNS历史解析"></a>DNS历史解析</h2><p><a href="https://community.riskiq.com/search/www.jd.com/subdomains" target="_blank" rel="noopener">https://community.riskiq.com/search/www.jd.com/subdomains</a></p>
+<p><a href="https://dns.bufferover.run/dns?q=jd.com" target="_blank" rel="noopener">https://dns.bufferover.run/dns?q=jd.com</a></p>
+<p><a href="https://securitytrails.com/list/apex_domain/jd.com" target="_blank" rel="noopener">https://securitytrails.com/list/apex_domain/jd.com</a></p>
+<h1 id="查找真实IP"><a href="#查找真实IP" class="headerlink" title="查找真实IP"></a>查找真实IP</h1><p>果挖掘的目标购买了CDN服务，可以直接ping目标的域名，但得到的并非真正的目标Web服务器，只是离我们最近的一台目标节点的CDN服务器，这就导致了我们没法直接得到目标的真实IP段范围。</p>
+<h2 id="CDN简介"><a href="#CDN简介" class="headerlink" title="CDN简介"></a>CDN简介</h2><p>CDN的全称是Content Delivery Network，即内容分发网络。其基本思路是尽可能避开互联网上有可能影响数据传输速度和稳定性的瓶颈和环节，使内容传输的更快、更稳定。通过在==网络各处放置节点服务器==所构成的在现有的互联网基础之上的一层智能虚拟网络，CDN系统能够实时地根据==网络流量和各节点的连接、负载状况以及到用户的距离和响应时间==等综合信息将用户的请求重新导==向离用户最近的服务节点==上。</p>
+<h2 id="国内外CND"><a href="#国内外CND" class="headerlink" title="国内外CND"></a>国内外CND</h2><p>国内常见CDN</p>
+<p>阿里云<br>腾讯云<br>百度云<br>网宿科技(ChinanNet Center)<br>蓝汛<br>金山云<br>UCloud<br>网易云<br>世纪互联<br>七牛云<br>京东云等</p>
+<p>国外常见CDN</p>
+<p>Akamai(阿卡迈)<br>Limelight Networks(简称LLNW)<br>AWS Cloud(亚马逊)<br>Google(谷歌)<br>Comcast(康卡斯特)</p>
+<h2 id="判断目标是否存在CDN"><a href="#判断目标是否存在CDN" class="headerlink" title="判断目标是否存在CDN"></a>判断目标是否存在CDN</h2><p>于CDN需要代价，一般小企业很大几率不会存在CDN服务。</p>
+<p>假如一些企业存在CDN服务，那该如何寻找其真实IP呢，往下看，常见几种手法</p>
+<p>通常通过ping目标主域，观察域名的解析情况，以此来判断其是否使用了CDN</p>
+<p>京东使用CDN 日日顺没有使用</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310164400003.png" alt="image-20200310164400003"></p>
+<h3 id="Nslookup"><a href="#Nslookup" class="headerlink" title="Nslookup"></a>Nslookup</h3><h4 id="不同DNS域名解析"><a href="#不同DNS域名解析" class="headerlink" title="不同DNS域名解析"></a>不同DNS域名解析</h4><p>不同DNS域名解析情况对比，判断其是否使用了CDN</p>
+<p>不同DNS解析结果若不一样，很有可能存在CDN服务</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310164929726.png" alt="image-20200310164929726"></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310165053280.png" alt="image-20200310165053280"></p>
+<h3 id="全国Ping"><a href="#全国Ping" class="headerlink" title="全国Ping"></a>全国Ping</h3><p>利用全国多地区的ping服务器操作，然后对比每个地区ping出的IP结果，查看这些IP是否一致， 如果都是一样的，极有可能不存在CDN。如果IP大多不太一样或者规律性很强，可以尝试查询这些IP的归属地，判断是否存在CDN。</p>
+<p>在线网址</p>
+<p>Ping检测-站长工具 <a href="http://ping.chinaz.com/" target="_blank" rel="noopener">http://ping.chinaz.com/</a></p>
+<p>一样</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310165339476.png" alt="image-20200310165339476"></p>
+<p>不一样</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310165548512.png" alt="image-20200310165548512"></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310165611184.png" alt="image-20200310165611184"></p>
+<p>17CE <a href="https://www.17ce.com/" target="_blank" rel="noopener">https://www.17ce.com/</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310165927846.png" alt="image-20200310165927846"></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310165942138.png" alt="image-20200310165942138"></p>
+<p>测试目标：<a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310170025548.png" alt="image-20200310170025548"></p>
+<h2 id="绕过CDN查找真实IP"><a href="#绕过CDN查找真实IP" class="headerlink" title="绕过CDN查找真实IP"></a>绕过CDN查找真实IP</h2><p>在确认了目标确实用了CDN以后，就需要绕过CDN寻找目标的真实IP，下面介绍一些常规的方法。</p>
+<p>一般的邮件系统都在内部，没有经过CDN的解析，通过利用目标网站的邮箱注册、找回密码或者RSS订阅等功能，查看邮件、寻找邮件头中的邮件服务器域名IP，ping这个邮件服务器的域名,就可以获得目标的真实IP。</p>
+<h3 id="国外请求"><a href="#国外请求" class="headerlink" title="国外请求"></a>国外请求</h3><p>很多时候国内的CDN对国外得覆盖面并不是很广，故此可以利用此特点进行探测。通过国外代理访问就能查看真实IP了，或者通过国外的DNS解析，可能就能得到真实的IP。</p>
+<h4 id="国际Ping"><a href="#国际Ping" class="headerlink" title="国际Ping"></a>国际Ping</h4><p>国际ping测试站点</p>
+<p>ipip <a href="https://tools.ipip.net/newping.php" target="_blank" rel="noopener">https://tools.ipip.net/newping.php</a></p>
+<p>ASM <a href="https://asm.ca.com/en/ping.php" target="_blank" rel="noopener">https://asm.ca.com/en/ping.php</a></p>
+<h3 id="分站域名-amp-C段查询"><a href="#分站域名-amp-C段查询" class="headerlink" title="分站域名&amp;C段查询"></a>分站域名&amp;C段查询</h3><p>很多网站主站的访问量会比较大，所以主站都是挂CDN的，但是分站可能没有挂CDN,可以通过ping二级域名获取分站IP， 可能会出现分站和主站不是同一个IP但在同一个C段下面的情况，从而能判断出目标的真实IP段。</p>
+<h4 id="C段查询"><a href="#C段查询" class="headerlink" title="C段查询"></a>C段查询</h4><h5 id="在线查询"><a href="#在线查询" class="headerlink" title="在线查询"></a>在线查询</h5><p><a href="https://phpinfo.me/bing.php" target="_blank" rel="noopener">https://phpinfo.me/bing.php</a></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310173053565.png" alt="image-20200310173053565"></p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310173107920.png" alt="image-20200310173107920"></p>
+<h5 id="网络资产搜索引擎"><a href="#网络资产搜索引擎" class="headerlink" title="网络资产搜索引擎"></a>网络资产搜索引擎</h5><h6 id="Fofa、Shodan、ZoomEye"><a href="#Fofa、Shodan、ZoomEye" class="headerlink" title="Fofa、Shodan、ZoomEye"></a>Fofa、Shodan、ZoomEye</h6><p><a href="https://fofa.so/" target="_blank" rel="noopener">https://fofa.so/</a></p>
+<p>利用这些网络空间资产搜索引擎来搜索暴露在外的端口信息</p>
+<p>利用语法搜索C段信息</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310191832669.png" alt="image-20200310191832669"></p>
+<h3 id="网站漏洞"><a href="#网站漏洞" class="headerlink" title="网站漏洞"></a>网站漏洞</h3><p>通过网站的信息泄露如phpinfo泄露，github信息泄露，命令执行等漏洞获取真实ip。</p>
+<h4 id="一些测试文件"><a href="#一些测试文件" class="headerlink" title="一些测试文件"></a>一些测试文件</h4><p>phpinfo、test等</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310191922942.png" alt="image-20200310191922942"></p>
+<h4 id="SSRF漏洞"><a href="#SSRF漏洞" class="headerlink" title="SSRF漏洞"></a>SSRF漏洞</h4><p>服务器主动向外发起连接，找到真实IP地址</p>
+<h3 id="查询域名解析记录"><a href="#查询域名解析记录" class="headerlink" title="查询域名解析记录"></a>查询域名解析记录</h3><p>一般网站从部署开始到使用cdn都有一个过程，周期如果较长的话 则可以通过这类历史解析记录查询等方式获取源站ip，查看IP与域名绑定的历史记录，可能会存在使用CDN前的记录。</p>
+<p>在线网站查询</p>
+<p>dnsdb <a href="https://www.dnsdb.io" target="_blank" rel="noopener">https://www.dnsdb.io</a></p>
+<p>NETCRAFT <a href="https://sitereport.netcraft.com/?url=" target="_blank" rel="noopener">https://sitereport.netcraft.com/?url=</a></p>
+<p>viewdns <a href="https://viewdns.info/" target="_blank" rel="noopener">https://viewdns.info/</a></p>
+<p>threatbook <a href="https://x.threatbook.cn/" target="_blank" rel="noopener">https://x.threatbook.cn/</a></p>
+<p>securitytrails <a href="https://securitytrails.com/" target="_blank" rel="noopener">https://securitytrails.com/</a></p>
+<h3 id="目标网站APP应用"><a href="#目标网站APP应用" class="headerlink" title="目标网站APP应用"></a>目标网站APP应用</h3><p>如果目标网站有自己的App，可以尝试利用Fiddler或Burp Suite抓取App的请求，从里面找到目标的真实IP。</p>
+<h3 id="网络空间引擎搜索"><a href="#网络空间引擎搜索" class="headerlink" title="网络空间引擎搜索"></a>网络空间引擎搜索</h3><p>shodan、FOFA、zoomeye</p>
+<h1 id="AS自治域"><a href="#AS自治域" class="headerlink" title="AS自治域"></a>AS自治域</h1><p>在网络中一个自治系统(Autonomous System, AS)是一个有权自主地决定在本系统中应采用何种路由协议的小型单位。这个网络单位可以是一个简单的网络也可以是一个由一个或多个普通的网络管理员来控制的网络群体，它是一个单独的可管理的网络单元（例如一所大学，一个企业或者一个公司个体）。</p>
+<p>一个自治系统有时也被称为是一个路由选择域（routing domain）。一个自治系统将会分配一个全局的唯一的16位号码，这个号码被称为自治系统号（ASN）。因此可以通过ASN号来查找可能相关的IP，例如：</p>
+<p>whois -h whois.radb.net – ‘-i origin AS111111’ | grep -Eo “([0-9.]+){4}/[0-9]+” | uniq<br>nmap –script targets-asn –script-args targets-asn.asn=15169</p>
+<h6 id="bgp-he-net用来查询一些域名归属以及组织IP段信息"><a href="#bgp-he-net用来查询一些域名归属以及组织IP段信息" class="headerlink" title="bgp.he.net用来查询一些域名归属以及组织IP段信息"></a>bgp.he.net用来查询一些域名归属以及组织IP段信息</h6><p><a href="https://bgp.he.net/dns/jd.com#_ipinfo" target="_blank" rel="noopener">https://bgp.he.net/dns/jd.com#_ipinfo</a></p>
+<p>针对资产集中，有自己的自治域，针对国内大厂效果好</p>
+<p><a href="https://www.robtex.com/dns-lookup/www.baidu.com" target="_blank" rel="noopener">https://www.robtex.com/dns-lookup/www.baidu.com</a></p>
+<h1 id="收集常用端口信息"><a href="#收集常用端口信息" class="headerlink" title="收集常用端口信息"></a>收集常用端口信息</h1><p>在对目标进行漏洞挖掘的过程中，对端口信息的收集是一个很重要的过程， 通过扫描服务器开放的端口以及从该端口判断服务器上存在的服务，就可以对症下药，便于我们渗透目标服务器。</p>
+<p>所以在端口渗透信息的收集过程中，我们需要关注常见应用的默认端口和在端口上运行的服务。</p>
+<p>端口一般是指TCP/IP协议中的端口，端口号的范围是从0-65535。</p>
+<h2 id="常见端口-amp-解析-amp-总结"><a href="#常见端口-amp-解析-amp-总结" class="headerlink" title="常见端口&amp;解析&amp;总结"></a>常见端口&amp;解析&amp;总结</h2><p>常用的端口利用及解析总结</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">端口：21 服务：FTP/TFTP/VSFTPD 总结：爆破/嗅探/溢出/后门</span><br><span class="line">端口：22 服务：ssh远程连接      总结：爆破/openssh漏洞</span><br><span class="line">端口：23 服务：Telnet远程连接   总结：爆破/嗅探/弱口令</span><br><span class="line">端口：25 服务：SMTP邮件服务     总结：邮件伪造</span><br><span class="line">端口：53 服务：DNS域名解析系统   总结：域传送/劫持/缓存投毒/欺骗</span><br><span class="line">端口：67/68 服务：dhcp服务      总结：劫持/欺骗</span><br><span class="line">端口：110 服务：pop3           总结：爆破/嗅探</span><br><span class="line">端口：139 服务：Samba服务       总结：爆破/未授权访问/远程命令执行</span><br><span class="line">端口：143 服务：Imap协议        总结：爆破161SNMP协议爆破/搜集目标内网信息</span><br><span class="line">端口：389 服务：Ldap目录访问协议 总结：注入/未授权访问/弱口令</span><br><span class="line">端口：445 服务：smb            总结：ms17-010/端口溢出</span><br><span class="line">端口：512/513/514 服务：Linux Rexec服务 总结：爆破/Rlogin登陆</span><br><span class="line">端口：873 服务：Rsync服务               总结：文件上传/未授权访问</span><br><span class="line">端口：1080 服务：socket                总结：爆破</span><br><span class="line">端口：1352 服务：Lotus domino邮件服务   总结：爆破/信息泄漏</span><br><span class="line">端口：1433 服务：mssql                 总结：爆破/注入/SA弱口令</span><br><span class="line">端口：1521 服务：oracle       总结：爆破/注入/TNS爆破/反弹shell2049Nfs服务配置不当</span><br><span class="line">端口：2181 服务：zookeeper服务         总结：未授权访问</span><br><span class="line">端口：2375 服务：docker remote api    总结：未授权访问</span><br><span class="line">端口：3306 服务：mysql                总结：爆破/注入</span><br><span class="line">端口：3389 服务：Rdp远程桌面链接        总结：爆破/shift后门</span><br><span class="line">端口：4848 服务：GlassFish控制台       总结：爆破/认证绕过</span><br><span class="line">端口：5000 服务：sybase/DB2数据库      总结：爆破/注入/提权</span><br><span class="line">端口：5432 服务：postgresql           总结：爆破/注入/缓冲区溢出</span><br><span class="line">端口：5632 服务：pcanywhere服务        总结：抓密码/代码执行</span><br><span class="line">端口：5900 服务：vnc                  总结：爆破/认证绕过</span><br><span class="line">端口：6379 服务：Redis数据库           总结：未授权访问/爆破</span><br><span class="line">端口：7001/7002 服务：weblogic        总结：java反序列化/控制台弱口令</span><br><span class="line">端口：80/443 服务：http/https         总结：web应用漏洞/心脏滴血</span><br><span class="line">端口：8069 服务：zabbix服务            总结：远程命令执行/注入</span><br><span class="line">端口：8161 服务：activemq             总结：弱口令/写文件</span><br><span class="line">端口：8080/8089 服务：Jboss/Tomcat/Resin 总结：爆破/PUT文件上传/反序列化</span><br><span class="line">端口：8083/8086 服务：influxDB        总结：未授权访问</span><br><span class="line">端口：9000 服务：fastcgi              总结：远程命令执行</span><br><span class="line">端口：9090 服务：Websphere            总结：控制台爆破/java反序列化/弱口令</span><br><span class="line">端口：9200/9300 服务：elasticsearch   总结：远程代码执行</span><br><span class="line">端口：11211 服务：memcached           总结：未授权访问</span><br><span class="line">端口：27017/27018 服务：mongodb       总结：未授权访问/爆破</span><br></pre></td></tr></table></figure>
+
+<p>详细参考：<a href="https://mp.weixin.qq.com/s/Y0PPqyHysBPmgmDw2KmHYw" target="_blank" rel="noopener">掘安攻防实验室</a></p>
+<h2 id="扫描工具"><a href="#扫描工具" class="headerlink" title="扫描工具"></a>扫描工具</h2><h3 id="常用扫描工具"><a href="#常用扫描工具" class="headerlink" title="常用扫描工具"></a>常用扫描工具</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Nmap  </span><br><span class="line"></span><br><span class="line">Masscan  </span><br><span class="line"></span><br><span class="line">ZMap  </span><br><span class="line"></span><br><span class="line">御剑高速TCP端口扫描工具</span><br><span class="line"></span><br><span class="line">御剑高速端口扫描工具</span><br><span class="line"></span><br><span class="line">IISPutScanner</span><br><span class="line"></span><br><span class="line">IISPutScanner增强版-DotNetScan v1.1 Beta</span><br><span class="line"></span><br><span class="line">masnmapscan</span><br></pre></td></tr></table></figure>
+
+<h3 id="常用扫描工具使用"><a href="#常用扫描工具使用" class="headerlink" title="常用扫描工具使用"></a>常用扫描工具使用</h3><h4 id="1、nmap"><a href="#1、nmap" class="headerlink" title="1、nmap"></a>1、nmap</h4><p>项目地址：<code>https://github.com/nmap/nmap</code></p>
+<h5 id="扫描多个IP"><a href="#扫描多个IP" class="headerlink" title="扫描多个IP"></a>扫描多个IP</h5><p>扫描整个子网 nmap 192.168.6.1/24<br>                         nmap 192.168.1.1/16<br>                         nmap 192.168.1-30.1-254<br>                         nmap 192.168.1-254.6<br>扫描多个主机 namp 192.168.6.2 192.168.6.6<br>扫描一个小范围 nmap 192.168.6.2-10<br>扫描txt内的ip列表  nmap -iL text.txt<br>扫描除某个目标外   nmap 192.168.6.1/24 -exclude 192.168.6.25</p>
+<h5 id="绕过Firewalld扫描主机端口"><a href="#绕过Firewalld扫描主机端口" class="headerlink" title="绕过Firewalld扫描主机端口"></a>绕过Firewalld扫描主机端口</h5><p>通过不同的协议(TCP半连接、TCP全连接、ICMP、UDP等)的扫描绕过Firewalld的限制</p>
+<p>nmap -sP 192.33.6.128<br>nmap -sT 192.33.6.128<br>nmap -sS 192.33.6.128<br>nmap -sU 192.33.6.128<br>nmap -sF 192.33.6.128<br>nmap -sX 192.33.6.128<br>nmap -sN 192.33.6.128</p>
+<h5 id="初步扫描端口信息"><a href="#初步扫描端口信息" class="headerlink" title="初步扫描端口信息"></a>初步扫描端口信息</h5><p>nmap -T4 -A -v -Pn 192.168.1.1/24 -p 21,22,23,25,80,81,82,83,88,110,143,443,445,512,513,514,1433,1521,2082,2083,2181,2601,2604,3128,3306,3389,3690,4848,5432,5900,5984,6379,7001,7002,8069,8080,8081,8086,8088,9200,9300,11211,10000,27017,27018,50000,50030,50070 -oN nmap_result.txt（-oA :输出所有格式）</p>
+<h5 id="扫描端口并且标记可以爆破的服务"><a href="#扫描端口并且标记可以爆破的服务" class="headerlink" title="扫描端口并且标记可以爆破的服务"></a>扫描端口并且标记可以爆破的服务</h5><p>nmap 127.0.0.1 –script=ftp-brute,imap-brute,smtp-brute,pop3-brute,mongodb-brute,redis-brute,ms-sql-brute,rlogin-brute,rsync-brute,mysql-brute,pgsql-brute,oracle-sid-brute,oracle-brute,rtsp-url-brute,snmp-brute,svn-brute,telnet-brute,vnc-brute,xmpp-brute</p>
+<h5 id="判断常见的漏洞并扫描端口"><a href="#判断常见的漏洞并扫描端口" class="headerlink" title="判断常见的漏洞并扫描端口"></a>判断常见的漏洞并扫描端口</h5><p>nmap 127.0.0.1 –script=auth,vuln</p>
+<h5 id="精确判断漏洞并扫描端口"><a href="#精确判断漏洞并扫描端口" class="headerlink" title="精确判断漏洞并扫描端口"></a>精确判断漏洞并扫描端口</h5><p>nmap 127.0.0.1 –script=dns-zone-transfer,ftp-anon,ftp-proftpd-backdoor,ftp-vsftpd-backdoor,ftp-vuln-cve2010-4221,http-backup-finder,http-cisco-anyconnect,http-iis-short-name-brute,http-put,http-php-version,http-shellshock,http-robots.txt,http-svn-enum,http-webdav-scan,iis-buffer-overflow,iax2-version,memcached-info,mongodb-info,msrpc-enum,ms-sql-info,mysql-info,nrpe-enum,pptp-version,redis-info,rpcinfo,samba-vuln-cve-2012-1182,smb-vuln-ms08-067,smb-vuln-ms17-010,snmp-info,sshv1,xmpp-info,tftp-enum,teamspeak2-version</p>
+<h5 id="nmap-输出美化"><a href="#nmap-输出美化" class="headerlink" title="nmap 输出美化"></a>nmap 输出美化</h5><p>apt-get install xsltproc</p>
+<h4 id="2、Masscan"><a href="#2、Masscan" class="headerlink" title="2、Masscan"></a>2、Masscan</h4><p>项目地址：<code>https://github.com/robertdavidgraham/masscan</code></p>
+<p>Masscan主要是真对全网进行端口扫描</p>
+<h4 id="masscan"><a href="#masscan" class="headerlink" title="masscan"></a>masscan</h4><p>号称世界上最快的扫描软件，可以在3分钟内扫描整个互联网端口之所以比namp快很多，采用了异步传输，无状态的扫描方式</p>
+<h5 id="Namp与Masscan的对比"><a href="#Namp与Masscan的对比" class="headerlink" title="Namp与Masscan的对比"></a>Namp与Masscan的对比</h5><p>都可以扫描端口</p>
+<p>nmap速度较慢，但可以扫描操作系统、端口的服务和版本等详细信息</p>
+<p>masscan速度快，但只能扫描端口</p>
+<p>为提高扫描效率，可以先使用masscan扫描开启的端口，再用nmap进行详细的扫描</p>
+<h4 id="3、Zmap"><a href="#3、Zmap" class="headerlink" title="3、Zmap"></a>3、Zmap</h4><p>项目地址：<code>https://github.com/zmap/zmap</code></p>
+<p>Zmap主要是真对全网进行端口扫描</p>
+<h4 id="4、masnmapscan"><a href="#4、masnmapscan" class="headerlink" title="4、masnmapscan"></a>4、masnmapscan</h4><p>项目地址：<code>https://github.com/hellogoldsnakeman/masnmapscan-V1.0</code></p>
+<p>masnmapscan整合了masscan和nmap两款扫描器，masscan扫描端口，nmap扫描端口对应服务，二者结合起来实现了又快又好地扫描。并且加入了针对目标资产有防火墙的应对措施。</p>
+<h3 id="网络空间引擎搜索-1"><a href="#网络空间引擎搜索-1" class="headerlink" title="网络空间引擎搜索"></a>网络空间引擎搜索</h3><p>shodan、FOFA、zoomeye</p>
+<p>FOFA为例</p>
+<h3 id="浏览器插件-1"><a href="#浏览器插件-1" class="headerlink" title="浏览器插件"></a>浏览器插件</h3><p>通过Google、FireFox等插件的使用，收集主机端口开放信息</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310194134092.png" alt="image-20200310194134092"></p>
+<h1 id="WEB指纹识别"><a href="#WEB指纹识别" class="headerlink" title="WEB指纹识别"></a>WEB指纹识别</h1><p>在漏洞挖掘中，对目标服务器进行指纹识别是相当有必要的，因为只有识别出相应的Web容器或者CMS，才能查找与其相关的漏洞，然后才能进行相应的渗透操作。</p>
+<p>CMS (Content Management System)又称整站系统或文章系统。常见的CMS有Dedecms (织梦)、Discuz、 PHPWEB、 PHPWind、PHPCMS、ECShop、 Dvbbs、 SiteWeaver、 ASPCMS、帝国、Z- Blog、WordPress等。</p>
+<h2 id="第三方平台"><a href="#第三方平台" class="headerlink" title="第三方平台"></a>第三方平台</h2><h6 id="云悉-http-www-yunsee-cn"><a href="#云悉-http-www-yunsee-cn" class="headerlink" title="云悉 http://www.yunsee.cn/"></a>云悉 <a href="http://www.yunsee.cn/" target="_blank" rel="noopener">http://www.yunsee.cn/</a></h6><p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310201314012.png" alt="image-20200310201314012"></p>
+<p>#### </p>
+<h6 id="BugScaner-http-whatweb-bugscaner-com-look"><a href="#BugScaner-http-whatweb-bugscaner-com-look" class="headerlink" title="BugScaner http://whatweb.bugscaner.com/look/"></a>BugScaner <a href="http://whatweb.bugscaner.com/look/" target="_blank" rel="noopener">http://whatweb.bugscaner.com/look/</a></h6><p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310201821242.png" alt="image-20200310201821242"></p>
+<h6 id="数字观星-https-fp-shuziguanxing-com"><a href="#数字观星-https-fp-shuziguanxing-com" class="headerlink" title="数字观星 https://fp.shuziguanxing.com/\#/"></a>数字观星 <a href="https://fp.shuziguanxing.com/\#/" target="_blank" rel="noopener">https://fp.shuziguanxing.com/\#/</a></h6><p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310201802580.png" alt="image-20200310201802580"></p>
+<h6 id="TideFinger-http-finger-tidesec-net"><a href="#TideFinger-http-finger-tidesec-net" class="headerlink" title="TideFinger http://finger.tidesec.net/"></a>TideFinger <a href="http://finger.tidesec.net/" target="_blank" rel="noopener">http://finger.tidesec.net/</a></h6><p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310201920947.png" alt="image-20200310201920947"></p>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>常用指纹识别工具有：<code>御剑Web指纹识别</code>、<code>WhatWeb</code>、<code>Test404轻量CMS指纹识别+v2.1</code>、<code>椰树</code>等，可以快速识别一些主流CMS</p>
+<p>Github项目</p>
+<p><a href="https://github.com/Tuhinshubhra/CMSeeK" target="_blank" rel="noopener">CMSeeK</a></p>
+<p><a href="https://github.com/Dionach/CMSmap" target="_blank" rel="noopener">CMSmap</a></p>
+<p><a href="https://github.com/aedoo/ACMSDiscovery" target="_blank" rel="noopener">ACMSDiscovery</a></p>
+<p><a href="https://github.com/TideSec/TideFinger" target="_blank" rel="noopener">TideFinger</a></p>
+<p><a href="https://github.com/Lucifer1993/AngelSword" target="_blank" rel="noopener">AngelSword</a></p>
+<h2 id="浏览器插件-2"><a href="#浏览器插件-2" class="headerlink" title="浏览器插件"></a>浏览器插件</h2><p>通过Google、FireFox等插件的使用，收集网站结构信息</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200310202146499.png" alt="image-20200310202146499"></p>
+<h2 id="kali-中whatweb基本满足"><a href="#kali-中whatweb基本满足" class="headerlink" title="kali 中whatweb基本满足"></a>kali 中whatweb基本满足</h2><h2 id="burp-指纹识别"><a href="#burp-指纹识别" class="headerlink" title="burp 指纹识别"></a>burp 指纹识别</h2><h1 id="收集敏感信息"><a href="#收集敏感信息" class="headerlink" title="收集敏感信息"></a>收集敏感信息</h1><h2 id="源码泄露"><a href="#源码泄露" class="headerlink" title="源码泄露"></a>源码泄露</h2><p>/CVS/Entries<br>/CVS/Root<br>/.DS_Store  MacOS自动生成<br>/.hg/<br>/.svn/ (/.svn/entries)<br>/.git/<br>/WEB-INF/src/<br>/WEB-INF/lib/<br>/WEB-INF/classes/<br>/WEB-INF/database.properties<br>/WEB-INF/web.xml</p>
+<p>Robots.txt</p>
+<p>上述源码泄露在Github上都可以找到相应的利用工具</p>
+<h3 id="源码泄露扫描工具"><a href="#源码泄露扫描工具" class="headerlink" title="源码泄露扫描工具"></a>源码泄露扫描工具</h3><p>将常见源码泄露加入字典配合FUZZ、御剑等扫描器进行扫描收集</p>
+<h3 id="源码泄露利用工具"><a href="#源码泄露利用工具" class="headerlink" title="源码泄露利用工具"></a>源码泄露利用工具</h3><p>.git源码泄露：<a href="https://github.com/lijiejie/GitHack" target="_blank" rel="noopener">https://github.com/lijiejie/GitHack</a></p>
+<p>.DS_Store泄露：<a href="https://github.com/lijiejie/ds\_store\_exp" target="_blank" rel="noopener">https://github.com/lijiejie/ds\_store\_exp</a></p>
+<p>.bzr、CVS、.svn、.hg源码泄露：<a href="https://github.com/kost/dvcs-ripper" target="_blank" rel="noopener">https://github.com/kost/dvcs-ripper</a></p>
+<h2 id="备份文件泄露"><a href="#备份文件泄露" class="headerlink" title="备份文件泄露"></a>备份文件泄露</h2><h3 id="网站备份文件泄露常见名称"><a href="#网站备份文件泄露常见名称" class="headerlink" title="网站备份文件泄露常见名称"></a>网站备份文件泄露常见名称</h3><p>backup<br>db<br>data<br>web<br>wwwroot<br>database<br>www<br>code<br>test<br>admin<br>user<br>sql</p>
+<h3 id="网站备份文件泄露常见后缀"><a href="#网站备份文件泄露常见后缀" class="headerlink" title="网站备份文件泄露常见后缀"></a>网站备份文件泄露常见后缀</h3><p>.bak<br>.html<br>_index.html<br>.swp<br>.rar<br>.txt<br>.zip<br>.7z<br>.sql<br>.tar.gz<br>.tgz<br>.tar</p>
+<h3 id="网站备份文件泄露扫描工具"><a href="#网站备份文件泄露扫描工具" class="headerlink" title="网站备份文件泄露扫描工具"></a>网站备份文件泄露扫描工具</h3><p>常见扫描工具有：Test404网站备份文件扫描器 v2.0、ihoneyBakFileScan等</p>
+<p>ihoneyBakFileScan v0.2 多进程批量网站备份文件泄露扫描工具，根据域名自动生成相关扫描字典，自动记录扫描成功的备份地址到文件</p>
+<h2 id="Google-Hacking"><a href="#Google-Hacking" class="headerlink" title="Google Hacking"></a>Google Hacking</h2><h3 id="常用GoogleHacking语法"><a href="#常用GoogleHacking语法" class="headerlink" title="常用GoogleHacking语法"></a>常用GoogleHacking语法</h3><p>1、intext：（仅针对Google有效） 把网页中的正文内容中的某个字符作为搜索的条件</p>
+<p>2、intitle： 把网页标题中的某个字符作为搜索的条件</p>
+<p>3、cache： 搜索搜索引擎里关于某些内容的缓存，可能会在过期内容中发现有价值的信息</p>
+<p>4、filetype/ext： 指定一个格式类型的文件作为搜索对象</p>
+<p>5、inurl： 搜索包含指定字符的URL</p>
+<p>6、site： 在指定的(域名)站点搜索相关内容</p>
+<h3 id="其他GoogleHacking语法"><a href="#其他GoogleHacking语法" class="headerlink" title="其他GoogleHacking语法"></a>其他GoogleHacking语法</h3><p>1、引号 ‘’ “ 把关键字打上引号后，把引号部分作为整体来搜索</p>
+<p>2、or 同时搜索两个或更多的关键字</p>
+<p>3、link 搜索某个网站的链接 link:baidu.com即返回所有和baidu做了链接的URL</p>
+<p>4、info 查找指定站点的一些基本信息</p>
+<h3 id="GoogleHacking典型用法"><a href="#GoogleHacking典型用法" class="headerlink" title="GoogleHacking典型用法"></a>GoogleHacking典型用法</h3><h6 id="管理后台地址"><a href="#管理后台地址" class="headerlink" title="管理后台地址"></a>管理后台地址</h6><p>site:target.com intext:管理 | 后台 | 后台管理 | 登陆 | 登录 | 用户名 | 密码 | 系统 | 账号 | login | system<br>site:target.com inurl:login | inurl:admin | inurl:manage | inurl:manager | inurl:admin_login | inurl:system | inurl:backend<br>site:target.com intitle:管理 | 后台 | 后台管理 | 登陆 | 登录</p>
+<h6 id="上传类漏洞地址"><a href="#上传类漏洞地址" class="headerlink" title="上传类漏洞地址"></a>上传类漏洞地址</h6><p>site:target.com inurl:file<br>site:target.com inurl:upload</p>
+<h6 id="注入页面"><a href="#注入页面" class="headerlink" title="注入页面"></a>注入页面</h6><p>site:target.com inurl:php?id=</p>
+<h6 id="编辑器页面"><a href="#编辑器页面" class="headerlink" title="编辑器页面"></a>编辑器页面</h6><p>site:target.com inurl:ewebeditor</p>
+<h6 id="目录遍历漏洞"><a href="#目录遍历漏洞" class="headerlink" title="目录遍历漏洞"></a>目录遍历漏洞</h6><p>site:target.com intitle:index.of</p>
+<h6 id="SQL错误"><a href="#SQL错误" class="headerlink" title="SQL错误"></a>SQL错误</h6><p>site:target.com intext:”sql syntax near” | intext:”syntax error has occurred” | intext:”incorrect syntax near” | intext:”unexpected end of SQL command” | intext:”Warning: mysql_connect()” | intext:”Warning: mysql_query()” | intext:”Warning: pg_connect()”</p>
+<h6 id="phpinfo"><a href="#phpinfo" class="headerlink" title="phpinfo()"></a>phpinfo()</h6><p>site:target.com ext:php intitle:phpinfo “published by the PHP Group”</p>
+<h6 id="配置文件泄露"><a href="#配置文件泄露" class="headerlink" title="配置文件泄露"></a>配置文件泄露</h6><p>site:target.com ext:.xml | .conf | .cnf | .reg | .inf | .rdp | .cfg | .txt | .ora | .ini</p>
+<h6 id="数据库文件泄露"><a href="#数据库文件泄露" class="headerlink" title="数据库文件泄露"></a>数据库文件泄露</h6><p>site:target.com ext:.sql | .dbf | .mdb | .db</p>
+<h6 id="日志文件泄露"><a href="#日志文件泄露" class="headerlink" title="日志文件泄露"></a>日志文件泄露</h6><p>site:target.com ext:.log</p>
+<h6 id="备份和历史文件泄露"><a href="#备份和历史文件泄露" class="headerlink" title="备份和历史文件泄露"></a>备份和历史文件泄露</h6><p>site:target.com ext:.bkf | .bkp | .old | .backup | .bak | .swp | .rar | .txt | .zip | .7z | .sql | .tar.gz | .tgz | .tar</p>
+<h6 id="公开文件泄露"><a href="#公开文件泄露" class="headerlink" title="公开文件泄露"></a>公开文件泄露</h6><p>site:target.com filetype:.doc | .docx | .xls | .xlsx | .ppt | .pptx | .odt | .pdf | .rtf | .sxw | .psw | .csv</p>
+<p>site: target.com filetype:doc|docx|xls|xlsx|ppt|pptx|zip|rar|sql</p>
+<h6 id="邮箱信息"><a href="#邮箱信息" class="headerlink" title="邮箱信息"></a>邮箱信息</h6><p>site:target.com intext:@target.com<br>site:target.com 邮件<br>site:target.com email</p>
+<h6 id="社工信息"><a href="#社工信息" class="headerlink" title="社工信息"></a>社工信息</h6><p>site:target.com intitle:账号 | 密码 | 工号 | 学号 | 身份证</p>
+<h2 id="JS获取敏感接口"><a href="#JS获取敏感接口" class="headerlink" title="JS获取敏感接口"></a>JS获取敏感接口</h2><h3 id="JSFinder"><a href="#JSFinder" class="headerlink" title="JSFinder"></a>JSFinder</h3><p>JSFinder是一款用作快速在网站的js文件中提取URL，子域名的工具。</p>
+<p>安装</p>
+<p>pip3 install requests bs4<br>git clone <a href="https://github.com/Threezh1/JSFinder.git" target="_blank" rel="noopener">https://github.com/Threezh1/JSFinder.git</a></p>
+<p>使用</p>
+<p>python3 JSFinder.py -u <a href="http://www.mi.com" target="_blank" rel="noopener">http://www.mi.com</a><br>python3 JSFinder.py -u <a href="http://www.mi.com" target="_blank" rel="noopener">http://www.mi.com</a> -d</p>
+<h3 id="LinkFinder"><a href="#LinkFinder" class="headerlink" title="LinkFinder"></a>LinkFinder</h3><p>该工具通过网站中的JS文件来发现服务端、敏感信息、隐藏控制面板的URL链接等有用信息，可最大化地提高URL发现效率</p>
+<p>安装</p>
+<p>git clone <a href="https://github.com/GerbenJavado/LinkFinder.git" target="_blank" rel="noopener">https://github.com/GerbenJavado/LinkFinder.git</a><br>cd LinkFinder<br>python2 setup.py install</p>
+<p>使用</p>
+<p>在线JavaScript文件中查找端点的最基本用法，并将结果输出到results.html：</p>
+<p>python linkfinder.py -i <a href="https://example.com/1.js" target="_blank" rel="noopener">https://example.com/1.js</a> -o results.html</p>
+<p>CLI输出（不使用jsbeautifier，这使得它非常快）：</p>
+<p>pyhon linkfinder.py -i <a href="https://example.com/1.js" target="_blank" rel="noopener">https://example.com/1.js</a> -o cli<br>分析整个域及其JS文件：</p>
+<p>python linkfinder.py -i <a href="https://example.com" target="_blank" rel="noopener">https://example.com</a> -d<br>Burp输入（在目标中选择要保存的文件，右键单击，Save selected items将该文件作为输入）：</p>
+<p>python linkfinder.py -i burpfile -b<br>枚举JavaScript文件的整个文件夹，同时查找以/ api /开头的终结点，并最终将结果保存到results.html：</p>
+<p>python linkfinder.py -i ‘Desktop/*.js’ -r ^/api/ -o results.html</p>
+<h2 id="目录-amp-后台扫描"><a href="#目录-amp-后台扫描" class="headerlink" title="目录&amp;后台扫描"></a>目录&amp;后台扫描</h2><p>1、DirMap  <a href="https://github.com/H4ckForJob/dirmap" target="_blank" rel="noopener">https://github.com/H4ckForJob/dirmap</a></p>
+<p>2、dirsearch <a href="https://github.com/maurosoria/dirsearch" target="_blank" rel="noopener">https://github.com/maurosoria/dirsearch</a></p>
+<p>3、github BBScan</p>
+<p>7kbscan-WebPathBrute  <a href="https://github.com/7kbstorm/7kbscan-WebPathBruteFuzz-gobuster" target="_blank" rel="noopener">https://github.com/7kbstorm/7kbscan-WebPathBruteFuzz-gobuster</a> <a href="https://github.com/OJ/gobuster" target="_blank" rel="noopener">https://github.com/OJ/gobuster</a><br>Test404轻量后台扫描器+v2.0<br>御剑</p>
+<p>工具无论再多再好，没有一个好的字典一切都是空谈。强大字典是需要自己平时慢慢的积累。</p>
+<h2 id="越权查询"><a href="#越权查询" class="headerlink" title="越权查询"></a>越权查询</h2><p>遍历uid获得身份信息等</p>
+<h2 id="代码托管"><a href="#代码托管" class="headerlink" title="代码托管"></a>代码托管</h2><p>通过代码托管平台搜索敏感信息（内部邮箱账号密码、数据库账号密码等）</p>
+<h4 id="github"><a href="#github" class="headerlink" title="github"></a>github</h4><p>GitHub是一个面向开源及私有软件项目的托管平台。</p>
+<p>平台地址：<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a></p>
+<p>GitHub敏感信息泄露一直是企业信息泄露和知识产权泄露的重灾区，安全意识薄弱的同事经常会将公司的代码、各种服务的账户等极度敏感的信息『开源』到github中，github也是黑、白帽子、安全工程师的必争之地。</p>
+<p>Github泄露扫描系统开发：<a href="https://sec.xiaomi.com/article/37" target="_blank" rel="noopener">https://sec.xiaomi.com/article/37</a></p>
+<p>在GitHub中一般通过搜索网站域名、网站JS路径、网站备案、网站下的技术支持等进行敏感信息查询</p>
+<p>site:Github.com ftp ftppassword</p>
+<p>也可以锁定域名搜索结合厂商域名 灵活运用例如搜百度的</p>
+<p>site:Github.com smtp @baidu.com</p>
+<p>==IP段搜索：“123.34.45.*”==</p>
+<p>==搜索内网域名地址==</p>
+<p>企业邮箱账号 对应 github账号</p>
+<p>思路来源：<a href="https://www.freebuf.com/articles/web/198721.html" target="_blank" rel="noopener">https://www.freebuf.com/articles/web/198721.html</a></p>
+<h4 id="gitee"><a href="#gitee" class="headerlink" title="gitee"></a>gitee</h4><p>平台地址：<a href="https://gitee.com/" target="_blank" rel="noopener">https://gitee.com/</a></p>
+<p>码云：开源中国出品的代码托管、协作开发平台。</p>
+<h4 id="gitcafe"><a href="#gitcafe" class="headerlink" title="gitcafe"></a>gitcafe</h4><p>GitCafe一个基于代码托管服务打造的技术协作与分享平台</p>
+<h2 id="Whois-amp-备案查询"><a href="#Whois-amp-备案查询" class="headerlink" title="Whois&amp;备案查询"></a>Whois&amp;备案查询</h2><p>通过Whois和备案查询得到网站的注册人、手机号、邮箱等（对后续的密码生成和社工很有帮助）</p>
+<h2 id="公网网盘"><a href="#公网网盘" class="headerlink" title="公网网盘"></a>公网网盘</h2><p>公司员工可能把一些内部资料放在了公网网盘，然后被在线云网盘搜索的网站抓取了，我们就可以利用这个来对目标系统进行深入挖掘。</p>
+<p>可以利用云网盘搜索工具搜集敏感文件，一般直接输入厂商名字进行搜索</p>
+<h3 id="凌风云搜索"><a href="#凌风云搜索" class="headerlink" title="凌风云搜索"></a>凌风云搜索</h3><p>地址：<a href="https://www.lingfengyun.com/" target="_blank" rel="noopener">https://www.lingfengyun.com/</a></p>
+<p>其他云网盘搜索工具可以参考 <a href="https://www.cnblogs.com/paad/p/10825483.html" target="_blank" rel="noopener">https://www.cnblogs.com/paad/p/10825483.html</a></p>
+<h2 id="获取公开文件"><a href="#获取公开文件" class="headerlink" title="获取公开文件"></a>获取公开文件</h2><h3 id="snitch"><a href="#snitch" class="headerlink" title="snitch"></a>snitch</h3><p>Snitch可以针对指定域自动执行信息收集过程。此工具可帮助收集可通过Web搜索引擎找到的指定信息。在渗透测试的早期阶段，它可能非常有用。</p>
+<p>安装</p>
+<p>git clone <a href="https://github.com/Smaash/snitch.git" target="_blank" rel="noopener">https://github.com/Smaash/snitch.git</a></p>
+<p>使用</p>
+<p>python2.7 snitch.py -C “site:whitehouse.gov filetype:pdf” -P 100</p>
+<h2 id="邮箱信息收集"><a href="#邮箱信息收集" class="headerlink" title="邮箱信息收集"></a>邮箱信息收集</h2><h3 id="Infoga"><a href="#Infoga" class="headerlink" title="Infoga"></a>Infoga</h3><p>Infoga可从不同的公共源网络（搜索引擎，pgp密钥服务器和shodan）收集电子邮件帐户信息（ip，主机名，国家/地区…）。是一个用法非常简单的工具，但是，对于渗透测试的早期阶段，或者只是为了了解自己公司在互联网上的可见性是非常有效的。</p>
+<p>安装</p>
+<p>git clone <a href="https://github.com/m4ll0k/Infoga.git" target="_blank" rel="noopener">https://github.com/m4ll0k/Infoga.git</a> /data/infoga<br>cd /data/infoga<br>pip3 install requests<br>python3 infoga.py</p>
+<p>使用</p>
+<p>python3 infoga.py –domain site.com –source all -v 3 | grep Email | cut -d ‘ ‘ -f 3 | uniq | sed -n ‘/-/!p’<br>python3 infoga.py –info <a href="mailto:emailtest@site.com" target="_blank" rel="noopener">emailtest@site.com</a><br>python3 infoga.py –info <a href="mailto:emailtest@site.com" target="_blank" rel="noopener">emailtest@site.com</a> -b</p>
+<h3 id="Google-Hacking-1"><a href="#Google-Hacking-1" class="headerlink" title="Google Hacking"></a>Google Hacking</h3><p>site:target.com intext:@target.com</p>
+<p>site:target.com 邮件<br>site:target.com email</p>
+<h1 id="历史漏洞-amp-资产"><a href="#历史漏洞-amp-资产" class="headerlink" title="历史漏洞&amp;资产"></a>历史漏洞&amp;资产</h1><p>很多时候去查看目标的历史漏洞和资产信息，往往能够得到很多有价值的信息。</p>
+<p>乌云漏洞库：<a href="https://github.com/hanc00l/wooyun\_public" target="_blank" rel="noopener">https://github.com/hanc00l/wooyun\_public</a></p>
+<p>Exploit-db：<a href="https://www.exploit-db.com/" target="_blank" rel="noopener">https://www.exploit-db.com/</a></p>
+<p>Securityfocus：<a href="https://www.securityfocus.com/bid" target="_blank" rel="noopener">https://www.securityfocus.com/bid</a></p>
+<p>Packetstorm：<a href="https://packetstormsecurity.org/" target="_blank" rel="noopener">https://packetstormsecurity.org/</a></p>
+<p>Cxsecurity：<a href="https://cxsecurity.com/exploit/" target="_blank" rel="noopener">https://cxsecurity.com/exploit/</a></p>
+<p>国家信息安全漏洞库：<a href="http://www.cnnvd.org.cn/" target="_blank" rel="noopener">http://www.cnnvd.org.cn/</a></p>
+<p>Seebug：<a href="https://www.seebug.org/" target="_blank" rel="noopener">https://www.seebug.org/</a></p>
+<p>等。。。</p>
+<h1 id="F12-信息收集"><a href="#F12-信息收集" class="headerlink" title="F12 信息收集"></a>F12 信息收集</h1><p>F12开发者工具，如相关功能模块和基本使用，以及使用F12进行信息收集的相关利用和在渗透实战中的一些相关小技巧，通过F12信息收集我们可收集到很多隐藏起来的敏感信息，如注释信息、webserver信息，而这些敏感信息往往可对后期的渗透起一定的辅助作用。</p>
+<p>F12开发者攻击是我认为==最基础的信息收集，也是最简单、最快捷的信息收集==，通过F12我们可以收集到很多不在明面上面的信息，主要==包括注释信息收集、hidden信息收集、相对路径信息收集、webserver信息收集以及JavaScript功能信息收集==等。</p>
+<p>F12 开发者工具是可帮助开发人员生成和调试网页的一套工具，主要包含elements、network、sources、timeliness、Profiles、resources、audits、console模块，</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311075505132.png" alt="image-20200311075505132"></p>
+<h3 id="注释信息收集"><a href="#注释信息收集" class="headerlink" title="注释信息收集"></a>注释信息收集</h3><p>我们在前端访问的页面，在其页面源代码中往往会存在有注释信息，这些注释信息中往往会包含有很多敏感信息，可能是某个文件的下载链接，也可能是一些隐藏的功能模块，甚至更有可能是一些你意想不到的敏感信息。</p>
+<p>在F12的elements模块中我们可以逐级展开个节点来查看注释信息，但是这样效率实在是太低了，因为在这个模块我们是不能使用【Ctrl+F】搜索注释信息的，另外可以通过查看页面源代码来搜索注释信息，但是搜索出来的不是连续的，这样也不是很方便我们查看。</p>
+<p>用法：</p>
+<p>在F12中，我们可以点击右上角的show drawer标志（<img src="/2020/03/08/渗透测试之资产信息收集/clip_image002.jpg" alt="img">）进行所有字符的搜索==&lt;!–==，另外我们可以使用快捷键==【Ctrl+shift+f】==来快速进行搜索，即可把所有的注释信息搜索出来</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311080702809.png" alt="image-20200311080702809"></p>
+<p>注释信息中引发的问题：</p>
+<p>1.获取到文件下载的地址，进而获取了很多敏感信息，如姓名、身份证、电话、邮箱等我们通过这个这些信息可以制作具有针对性的字典，从而对后台管理进行暴力破解；</p>
+<p>2.在注释信息中获取到一个忘记密码功能的连接，刚好这个忘记密码这个地方存在SQL注入，通过注入将发送的验证码发到本人的手机号上面，然后对root账号进行重置，通过登录后在文件上传的地方可上传webshell，前端校验，因此很容易绕过！</p>
+<p>如何预防：</p>
+<p>一是尽量删除前端显示的注释信息，二是不用的功能模块直接删除，不可通过注释的手段来进行隐藏！</p>
+<h3 id="hidden信息收集"><a href="#hidden信息收集" class="headerlink" title="hidden信息收集"></a>hidden信息收集</h3><p>在查看源代码时，我们会发现有些控件的type的值是==hidden==，代表该控件在页面中是隐藏的，不显示的，有些参数虽然是hidden的，但是依旧会提交到服务器，这也给了我们利用的机会，我们使用上面的搜索方法搜索hidden，如图1-5所示，即可查看所有type值为hidden的控件。</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311081100581.png" alt="image-20200311081100581"></p>
+<p>我们可以通过删除hidden即可在页面中显示该控件，如图1-6所示，并且可修改对应的value的值</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311081138688.png" alt="image-20200311081138688"></p>
+<p>hidden控件可能引发的问题：</p>
+<p>1.曾通过搜索hidden获取到重置别人的账号所发送的短信验证码，成功重置了该用户的密码，进而获取到该站点的登录访问权限</p>
+<p>2.由于hidden的这个参数依旧是提交到服务器的，而刚好这个参数是存在XSS漏洞，其余提交的显性参数是有了一定过滤的。</p>
+<p>如何预防问题：</p>
+<p>因此尽量不要使用hidden属性来隐藏敏感数据，如==隐藏登录账户==；发送的==短信验证码==禁止显示在页面源代码中。不管以何种方式，对于提交到服务器的参数切记都需要进行校验及过滤！</p>
+<h3 id="相对路径信息收集"><a href="#相对路径信息收集" class="headerlink" title="相对路径信息收集"></a>相对路径信息收集</h3><p>相对路径信息收集，我主要是收集图片所在的相对路径，如图所示，然后通过查找（locate或者find）对应图片的位置，结合收集的相对路径来进行获取我们想要的绝对路径，从而进行webshell的上传！</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311084346030.png" alt="image-20200311084346030"></p>
+<p>另外我们还可以在Resource下的script中查看相关的js文件（如conf.js）来获取相对路径信息，可能某些链接就可以未授权访问，从而我们可进行进一步的利用</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311084445868.png" alt="image-20200311084445868"></p>
+<p>可能引发的问题：</p>
+<p>1.使用这种方法进行查找物理路径来进行上传webshell，尤其是结合一些命令执行工具来进行使用</p>
+<p>2.有案例图片的这个路径逐级删除，就会直接获取到后台地址！</p>
+<h3 id="webserver信息收集"><a href="#webserver信息收集" class="headerlink" title="webserver信息收集"></a>webserver信息收集</h3><p>webserver信息收集主要是收集web服务器的一个部署情况，是使用什么==框架搭建的，是Apache，还是Nginx==，或是其他的，网站是什么==脚本语言==开发的，是asp，还是PHP等信息，这些信息我们可以使用F12进行简单的查看。</p>
+<p>方法：</p>
+<p>首先我们定位到F12的network模块，选择doc（文档，document）进行筛选，然后使用F5进行刷新获取数据</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311085149871.png" alt="image-20200311085149871"></p>
+<p>有时候在这里也可以看到网站的cookie，如果在这里你发现cookie中含有admin=0,或者flag=0的这类标志，你就可以使用burpsuit进行抓包进行截断改包，将0改为1可能就可以直接进入到系统中了！</p>
+<p>webserver信息对于渗透来说是很重要的，通过获取的版本即可查找对应的漏洞进行利用，从而提高渗透的效率！因此网站管理员在部署网站的时候，切记进行安全配置，隐藏此类信息，或者修改此类信息进行干扰攻击者！如在php.ini中设置expose_php = Off来隐藏PHP版本信息，将下面两行添加到Apache配置文件（vi /etc/apache2/apache2.conf）底部，最后一行，即可隐藏Apache banner信息！</p>
+<p>ServerSignature Off</p>
+<p>ServerTokens Prod</p>
+<h3 id="JavaScript功能信息收集"><a href="#JavaScript功能信息收集" class="headerlink" title="JavaScript功能信息收集"></a>JavaScript功能信息收集</h3><p>JavaScript信息收集主要是看看某些功能是不是前端js校验，如图所示，如果是前端校验的我们可以通过禁用js或者直接使用burpsuit进行更改数据包进行相关绕过。另外还可以去资源模块（Resource）看看有没有可利用的js文件，比如conf.js，里面可能会涉及到一些暗藏的链接等敏感信息。</p>
+<p><img src="/2020/03/08/渗透测试之资产信息收集/image-20200311085641514.png" alt="image-20200311085641514"></p>
+<p>危害：</p>
+<p>1.如果上传点是前端校验的，那么我们可以禁用js来进行webshell的上传</p>
+<p>2.有时在登录页面你可以禁用js之后，然后使用任意账户密码登录即可成功进入到系统中</p>
+<p>所以开发者做相关校验的时候，切记在前端的一切校验都是不安全的，尽量前端（客户端）和后端（服务器端）一起校验和过滤！</p>
+<h1 id="burp被动收集"><a href="#burp被动收集" class="headerlink" title="burp被动收集"></a>burp被动收集</h1><h5 id="Burp"><a href="#Burp" class="headerlink" title="Burp"></a>Burp</h5><p>1、scope爬虫（site map）</p>
+<p>2、Burp插件收集</p>
+<p>​       request数据包内容</p>
+<p>​        response数据包内容</p>
+<h5 id="主动爬虫"><a href="#主动爬虫" class="headerlink" title="主动爬虫"></a>主动爬虫</h5><p>Crawlergo动态爬虫</p>
+<h1 id="注册资料收集（注册时需提供资质）"><a href="#注册资料收集（注册时需提供资质）" class="headerlink" title="注册资料收集（注册时需提供资质）"></a>注册资料收集（注册时需提供资质）</h1><p>1、能言论自由的地方，比如搜索身份证信息</p>
+<p>2、github 搜索开发者网站域名</p>
+<p>3、百度网盘搜索证件照，营业执照，手持等关键词</p>
+<p>信息收集系统 </p>
+<h1 id="开源资产收集系统"><a href="#开源资产收集系统" class="headerlink" title="开源资产收集系统"></a>开源资产收集系统</h1><p>w12scan</p>
+<p>xunfeng（不太好用）</p>
+<h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><p>定制厂商专属字典</p>
+<p>前期信息收集，确认厂商员工账号命名规则，定制精准用户字典（注册，密码找回策略，github，邮件服务器，搜索引擎）</p>
+<p>1、工具：passmaker</p>
+<p><a href="https://github.com/bit4woo/passmaker" target="_blank" rel="noopener">https://github.com/bit4woo/passmaker</a></p>
+<p>2、服务器24小时爆破</p>
+<p>3、突破IP限制</p>
+<p>1、代理池</p>
+<p>2、aws api</p>
+<p>3、aws 提供的IP服务，通过该服务器可切换自己的出口ip</p>
+<p>4、tor网络:<a href="https://github.com/realgam3/pymultitor" target="_blank" rel="noopener">https://github.com/realgam3/pymultitor</a></p>
+<h1 id="前端加密"><a href="#前端加密" class="headerlink" title="前端加密"></a>前端加密</h1><p>1、前端sign</p>
+<p>​      按键精灵</p>
+<p>2、AES加密</p>
+<h1 id="验证码绕过"><a href="#验证码绕过" class="headerlink" title="验证码绕过"></a>验证码绕过</h1><p>验证码在回包中</p>
+<p>验证码设计缺陷 ，不改cookie 不刷新</p>
+<p>图形验证码识别</p>
+<p>次时代验证码识别系统2.3</p>
+<p>滑块验证码：selenium.webdriver</p>
+<h1 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h1><p><a href="https://github.com/Qftm/Information_Collection_Handbook" target="_blank" rel="noopener">https://github.com/Qftm/Information_Collection_Handbook</a></p>
+<p><a href="https://mp.weixin.qq.com/s/Y0PPqyHysBPmgmDw2KmHYw" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/Y0PPqyHysBPmgmDw2KmHYw</a></p>
+<p>F12信息收集word文档</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/03/08/渗透测试之规范学习/" rel="next" title="渗透测试之规范学习">
+                <i class="fa fa-chevron-left"></i> 渗透测试之规范学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/31/赋能/" rel="prev" title="赋能">
+                赋能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/cat.jpg" alt="ZSC0810">
+            
+              <p class="site-author-name" itemprop="name">ZSC0810</p>
+              <p class="site-description motion-element" itemprop="description">加油！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#target"><span class="nav-number">1.</span> <span class="nav-text">target:</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础信息"><span class="nav-number">1.1.</span> <span class="nav-text">基础信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统信息"><span class="nav-number">1.2.</span> <span class="nav-text">系统信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用信息"><span class="nav-number">1.3.</span> <span class="nav-text">应用信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务信息"><span class="nav-number">1.4.</span> <span class="nav-text">服务信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#人员信息"><span class="nav-number">1.5.</span> <span class="nav-text">人员信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防护信息"><span class="nav-number">1.6.</span> <span class="nav-text">防护信息</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#信息收集流程"><span class="nav-number">2.</span> <span class="nav-text">信息收集流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、厂商信息收集"><span class="nav-number">2.1.</span> <span class="nav-text">1、厂商信息收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、资产归属判断"><span class="nav-number">2.2.</span> <span class="nav-text">2、资产归属判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、资产收集维度"><span class="nav-number">2.3.</span> <span class="nav-text">3、资产收集维度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、资产收集内容"><span class="nav-number">2.4.</span> <span class="nav-text">4、资产收集内容</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收集域名信息"><span class="nav-number">3.</span> <span class="nav-text">收集域名信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Whois-查询"><span class="nav-number">3.1.</span> <span class="nav-text">Whois 查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kali下whois查询"><span class="nav-number">3.1.1.</span> <span class="nav-text">Kali下whois查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名Whois查询-站长之家"><span class="nav-number">3.1.2.</span> <span class="nav-text">域名Whois查询 - 站长之家</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Whois-爱站"><span class="nav-number">3.1.3.</span> <span class="nav-text">Whois 爱站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ip138-（可查询子域名）"><span class="nav-number">3.1.4.</span> <span class="nav-text">ip138 （可查询子域名）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Whois-Lookup"><span class="nav-number">3.1.5.</span> <span class="nav-text">Whois Lookup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ICANN-Lookup"><span class="nav-number">3.1.6.</span> <span class="nav-text">ICANN Lookup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nicolasbouliane"><span class="nav-number">3.1.7.</span> <span class="nav-text">nicolasbouliane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新网-whois信息查询"><span class="nav-number">3.1.8.</span> <span class="nav-text">新网 whois信息查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-WHOIS查询-站长工具"><span class="nav-number">3.1.9.</span> <span class="nav-text">IP WHOIS查询 - 站长工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备案信息查询"><span class="nav-number">3.2.</span> <span class="nav-text">备案信息查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ICP备案查询网"><span class="nav-number">3.2.1.</span> <span class="nav-text">ICP备案查询网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ICP备案查询-站长工具"><span class="nav-number">3.2.2.</span> <span class="nav-text">ICP备案查询 - 站长工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SEO综合查询-爱站"><span class="nav-number">3.2.3.</span> <span class="nav-text">SEO综合查询 - 爱站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量查询-站长工具"><span class="nav-number">3.2.4.</span> <span class="nav-text">批量查询 - 站长工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工业和信息化部ICP-IP-域名信息备案管理-（太卡了）"><span class="nav-number">3.2.5.</span> <span class="nav-text">工业和信息化部ICP/IP/域名信息备案管理 （太卡了）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信用信息查询"><span class="nav-number">3.3.</span> <span class="nav-text">信用信息查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IP反查站点的站"><span class="nav-number">3.4.</span> <span class="nav-text">IP反查站点的站</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dnslytics"><span class="nav-number">3.4.1.</span> <span class="nav-text">Dnslytics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器插件"><span class="nav-number">3.4.2.</span> <span class="nav-text">浏览器插件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收集相关应用信息"><span class="nav-number">3.5.</span> <span class="nav-text">收集相关应用信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信公众号-amp-微博"><span class="nav-number">3.6.</span> <span class="nav-text">微信公众号&amp;微博</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#天眼查"><span class="nav-number">3.6.1.</span> <span class="nav-text">天眼查</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信公众号"><span class="nav-number">3.6.2.</span> <span class="nav-text">微信公众号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#null"><span class="nav-number">3.6.3.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微博"><span class="nav-number">3.6.4.</span> <span class="nav-text">微博</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#APP"><span class="nav-number">3.6.5.</span> <span class="nav-text">APP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七麦数据"><span class="nav-number">3.6.6.</span> <span class="nav-text">七麦数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AppStore"><span class="nav-number">3.6.7.</span> <span class="nav-text">AppStore</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收集子域名信息"><span class="nav-number">4.</span> <span class="nav-text">收集子域名信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在线平台"><span class="nav-number">4.1.</span> <span class="nav-text">在线平台</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方平台查询"><span class="nav-number">4.1.1.</span> <span class="nav-text">第三方平台查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#权重综合查询"><span class="nav-number">4.1.2.</span> <span class="nav-text">权重综合查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP反查绑定域名网站"><span class="nav-number">4.1.3.</span> <span class="nav-text">IP反查绑定域名网站</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资产搜索引擎"><span class="nav-number">4.2.</span> <span class="nav-text">资产搜索引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Google语法查询"><span class="nav-number">4.2.1.</span> <span class="nav-text">Google语法查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FOFA语法查询"><span class="nav-number">4.2.2.</span> <span class="nav-text">FOFA语法查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具枚举"><span class="nav-number">4.3.</span> <span class="nav-text">工具枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OneForAll"><span class="nav-number">4.3.1.</span> <span class="nav-text">OneForAll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layer"><span class="nav-number">4.3.2.</span> <span class="nav-text">Layer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#subDomainsBrute"><span class="nav-number">4.3.3.</span> <span class="nav-text">subDomainsBrute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sublist3r"><span class="nav-number">4.3.4.</span> <span class="nav-text">Sublist3r</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#证书透明度公开日志枚举"><span class="nav-number">4.4.</span> <span class="nav-text">证书透明度公开日志枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在线第三方平台查询"><span class="nav-number">4.4.1.</span> <span class="nav-text">在线第三方平台查询</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS域传送漏洞"><span class="nav-number">4.5.</span> <span class="nav-text">DNS域传送漏洞</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS历史解析"><span class="nav-number">4.6.</span> <span class="nav-text">DNS历史解析</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找真实IP"><span class="nav-number">5.</span> <span class="nav-text">查找真实IP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CDN简介"><span class="nav-number">5.1.</span> <span class="nav-text">CDN简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#国内外CND"><span class="nav-number">5.2.</span> <span class="nav-text">国内外CND</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#判断目标是否存在CDN"><span class="nav-number">5.3.</span> <span class="nav-text">判断目标是否存在CDN</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nslookup"><span class="nav-number">5.3.1.</span> <span class="nav-text">Nslookup</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#不同DNS域名解析"><span class="nav-number">5.3.1.1.</span> <span class="nav-text">不同DNS域名解析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全国Ping"><span class="nav-number">5.3.2.</span> <span class="nav-text">全国Ping</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绕过CDN查找真实IP"><span class="nav-number">5.4.</span> <span class="nav-text">绕过CDN查找真实IP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#国外请求"><span class="nav-number">5.4.1.</span> <span class="nav-text">国外请求</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#国际Ping"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">国际Ping</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分站域名-amp-C段查询"><span class="nav-number">5.4.2.</span> <span class="nav-text">分站域名&amp;C段查询</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C段查询"><span class="nav-number">5.4.2.1.</span> <span class="nav-text">C段查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#在线查询"><span class="nav-number">5.4.2.1.1.</span> <span class="nav-text">在线查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#网络资产搜索引擎"><span class="nav-number">5.4.2.1.2.</span> <span class="nav-text">网络资产搜索引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Fofa、Shodan、ZoomEye"><span class="nav-number">5.4.2.1.2.1.</span> <span class="nav-text">Fofa、Shodan、ZoomEye</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站漏洞"><span class="nav-number">5.4.3.</span> <span class="nav-text">网站漏洞</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一些测试文件"><span class="nav-number">5.4.3.1.</span> <span class="nav-text">一些测试文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SSRF漏洞"><span class="nav-number">5.4.3.2.</span> <span class="nav-text">SSRF漏洞</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询域名解析记录"><span class="nav-number">5.4.4.</span> <span class="nav-text">查询域名解析记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标网站APP应用"><span class="nav-number">5.4.5.</span> <span class="nav-text">目标网站APP应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络空间引擎搜索"><span class="nav-number">5.4.6.</span> <span class="nav-text">网络空间引擎搜索</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AS自治域"><span class="nav-number">6.</span> <span class="nav-text">AS自治域</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#bgp-he-net用来查询一些域名归属以及组织IP段信息"><span class="nav-number">6.0.0.0.0.1.</span> <span class="nav-text">bgp.he.net用来查询一些域名归属以及组织IP段信息</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#收集常用端口信息"><span class="nav-number">7.</span> <span class="nav-text">收集常用端口信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见端口-amp-解析-amp-总结"><span class="nav-number">7.1.</span> <span class="nav-text">常见端口&amp;解析&amp;总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扫描工具"><span class="nav-number">7.2.</span> <span class="nav-text">扫描工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用扫描工具"><span class="nav-number">7.2.1.</span> <span class="nav-text">常用扫描工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用扫描工具使用"><span class="nav-number">7.2.2.</span> <span class="nav-text">常用扫描工具使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、nmap"><span class="nav-number">7.2.2.1.</span> <span class="nav-text">1、nmap</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#扫描多个IP"><span class="nav-number">7.2.2.1.1.</span> <span class="nav-text">扫描多个IP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#绕过Firewalld扫描主机端口"><span class="nav-number">7.2.2.1.2.</span> <span class="nav-text">绕过Firewalld扫描主机端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#初步扫描端口信息"><span class="nav-number">7.2.2.1.3.</span> <span class="nav-text">初步扫描端口信息</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#扫描端口并且标记可以爆破的服务"><span class="nav-number">7.2.2.1.4.</span> <span class="nav-text">扫描端口并且标记可以爆破的服务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#判断常见的漏洞并扫描端口"><span class="nav-number">7.2.2.1.5.</span> <span class="nav-text">判断常见的漏洞并扫描端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#精确判断漏洞并扫描端口"><span class="nav-number">7.2.2.1.6.</span> <span class="nav-text">精确判断漏洞并扫描端口</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nmap-输出美化"><span class="nav-number">7.2.2.1.7.</span> <span class="nav-text">nmap 输出美化</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、Masscan"><span class="nav-number">7.2.2.2.</span> <span class="nav-text">2、Masscan</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#masscan"><span class="nav-number">7.2.2.3.</span> <span class="nav-text">masscan</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Namp与Masscan的对比"><span class="nav-number">7.2.2.3.1.</span> <span class="nav-text">Namp与Masscan的对比</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、Zmap"><span class="nav-number">7.2.2.4.</span> <span class="nav-text">3、Zmap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、masnmapscan"><span class="nav-number">7.2.2.5.</span> <span class="nav-text">4、masnmapscan</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络空间引擎搜索-1"><span class="nav-number">7.2.3.</span> <span class="nav-text">网络空间引擎搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器插件-1"><span class="nav-number">7.2.4.</span> <span class="nav-text">浏览器插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WEB指纹识别"><span class="nav-number">8.</span> <span class="nav-text">WEB指纹识别</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方平台"><span class="nav-number">8.1.</span> <span class="nav-text">第三方平台</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#云悉-http-www-yunsee-cn"><span class="nav-number">8.1.0.0.0.1.</span> <span class="nav-text">云悉 http://www.yunsee.cn/</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#BugScaner-http-whatweb-bugscaner-com-look"><span class="nav-number">8.1.0.0.0.2.</span> <span class="nav-text">BugScaner http://whatweb.bugscaner.com/look/</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数字观星-https-fp-shuziguanxing-com"><span class="nav-number">8.1.0.0.0.3.</span> <span class="nav-text">数字观星 https://fp.shuziguanxing.com/\#/</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#TideFinger-http-finger-tidesec-net"><span class="nav-number">8.1.0.0.0.4.</span> <span class="nav-text">TideFinger http://finger.tidesec.net/</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具"><span class="nav-number">8.2.</span> <span class="nav-text">工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器插件-2"><span class="nav-number">8.3.</span> <span class="nav-text">浏览器插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#kali-中whatweb基本满足"><span class="nav-number">8.4.</span> <span class="nav-text">kali 中whatweb基本满足</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#burp-指纹识别"><span class="nav-number">8.5.</span> <span class="nav-text">burp 指纹识别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#收集敏感信息"><span class="nav-number">9.</span> <span class="nav-text">收集敏感信息</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#源码泄露"><span class="nav-number">9.1.</span> <span class="nav-text">源码泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#源码泄露扫描工具"><span class="nav-number">9.1.1.</span> <span class="nav-text">源码泄露扫描工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#源码泄露利用工具"><span class="nav-number">9.1.2.</span> <span class="nav-text">源码泄露利用工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份文件泄露"><span class="nav-number">9.2.</span> <span class="nav-text">备份文件泄露</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#网站备份文件泄露常见名称"><span class="nav-number">9.2.1.</span> <span class="nav-text">网站备份文件泄露常见名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站备份文件泄露常见后缀"><span class="nav-number">9.2.2.</span> <span class="nav-text">网站备份文件泄露常见后缀</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网站备份文件泄露扫描工具"><span class="nav-number">9.2.3.</span> <span class="nav-text">网站备份文件泄露扫描工具</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Hacking"><span class="nav-number">9.3.</span> <span class="nav-text">Google Hacking</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用GoogleHacking语法"><span class="nav-number">9.3.1.</span> <span class="nav-text">常用GoogleHacking语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他GoogleHacking语法"><span class="nav-number">9.3.2.</span> <span class="nav-text">其他GoogleHacking语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GoogleHacking典型用法"><span class="nav-number">9.3.3.</span> <span class="nav-text">GoogleHacking典型用法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#管理后台地址"><span class="nav-number">9.3.3.0.0.1.</span> <span class="nav-text">管理后台地址</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#上传类漏洞地址"><span class="nav-number">9.3.3.0.0.2.</span> <span class="nav-text">上传类漏洞地址</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#注入页面"><span class="nav-number">9.3.3.0.0.3.</span> <span class="nav-text">注入页面</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#编辑器页面"><span class="nav-number">9.3.3.0.0.4.</span> <span class="nav-text">编辑器页面</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#目录遍历漏洞"><span class="nav-number">9.3.3.0.0.5.</span> <span class="nav-text">目录遍历漏洞</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#SQL错误"><span class="nav-number">9.3.3.0.0.6.</span> <span class="nav-text">SQL错误</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#phpinfo"><span class="nav-number">9.3.3.0.0.7.</span> <span class="nav-text">phpinfo()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#配置文件泄露"><span class="nav-number">9.3.3.0.0.8.</span> <span class="nav-text">配置文件泄露</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数据库文件泄露"><span class="nav-number">9.3.3.0.0.9.</span> <span class="nav-text">数据库文件泄露</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#日志文件泄露"><span class="nav-number">9.3.3.0.0.10.</span> <span class="nav-text">日志文件泄露</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#备份和历史文件泄露"><span class="nav-number">9.3.3.0.0.11.</span> <span class="nav-text">备份和历史文件泄露</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#公开文件泄露"><span class="nav-number">9.3.3.0.0.12.</span> <span class="nav-text">公开文件泄露</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#邮箱信息"><span class="nav-number">9.3.3.0.0.13.</span> <span class="nav-text">邮箱信息</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#社工信息"><span class="nav-number">9.3.3.0.0.14.</span> <span class="nav-text">社工信息</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS获取敏感接口"><span class="nav-number">9.4.</span> <span class="nav-text">JS获取敏感接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSFinder"><span class="nav-number">9.4.1.</span> <span class="nav-text">JSFinder</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkFinder"><span class="nav-number">9.4.2.</span> <span class="nav-text">LinkFinder</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录-amp-后台扫描"><span class="nav-number">9.5.</span> <span class="nav-text">目录&amp;后台扫描</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#越权查询"><span class="nav-number">9.6.</span> <span class="nav-text">越权查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码托管"><span class="nav-number">9.7.</span> <span class="nav-text">代码托管</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#github"><span class="nav-number">9.7.0.1.</span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitee"><span class="nav-number">9.7.0.2.</span> <span class="nav-text">gitee</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitcafe"><span class="nav-number">9.7.0.3.</span> <span class="nav-text">gitcafe</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Whois-amp-备案查询"><span class="nav-number">9.8.</span> <span class="nav-text">Whois&amp;备案查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#公网网盘"><span class="nav-number">9.9.</span> <span class="nav-text">公网网盘</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#凌风云搜索"><span class="nav-number">9.9.1.</span> <span class="nav-text">凌风云搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取公开文件"><span class="nav-number">9.10.</span> <span class="nav-text">获取公开文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#snitch"><span class="nav-number">9.10.1.</span> <span class="nav-text">snitch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邮箱信息收集"><span class="nav-number">9.11.</span> <span class="nav-text">邮箱信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Infoga"><span class="nav-number">9.11.1.</span> <span class="nav-text">Infoga</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Google-Hacking-1"><span class="nav-number">9.11.2.</span> <span class="nav-text">Google Hacking</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#历史漏洞-amp-资产"><span class="nav-number">10.</span> <span class="nav-text">历史漏洞&amp;资产</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#F12-信息收集"><span class="nav-number">11.</span> <span class="nav-text">F12 信息收集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注释信息收集"><span class="nav-number">11.0.1.</span> <span class="nav-text">注释信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hidden信息收集"><span class="nav-number">11.0.2.</span> <span class="nav-text">hidden信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相对路径信息收集"><span class="nav-number">11.0.3.</span> <span class="nav-text">相对路径信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webserver信息收集"><span class="nav-number">11.0.4.</span> <span class="nav-text">webserver信息收集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript功能信息收集"><span class="nav-number">11.0.5.</span> <span class="nav-text">JavaScript功能信息收集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#burp被动收集"><span class="nav-number">12.</span> <span class="nav-text">burp被动收集</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Burp"><span class="nav-number">12.0.0.0.1.</span> <span class="nav-text">Burp</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#主动爬虫"><span class="nav-number">12.0.0.0.2.</span> <span class="nav-text">主动爬虫</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注册资料收集（注册时需提供资质）"><span class="nav-number">13.</span> <span class="nav-text">注册资料收集（注册时需提供资质）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#开源资产收集系统"><span class="nav-number">14.</span> <span class="nav-text">开源资产收集系统</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典"><span class="nav-number">15.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#前端加密"><span class="nav-number">16.</span> <span class="nav-text">前端加密</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#验证码绕过"><span class="nav-number">17.</span> <span class="nav-text">验证码绕过</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考链接："><span class="nav-number">18.</span> <span class="nav-text">参考链接：</span></a></li></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZSC0810</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
