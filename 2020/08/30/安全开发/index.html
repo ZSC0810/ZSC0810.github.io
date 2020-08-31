@@ -93,20 +93,20 @@
 <meta property="og:site_name" content="ZSC0810の博客">
 <meta property="og:description" content="任务：熟悉JAVA WEB开发流程目标：1、了解并掌握JAVA WEB开发流程；2、熟悉基本框架；3、学会使用JAVA、CSS、HTML、JS等基础编程语言；4、尝试使用符合安全规范的编码进行编写。 所需安装的基础环境 jdk1.8+tomcat 7 +mysql 5.7 +eclipse 项目设计的知识点 ssm框架+easyui前端框架 SSM框架原理：SSM框架：spring、springM">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/clip_image002.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200830191000682.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200830195720376.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200830202724746.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200830205011469.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200830205521275.png">
-<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200830231625484.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831113202438.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831113219900.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831113247341.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831113317680.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831115835208.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831115900126.png">
+<meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831115921124.png">
 <meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831084637530.png">
 <meta property="og:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831085337433.png">
-<meta property="og:updated_time" content="2020-08-31T00:59:12.697Z">
+<meta property="og:updated_time" content="2020-08-31T03:59:25.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安全开发">
 <meta name="twitter:description" content="任务：熟悉JAVA WEB开发流程目标：1、了解并掌握JAVA WEB开发流程；2、熟悉基本框架；3、学会使用JAVA、CSS、HTML、JS等基础编程语言；4、尝试使用符合安全规范的编码进行编写。 所需安装的基础环境 jdk1.8+tomcat 7 +mysql 5.7 +eclipse 项目设计的知识点 ssm框架+easyui前端框架 SSM框架原理：SSM框架：spring、springM">
-<meta name="twitter:image" content="http://yoursite.com/2020/08/30/安全开发/clip_image002.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/08/30/安全开发/image-20200831113202438.png">
 
 
 
@@ -356,7 +356,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2020-08-31T08:59:12+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2020-08-31T11:59:25+08:00">
                 2020-08-31
               </time>
             
@@ -437,12 +437,12 @@
 <p>它用于web层，相当于controller（等价于传统的servlet和struts的action），用来处理用户请求。举个例子，用户在地址栏输入http://网站域名/login，那么springmvc就会拦截到这个请求，并且调用controller层中相应的方法，（中间可能包含验证用户名和密码的业务逻辑，以及查询数据库操作，但这些都不是springmvc的职责），最终把结果返回给用户，并且返回相应的页面（当然也可以只返回json/xml等格式数据）。springmvc就是做前面和后面过程的活，与用户打交道！！</p>
 <h4 id="MyBatis："><a href="#MyBatis：" class="headerlink" title="MyBatis："></a>MyBatis：</h4><p>jdbc封装，本质就是java对数据库的操作。创建Sqlsessionfactory实例，其中实体、数据库表、mapper三者一一对应，缺一不可。</p>
 <p>根据用户写的实体类和映射mapper文件之间的对应来获取到相应的sql操作去执行。</p>
-<p><img src="/2020/08/30/安全开发/clip_image002.png" alt="ssm框架远离流程图"></p>
+<p><img src="/2020/08/30/安全开发/image-20200831113202438.png" alt="image-20200831113202438"></p>
 <p>控制器根据请求参数判断要访问数据库，从容器Spring里面拿到要访问数据库的对象，拿到对象后告诉对象我要什么数据，然后对象跑到数据库调用方法，将拿到的数据交给Spring,拿到数据后，调用包含在一起的视图分发器，数据丢给他，视图分发器将数据渲染后放到指定页面，返回给用户</p>
 <p>使用框架开发项目的难点：</p>
 <p>最头疼的就是配置文件，框架开发中，要用到很多的配置项，配置文件也比较多，springboot框架可解决这个弊端</p>
 <h2 id="新建SSM框架，认识配置文件"><a href="#新建SSM框架，认识配置文件" class="headerlink" title="新建SSM框架，认识配置文件"></a>新建SSM框架，认识配置文件</h2><p>新建一个动态的WEB项目</p>
-<p><img src="/2020/08/30/安全开发/image-20200830191000682.png" alt="image-20200830191000682"></p>
+<p><img src="/2020/08/30/安全开发/image-20200831113219900.png" alt="image-20200831113219900"></p>
 <h3 id="文件目录："><a href="#文件目录：" class="headerlink" title="文件目录："></a>文件目录：</h3><p>配置的文件的改动是很慎重的</p>
 <p>不要死记硬背，理解即可，用的时候可以现查</p>
 <p>WebContent：存放WEB资源，jsp问件 图片，css文件等等</p>
@@ -462,14 +462,14 @@
 <p><load-on-startup>：启动状态，无所谓，默认是1</load-on-startup></p>
 <p><welcome-file-list>：项目一启动要显示的文件</welcome-file-list></p>
 <h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><p>容器呀~</p>
-<h5 id="applicationContext-xml"><a href="#applicationContext-xml" class="headerlink" title="applicationContext.xml"></a>applicationContext.xml</h5><p><img src="/2020/08/30/安全开发/image-20200830195720376.png" alt="image-20200830195720376"></p>
+<h5 id="applicationContext-xml"><a href="#applicationContext-xml" class="headerlink" title="applicationContext.xml"></a>applicationContext.xml</h5><p><img src="/2020/08/30/安全开发/image-20200831113247341.png" alt="image-20200831113247341"></p>
 <p>固定格式，只需修改相应的版本号</p>
 <p><a href="context:component-scan/" target="_blank" rel="noopener">context:component-scan/</a> ：上下文组件扫描：去com.ischoolbar.programmer这个包下，扫描类，这三个字标记的关键字Component（标记实体的）、Repository（用来标记数据库操作层里的 dao层），Service（操作service的）都放到容器里，关键字是已经框架已经写好了的</p>
 <p><a href="context:property-placeholder/" target="_blank" rel="noopener">context:property-placeholder/</a>：放置了数据库的配置文件，文件名称与springmvc里面对应</p>
 <p><property name="driverClass" value="${datasource.connection.driver_class}">，加载db.properties中的</property></p>
 <p>变量值com.mysql.jdbc.Driver，固定写法</p>
 <p>可以不用db.properties，直接赋值在applicationContext.xml文件里</p>
-<p><img src="/2020/08/30/安全开发/image-20200830202724746.png" alt="image-20200830202724746"></p>
+<p><img src="/2020/08/30/安全开发/image-20200831113317680.png" alt="image-20200831113317680"></p>
 <p>但是不符合框架规范，容易出错</p>
 <!-- 事务管理器 （JDBC） -->
 
@@ -488,14 +488,14 @@
 <p>service</p>
 <p>service.iml</p>
 <p>mapper文件写得slq语句映射到dao里面</p>
-<p><img src="/2020/08/30/安全开发/image-20200830205011469.png" alt="image-20200830205011469"></p>
+<p><img src="/2020/08/30/安全开发/image-20200831115835208.png" alt="image-20200831115835208"></p>
 <p>平常使用的时候，就是在使用的地方用dao去调用跟mapper文件里面同名的方法，自动建立起关联</p>
 <p>一个实体对应一个service，对应一个service.iml，对应一个dao,对应一个mapper文件，都是一一对应的，都是框架规定的，为了结构清晰</p>
 <h4 id="db-properties"><a href="#db-properties" class="headerlink" title="db.properties"></a>db.properties</h4><p>开发项目中用到的很少</p>
 <p>datasource.connection.driver_class：变量名</p>
 <p>datasource.connection.url=jdbc:mysql://localhost:3306/db_base_project?useUnicode=true&amp;characterEncoding=utf-8</p>
 <p>db_base_project：数据名称</p>
-<h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p><img src="/2020/08/30/安全开发/image-20200830205521275.png" alt="image-20200830205521275"></p>
+<h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p><img src="/2020/08/30/安全开发/image-20200831115900126.png" alt="image-20200831115900126"></p>
 <p>固定格式</p>
 <p>告诉SpringMVC控制器的类是写在哪个包下面的，扫描这个包下的类，凡是用.Controller注解的类加载进来，不是这个关键字注解的类不要加载进来</p>
 <p>&lt;context:component-scan base-package=”com.ischoolbar.programmer.controller”&gt;<br>    &lt;context:include-filter type=”annotation”<br>        expression=”org.springframework.stereotype.Controller” /&gt;<br>    </p>
@@ -509,7 +509,7 @@
 <p>运行hello ssm文件。路径为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/views/&quot;&gt;&lt;/property&gt;+return &quot;system/index&quot;;+&lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;&gt;&lt;/property&gt;</span><br></pre></td></tr></table></figure>
 
-<p><img src="/2020/08/30/安全开发/image-20200830231625484.png" alt="image-20200830231625484"></p>
+<p><img src="/2020/08/30/安全开发/image-20200831115921124.png" alt="image-20200831115921124"></p>
 <p>从网上找套精致的模板套上即可</p>
 <p><img src="/2020/08/30/安全开发/image-20200831084637530.png" alt="image-20200831084637530"></p>
 <p><img src="/2020/08/30/安全开发/image-20200831085337433.png" alt="image-20200831085337433"></p>
